@@ -1,6 +1,6 @@
 require "test_helper"
 
-class ItineraryTest < ActiveSupport::TestCase
+class PlanTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
