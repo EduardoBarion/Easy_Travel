@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
 
   def show
     @place = Place.find(params[:id])
+    @plan = Plan.new
   end
 
   private
