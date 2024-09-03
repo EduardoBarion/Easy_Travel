@@ -5,6 +5,10 @@ class PlacesController < ApplicationController
     @places = Place.where(city: @city)
   end
 
+  def show
+    @place = Place.find(params[:id])
+  end
+
   private
 
   def set_city

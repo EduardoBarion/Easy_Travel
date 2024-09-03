@@ -1,0 +1,8 @@
+<h1>Lista de cidades</h1>
+
+<ul>
+  <% @cities.each do |city| %>
+    <li><%= city.name %></li>
+  <% end %>
+</ul>
+ <%= link_to "Home Page", root_path %>
