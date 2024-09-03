@@ -10,11 +10,11 @@
 
 puts 'Cleaning DB...'
 User.destroy_all
+Plan.destroy_all
 Place.destroy_all
 City.destroy_all
 Country.destroy_all
 # Trip.destroy_all
-# Plan.destroy_all
 puts 'DB cleaned.'
 
 puts 'Creating 2 fake users...'
@@ -912,3 +912,26 @@ munich10 = Place.new(
 )
 munich10.save!
 puts 'Attractions created.'
+
+puts 'Creating trip...'
+trip = Trip.create!(
+  user: user,
+  name: "Europa"
+)
+puts 'trip created.'
+
+puts 'Creating 2 plans...'
+plan1 = Plan.new(
+  suggestion: 'Platzl 9, 80331 München, Germany',
+  place: munich10,
+  trip: trip
+)
+plan1.save!
+
+plan2 = Plan.new(
+  suggestion: 'Platzl 9, 80331 München, Germany',
+  place: munich10,
+  trip: trip
+)
+plan2.save!
+puts 'Plans created.'

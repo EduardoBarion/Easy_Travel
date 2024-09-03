@@ -1,0 +1,20 @@
+<div class="mt-4">
+  <h1>Attractions</h1>
+
+  <div class="row justify-content-start">
+    <% @places.each do |place| %>
+      <div class="col-3">
+        <ul>
+            <div class="card" style="width: 18rem;">
+              <img src="https://picsum.photos/seed/picsum/300/200" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%= place.name %></h5>
+                  <p class="card-text"><%= place.description %></p>
+                  <a href="#" class="btn btn-primary">Saiba mais</a>
+                </div>
+            </div>
+        </ul>
+      </div>
+    <% end %>
+  </div>
+</div>
