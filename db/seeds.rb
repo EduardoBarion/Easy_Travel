@@ -9,12 +9,12 @@
 #   end
 
 puts 'Cleaning DB...'
-User.destroy_all
 Plan.destroy_all
+Trip.destroy_all
+User.destroy_all
 Place.destroy_all
 City.destroy_all
 Country.destroy_all
-# Trip.destroy_all
 puts 'DB cleaned.'
 
 puts 'Creating 2 fake users...'
