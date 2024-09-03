@@ -1,0 +1,10 @@
+<div class="mt-4">
+  <h1>Lista de Países</h1>
+
+  <ul>
+    <% @countries.each do |country| %>
+      <li><%= country.name %></li>
+    <% end %>
+  </ul>
+   <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
+</div>
