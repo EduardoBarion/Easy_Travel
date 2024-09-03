@@ -1,0 +1,8 @@
+<div class="mt-4">
+  <h1> Plans </h1>
+  <ul>
+    <% @plans.each do |plan| %>
+      <li><%= link_to plan.name, plan_path(plan) %></li>
+    <% end %>
+  </ul>
+</div>
