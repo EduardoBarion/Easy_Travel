@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   resources :countries, only: %i[index]
 
   resources :cities, only: :index do
-    resources :places, only: %i[index, show]
+    resources :places, only: %i[index]
   end
   resources :trips, only: %i[index]
+  resources :places, only: %i[show] do
+    resources :plans, only: %i[create]
+  end
 
   # Defines the root path route ("/")
   # root "posts#index"
