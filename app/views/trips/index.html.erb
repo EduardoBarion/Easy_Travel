@@ -2,6 +2,7 @@
   <h1> Trips </h1>
   <ul>
     <% @trips.each do |trip| %>
+      <li><%= trip.name %></li>
       <%# <li><%= link_to trip.name, trip_path(trip) %>
     <% end %>
   </ul>
