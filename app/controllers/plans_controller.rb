@@ -12,6 +12,13 @@ class PlansController < ApplicationController
     end
   end
 
+  def destroy
+    # raise
+    @plan = Plan.find(params[:plan_id])
+    @plan.destroy
+    redirect_to trip_path(@plan.trip_id)
+  end
+
   private
 
   def plan_params

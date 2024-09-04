@@ -13,10 +13,10 @@ Rails.application.routes.draw do
     resources :places, only: :index
   end
 
-  resources :trips, only: %i[index show]
+  resources :trips, only: %i[index show destroy]
 
   resources :places, only: :show do
-    resources :plans, only: :create
+    resources :plans, only: %i[create destroy]
   end
 
   # Defines the root path route ("/")
