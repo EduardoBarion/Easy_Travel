@@ -1,7 +1,10 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
-<%= link_to "Lista de cidades", cities_path %>
+<%= link_to "Lista de países", countries_path, class: "btn btn-primary" %>
+<%= link_to "Lista dos seus roteiros", trips_path, class: "btn btn-primary" %>
+<%= link_to "Criar novo roteiro", new_trip_path, class: "btn btn-primary" %>
+
 
 
 <div class="footer">
@@ -10,7 +13,6 @@
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
   </div>
   <div class="footer-copyright">
     Easy Co. 2024

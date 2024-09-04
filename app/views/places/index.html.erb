@@ -1,4 +1,4 @@
-<div class="mt-4">
+<div class="container">
   <h1>Attrações</h1>
 
   <div class="row justify-content-start">
@@ -17,6 +17,5 @@
       </div>
     <% end %>
   </div>
+  <%= link_to "Voltar para cidades", country_cities_path(@city.country), class: "btn btn-outline-secondary" %>
 </div>
-
-  <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>

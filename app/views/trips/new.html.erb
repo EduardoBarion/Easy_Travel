@@ -1,0 +1,9 @@
+<div class="container">
+  <%= simple_form_for @trip do |f| %>
+    <%= f.input :name, label: 'Nome do roteiro:' %>
+    <%= f.input :date_start, label: 'Dia de partida:', as: :string, input_html: { type: 'date' } %>
+    <%= f.input :date_end, label: 'Dia de retorno:', as: :string, input_html: { type: 'date' } %>
+    <%= f.submit 'Criar novo roteiro', class: 'btn btn-outline-primary m-4' %>
+    <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
+  <% end %>
+</div>
