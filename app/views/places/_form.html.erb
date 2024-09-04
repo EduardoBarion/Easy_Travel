@@ -3,6 +3,7 @@
     <%= simple_form_for [place, plan] do |f| %>
       <%= f.association :trip, label: 'Roteiro:', collection: current_user.trips %>
       <%= f.submit 'Adicionar', class: 'btn btn-outline-primary m-4' %>
+      <button type="button" class="btn btn-outline-primary m-4"> Criar novo roteiro </button>
     <% end %>
   </div>
 <% end %>
