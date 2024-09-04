@@ -13,8 +13,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :trips, only: %i[index show destroy]
-  resources :trips, only: %i[index show new create]
+ 
+  resources :trips, only: %i[index show new create destroy]
 
   resources :places, only: :show do
     resources :plans, only: %i[create destroy]
