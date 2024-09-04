@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :places, only: :index
   end
 
-  resources :trips, only: :index
+  resources :trips, only: %i[index show]
 
   resources :places, only: :show do
     resources :plans, only: :create

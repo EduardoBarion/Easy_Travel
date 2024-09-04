@@ -113,101 +113,101 @@ puts 'Countries created.'
 
 puts 'Creating 10 attractions for every city...'
 barcelona1 = Place.new(
-  name: 'Museu do Prado',
-  address: 'Calle de Felipe IV, s/n, 28014 Madrid, Espanha',
-  price: 15.00,
-  description: 'O principal museu de arte de Madrid, conhecido por sua vasta coleção de obras-primas europeias, incluindo pinturas de Velázquez e Goya.',
-  review: 'Um dos museus mais impressionantes da Europa, com uma coleção de arte excepcional.',
+  name: 'Sagrada Família',
+  address: 'Carrer de Mallorca, 401, 08013 Barcelona, Espanha',
+  price: 26.00,
+  description: 'Uma das obras-primas de Antoni Gaudí, uma basílica impressionante e icônica com arquitetura única e detalhes elaborados.',
+  review: 'Uma visita obrigatória em Barcelona, com sua arquitetura extraordinária e construção ainda em andamento.',
   city: barcelona
 )
 barcelona1.save!
 
 barcelona2 = Place.new(
-  name: 'Palácio Real de Madrid',
-  address: 'Calle de Bailén, s/n, 28071 Madrid, Espanha',
-  price: 13.00,
-  description: 'A residência oficial dos reis da Espanha, um palácio grandioso com impressionantes salões e jardins.',
-  review: 'Uma visita obrigatória para apreciar a opulência e a história real de Madrid.',
+  name: 'Parc Güell',
+  address: 'Carrer d\'Olot, 5, 08024 Barcelona, Espanha',
+  price: 10.00,
+  description: 'Um parque público projetado por Antoni Gaudí, conhecido por seus mosaicos coloridos e formas arquitetônicas inusitadas.',
+  review: 'Um lugar encantador para passeios, com vistas panorâmicas e uma arquitetura vibrante e divertida.',
   city: barcelona
 )
 barcelona2.save!
 
 barcelona3 = Place.new(
-  name: 'Parque do Retiro',
-  address: 'Plaza de la Independencia, 7, 28001 Madrid, Espanha',
+  name: 'La Rambla',
+  address: 'La Rambla, 08002 Barcelona, Espanha',
   price: 0.00,
-  description: 'Um grande parque urbano no centro de Madrid, perfeito para passeios relaxantes, passeios de barco e apreciar a natureza.',
-  review: 'Um oásis de tranquilidade no coração da cidade, ótimo para um passeio ao ar livre.',
+  description: 'Uma famosa avenida em Barcelona, repleta de lojas, restaurantes e artistas de rua, perfeita para passeios e compras.',
+  review: 'O coração vibrante de Barcelona, ótimo para explorar a vida urbana e absorver a atmosfera local.',
   city: barcelona
 )
 barcelona3.save!
 
 barcelona4 = Place.new(
-  name: 'Museu Nacional Centro de Arte Reina Sofia',
-  address: 'Calle de Santa Isabel, 52, 28012 Madrid, Espanha',
-  price: 10.00,
-  description: 'Museu dedicado à arte moderna e contemporânea, conhecido por abrigar o famoso "Guernica" de Picasso.',
-  review: 'Uma galeria fascinante com algumas das obras mais importantes da arte moderna.',
+  name: 'Casa Batlló',
+  address: 'Passeig de Gràcia, 43, 08007 Barcelona, Espanha',
+  price: 35.00,
+  description: 'Um dos edifícios mais icônicos de Antoni Gaudí, conhecido por suas fachadas coloridas e design inovador.',
+  review: 'Uma experiência fascinante com uma arquitetura inovadora e interior deslumbrante.',
   city: barcelona
 )
 barcelona4.save!
 
 barcelona5 = Place.new(
-  name: 'Templo de Debod',
-  address: 'Calle de Ferraz, 1, 28008 Madrid, Espanha',
-  price: 0.00,
-  description: 'Templo egípcio antigo que foi reconstruído em Madrid, oferecendo uma vista única e uma experiência histórica.',
-  review: 'Um lugar único para conhecer a história egípcia e desfrutar de vistas panorâmicas da cidade.',
+  name: 'Casa Milà (La Pedrera)',
+  address: 'Passeig de Gràcia, 92, 08008 Barcelona, Espanha',
+  price: 25.00,
+  description: 'Outro marco de Gaudí, famoso por sua fachada ondulada e interiores distintos, oferecendo uma visão única da arquitetura modernista.',
+  review: 'Uma peça de arquitetura impressionante com um design muito diferente do convencional.',
   city: barcelona
 )
 barcelona5.save!
 
 barcelona6 = Place.new(
-  name: 'Gran Vía',
-  address: 'Gran Vía, 28013 Madrid, Espanha',
-  price: 0.00,
-  description: 'Uma das avenidas mais importantes de Madrid, conhecida por seus edifícios imponentes, teatros e lojas.',
-  review: 'Ótima para compras, entretenimento e sentir a vibração de Madrid.',
+  name: 'Museu Picasso',
+  address: 'Carrer Montcada, 15-23, 08003 Barcelona, Espanha',
+  price: 12.00,
+  description: 'Museu dedicado a Pablo Picasso, com uma vasta coleção de suas obras e uma visão profunda sobre sua evolução artística.',
+  review: 'Uma excelente forma de explorar a trajetória de Picasso e apreciar suas obras mais importantes.',
   city: barcelona
 )
 barcelona6.save!
 
 barcelona7 = Place.new(
-  name: 'Praça Mayor',
-  address: 'Plaza Mayor, 28012 Madrid, Espanha',
+  name: 'Parc de la Ciutadella',
+  address: 'Passeig de Picasso, 21, 08003 Barcelona, Espanha',
   price: 0.00,
-  description: 'Uma grande praça retangular no centro histórico de Madrid, cercada por edifícios históricos e cheia de cafés e restaurantes.',
-  review: 'Um ótimo lugar para apreciar a arquitetura e a atmosfera vibrante de Madrid.',
+  description: 'Um grande parque urbano no centro de Barcelona, ideal para passeios, piqueniques e relaxamento.',
+  review: 'Um espaço verde maravilhoso para escapar da agitação da cidade e desfrutar da natureza.',
   city: barcelona
 )
 barcelona7.save!
 
 barcelona8 = Place.new(
-  name: 'Estádio Santiago Bernabéu',
-  address: 'Avenida de Concha Espina, 1, 28036 Madrid, Espanha',
+  name: 'Camp Nou',
+  address: 'Carrer d\'Aristides Maillol, 12, 08028 Barcelona, Espanha',
   price: 25.00,
-  description: 'O icônico estádio do Real Madrid, oferecendo tours e uma visão da história do futebol.',
-  review: 'Um paraíso para os fãs de futebol e uma experiência impressionante para todos.',
+  description: 'O icônico estádio do FC Barcelona, oferecendo tours e uma visão fascinante da história do clube.',
+  review: 'Um paraíso para os fãs de futebol e uma visita obrigatória para os admiradores do FC Barcelona.',
   city: barcelona
 )
 barcelona8.save!
 
 barcelona9 = Place.new(
-  name: 'Museu Thyssen-Bornemisza',
-  address: 'Paseo del Prado, 8, 28014 Madrid, Espanha',
-  price: 13.00,
-  description: 'Museu de arte com uma vasta coleção de obras de diferentes períodos, incluindo desde o Renascimento até o século XX.',
-  review: 'Uma excelente adição ao circuito de museus de Madrid com uma coleção diversificada e de alta qualidade.',
+  name: 'Mercado de La Boqueria',
+  address: 'La Rambla, 91, 08001 Barcelona, Espanha',
+  price: 0.00,
+  description: 'Um vibrante mercado de alimentos em La Rambla, conhecido por sua variedade de produtos frescos e tapas.',
+  review: 'Um local ideal para experimentar as delícias locais e vivenciar a atmosfera animada de um mercado espanhol.',
   city: barcelona
 )
 barcelona9.save!
 
 barcelona10 = Place.new(
-  name: 'Mercado de San Miguel',
-  address: 'Plaza de San Miguel, s/n, 28005 Madrid, Espanha',
+  name: 'Gothic Quarter (Barri Gòtic)',
+  address: 'Barri Gòtic, 08002 Barcelona, Espanha',
   price: 0.00,
-  description: 'Um mercado gastronômico coberto, ideal para provar uma variedade de tapas e produtos locais.',
-  review: 'Um paraíso para os amantes da gastronomia, com uma variedade incrível de sabores e produtos.',
+  description: 'O bairro medieval de Barcelona, repleto de ruas estreitas, praças encantadoras e edifícios históricos.',
+  review: 'Um labirinto de história e cultura, ótimo para explorar a arquitetura antiga e absorver o charme da cidade.',
   city: barcelona
 )
 barcelona10.save!
