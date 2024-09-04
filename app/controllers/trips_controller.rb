@@ -8,20 +8,23 @@ class TripsController < ApplicationController
     @plans = Plan.where(trip: @trip)
   end
 
+  def new
+    @trip = Trip.new
+  end
+
   def create
-    @plan = Plan.find(params[:plan_id])
     @trip = Trip.new(trip_params)
-    @trip.plan = @trip
+    @trip.user = current_user
     if @trip.save
-      render turbo_stream: turbo_stream.replace("trip_form", partial: "trips/confirmed")
+      redirect_to trips_path
     else
-      render turbo_stream: turbo_stream.replace("trip_form", partial: "trips/form", locals: { plan: @plan, trip: @trip })
+      render :new
     end
   end
 
   private
 
   def trip_params
-    params.require(:trip).permit(:user_id)
+    params.require(:trip).permit(:name, :date_start, :date_end, :user_id)
   end
 end
