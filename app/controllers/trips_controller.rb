@@ -3,6 +3,11 @@ class TripsController < ApplicationController
     @trips = Trip.all
   end
 
+  def show
+    @trip = Trip.find(params[:id])
+    @plans = Plan.where(trip: @trip)
+  end
+
   def create
     @plan = Plan.find(params[:plan_id])
     @trip = Trip.new(trip_params)
@@ -18,8 +23,5 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:user_id)
-  def show
-    @trip = Trip.find(params[:id])
-    @plans = Plan.where(trip: @trip)
   end
 end
