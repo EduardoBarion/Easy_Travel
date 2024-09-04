@@ -8,9 +8,9 @@
 
   <hr>
 
-  <%= link_to 'Go back', city_places_path(@place.city), class: "btn btn-primary" %>
+  <%= link_to 'Voltar para outras atrações', country_city_places_path(@place.city.country, @place.city), class: "btn btn-primary" %>
 
-  <button type="button" class="btn btn-outline-success rounded-pill m-4" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Adicionar ao roteiro
   </button>
 
@@ -25,10 +25,8 @@
           <%= render "places/form", plan: @plan, place: @place %>
         </div>
         <div class="modal-footer">
-
         </div>
       </div>
     </div>
   </div>
 </div>
-
