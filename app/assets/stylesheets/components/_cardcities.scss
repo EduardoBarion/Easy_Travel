@@ -1,3 +1,4 @@
+
 .cardcities {
   position: relative;
   display: flex;
@@ -7,6 +8,8 @@
   border-radius: 24px;
   line-height: 1.6;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+
+
 }
 
 .content {
@@ -18,9 +21,15 @@
   border-radius: 22px;
   color: #ffffff;
   overflow: hidden;
-  background: #0a3cff;
+  background: #898c93;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+  background-image: url('https://static.wixstatic.com/media/797e06_e43ce0d4729b4dcfaf781fc34ec7c945~mv2.jpg/v1/fill/w_640,h_652,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/797e06_e43ce0d4729b4dcfaf781fc34ec7c945~mv2.jpg'); /* Adiciona a imagem de fundo */
+  background-size: cover; /* Cobre todo o card */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat;
+
 }
+
 
 .content::before {
   position: absolute;
@@ -30,7 +39,7 @@
   width: 90%;
   height: 90%;
   transform: translate(-50%);
-  background: #ced8ff;
+  background: #98DED9;
   z-index: -1;
   transform-origin: bottom;
 
@@ -46,7 +55,7 @@
   width: 80%;
   height: 80%;
   transform: translate(-50%);
-  background: #e7ecff;
+  background: #C7FFD8;
   z-index: -2;
   transform-origin: bottom;
   border-radius: inherit;
@@ -60,10 +69,27 @@
 
 .content .para {
   z-index: 1;
-  opacity: 1;
+  opacity: 0;
   font-size: 18px;
   transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
+.content:hover .para{
+  opacity: 1;
+  --flow-space: 0.9375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-end;
+  height: 55%;
+  padding: 12% 1.25rem 1.875rem;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 0%, 0) 0%,
+    hsla(0, 0%, 0%, 0.3) 10%,
+    hsl(0, 0%, 0%) 100%
+  );
+  }
 
 .content .link {
   z-index: 1;
@@ -94,4 +120,8 @@
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+.namecity{
+  color: #303032;
 }
