@@ -3,7 +3,7 @@
 
   <ul>
     <% @cities.each do |city| %>
-      <li><%= city.name %></li>
+      <li><%= link_to city.name, city_places_path(city) %></li>
     <% end %>
   </ul>
 
