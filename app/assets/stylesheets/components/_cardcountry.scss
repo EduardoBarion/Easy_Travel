@@ -26,7 +26,6 @@ p {
   margin: 0;
 }
 
-/* GLOBAL STYLES */
 h2 {
   font-size: 2.25rem;
   font-family: var(--font-title);
@@ -105,7 +104,7 @@ p {
   background-color: var(--brand-color);
 }
 
-.card__button {
+.cardcountry__button {
   padding: 0.75em 1.6em;
   width: fit-content;
   width: -moz-fit-content; /* Prefijo necesario para Firefox  */
@@ -119,7 +118,7 @@ p {
   color: var(--black);
 }
 
-.card__button:focus {
+.cardcountry__button:focus {
   outline: 2px solid black;
   outline-offset: -5px;
 }
@@ -144,7 +143,7 @@ p {
   }
 
   .cardcountry__content--container > :not(.cardcountry__title),
-  .card__button {
+  .cardcountry__button {
     opacity: 0;
     transition: transform 500ms ease-out, opacity 500ms ease-out;
   }
@@ -171,9 +170,9 @@ p {
   }
 
   .cardcountry:hover .cardcountry__content--container > :not(.cardcountry__title),
-  .cardcountry:hover .card__button,
+  .cardcountry:hover .cardcountry__button,
   .cardcountry:focus-within .cardcountry__content--container > :not(.cardcountry__title),
-  .cardcountry:focus-within .card__button {
+  .cardcountry:focus-within .cardcountry__button {
     opacity: 1;
     transition: opacity 500ms ease-in;
     transition-delay: 1000ms;
@@ -188,6 +187,3 @@ p {
     transition-delay: 500ms;
   }
 }
-
-
-/*CARD MODELO 2*/

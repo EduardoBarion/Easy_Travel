@@ -1,22 +1,26 @@
-<div class="mt-4">
+<div class="container">
+<div class="p-4 d-flex justify-content-center">
   <h1>Attrações</h1>
-
+</div>
   <div class="row justify-content-start">
     <% @places.each do |place| %>
       <div class="col-3">
         <ul>
-            <div class="card" style="width: 18rem;">
-              <img src="https://picsum.photos/seed/picsum/300/200" class="card-img-top" alt="...">
-                <div class="card-body">
+            <div class="card d-flex">
+              <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"></svg>
+                <h3 class="nameattraction">Nome da atração</h3>
+                  <div class="card__content">
                   <h5 class="card-title"><%= place.name %></h5>
-                  <p class="card-text"><%= place.description %></p>
-                  <%= link_to 'Saiba mais', place_path(place), class: "btn btn-primary" %>
+                  <p class="card__description"><%= place.description %></p>
+                  <%= link_to 'Saiba mais', place_path(place), class: "btn btn-primary mt-2" %>
                 </div>
             </div>
         </ul>
       </div>
     <% end %>
   </div>
-</div>
 
-  <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
+  <div class= "p-4 d-flex justify-content-center">
+  <%= link_to "Home Page", root_path, class: "btn btn-outline-primary rounded-pill" %>
+  </div>
+</div>
