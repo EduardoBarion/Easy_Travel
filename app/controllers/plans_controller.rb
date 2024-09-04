@@ -1,6 +1,4 @@
 class PlansController < ApplicationController
-
-
   def create
     @place = Place.find(params[:place_id])
     @plan = Plan.new(plan_params)
@@ -10,6 +8,13 @@ class PlansController < ApplicationController
     else
       render turbo_stream: turbo_stream.replace("plan_form", partial: "places/form", locals: { place: @place, plan: @plan })
     end
+  end
+
+  def destroy
+    # raise
+    @plan = Plan.find(params[:plan_id])
+    @plan.destroy
+    redirect_to trip_path(@plan.trip_id)
   end
 
   private
