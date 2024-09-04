@@ -1,0 +1,18 @@
+  <h1><strong><%= @trip.name %></strong></h1>
+    <div class>
+      <% @plans.each do |plan| %>
+        <div>
+          <ul>
+              <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title"><%= plan.place.name %></h5>
+                    <p class="card-text"><%= plan.suggestion %></p>
+                    <p class="card-text"><%= plan.place.price %></p>
+                  </div>
+              </div>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Atracoes", city_places_path(@plans[-1].place.city) %>
