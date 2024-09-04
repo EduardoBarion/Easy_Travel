@@ -1,4 +1,4 @@
 <h1>Atração adicionada</h1>
 <p>
-  <%= link_to "Ver outras atrações", city_places_path(@plan.place.city), class: 'btn btn-outline-primary' %>
+  <%= link_to "Ver outras atrações", country_city_places_path(@place.city.country, @place.city), class: 'btn btn-outline-primary' %>
 </p>

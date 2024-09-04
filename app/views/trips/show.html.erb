@@ -1,5 +1,6 @@
   <h1><strong><%= @trip.name %></strong></h1>
     <div class>
+    <% if @plans.exists? %>
       <% @plans.each do |plan| %>
         <div>
           <ul>
@@ -8,11 +9,14 @@
                     <h5 class="card-title"><%= plan.place.name %></h5>
                     <p class="card-text"><%= plan.suggestion %></p>
                     <p class="card-text"><%= plan.place.price %></p>
+                    <%= link_to 'Deletar esse lugar', place_plan_path(plan_id: plan.id, place_id: plan.place_id), method: :delete, data: { turbo_method: :delete } %>
                   </div>
               </div>
           </ul>
         </div>
       <% end %>
+    <%= link_to "Atracoes", city_places_path(@plans[-1].place.city) %>
+   <% end %>
     </div>
   </div>
-  <%= link_to "Atracoes", city_places_path(@plans[-1].place.city) %>
+  <%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete } %>

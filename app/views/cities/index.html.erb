@@ -3,9 +3,10 @@
 
   <ul>
     <% @cities.each do |city| %>
-      <li><%= link_to city.name, city_places_path(city) %></li>
+      <li><%= link_to city.name, country_city_places_path(city.country, city) %></li>
     <% end %>
   </ul>
 
   <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
+  <%= link_to "Voltar para países", countries_path, class: "btn btn-outline-secondary" %>
 </div>
