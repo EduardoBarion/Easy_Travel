@@ -1,5 +1,6 @@
 class PlansController < ApplicationController
 
+
   def create
     @place = Place.find(params[:place_id])
     @plan = Plan.new(plan_params)
