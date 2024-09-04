@@ -8,7 +8,7 @@ class PlansController < ApplicationController
     if @plan.save
       render turbo_stream: turbo_stream.replace("plan_form", partial: "places/confirmed")
     else
-      render turbo_stream: turbo_stream.replace("plan_form", partial: "places/form", locals: {place: @place, plan: @plan})
+      render turbo_stream: turbo_stream.replace("plan_form", partial: "places/form", locals: { place: @place, plan: @plan })
     end
   end
 
