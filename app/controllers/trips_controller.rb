@@ -18,5 +18,8 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:user_id)
+  def show
+    @trip = Trip.find(params[:id])
+    @plans = Plan.where(trip: @trip)
   end
 end
