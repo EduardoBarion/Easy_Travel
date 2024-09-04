@@ -1,10 +1,8 @@
 <%= turbo_frame_tag "plan_form" do %>
   <div class="container">
-    <%# <h1 class="mb-4">Adicionar ao roteiro</h1> %>
-
     <%= simple_form_for [place, plan] do |f| %>
       <%= f.association :trip, label: 'Roteiro:', collection: current_user.trips %>
-      <%= f.submit 'Agendar', class: 'btn btn-outline-primary m-4' %>
+      <%= f.submit 'Adicionar', class: 'btn btn-outline-primary m-4' %>
     <% end %>
   </div>
 <% end %>
