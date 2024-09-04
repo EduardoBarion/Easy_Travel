@@ -3,4 +3,3 @@ class CitiesController < ApplicationController
     @cities = City.all
   end
 end
-  

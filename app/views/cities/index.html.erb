@@ -1,8 +1,11 @@
-<h1>Lista de cidades</h1>
+<div class="mt-4">
+  <h1>Lista de cidades</h1>
 
-<ul>
-  <% @cities.each do |city| %>
-    <li><%= city.name %></li>
-  <% end %>
-</ul>
- <%= link_to "Home Page", root_path %>
+  <ul>
+    <% @cities.each do |city| %>
+      <li><%= link_to city.name, city_places_path(city) %></li>
+    <% end %>
+  </ul>
+
+  <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
+</div>

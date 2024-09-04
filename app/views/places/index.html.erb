@@ -1,5 +1,5 @@
 <div class="mt-4">
-  <h1>Attractions</h1>
+  <h1>Attrações</h1>
 
   <div class="row justify-content-start">
     <% @places.each do |place| %>
@@ -10,7 +10,7 @@
                 <div class="card-body">
                   <h5 class="card-title"><%= place.name %></h5>
                   <p class="card-text"><%= place.description %></p>
-                  <a href="#" class="btn btn-primary">Saiba mais</a>
+                  <%= link_to 'Saiba mais', place_path(place), class: "btn btn-primary" %>
                 </div>
             </div>
         </ul>
@@ -19,3 +19,4 @@
   </div>
 </div>
 
+  <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
