@@ -6,7 +6,9 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @plans = Plan.where(trip: @trip)
-
+    @markers = @plans.map do |plan|
+      { lat: plan.place.latitude, lng: plan.place.longitude }
+    end
   end
 
   def destroy
