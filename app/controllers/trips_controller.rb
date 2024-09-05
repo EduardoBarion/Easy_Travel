@@ -1,6 +1,10 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.where(user: @user)
+    trips_owned_by_user = Trip.where(user: current_user)
+    trips_with_memberships = Trip.joins(groups: :memberships)
+                                 .where(memberships: { user: current_user })
+
+    @trips = Trip.where(id: trips_owned_by_user).or(Trip.where(id: trips_with_memberships))
   end
 
   def show

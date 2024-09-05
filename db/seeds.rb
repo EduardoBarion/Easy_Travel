@@ -102,7 +102,7 @@ ny = City.new(
 ny.save!
 
 lasvegas = City.new(
-  name: 'Bath',
+  name: 'Las vegas',
   description: 'Uma charmosa cidade na Inglaterra, famosa por suas termas romanas bem preservadas, arquitetura georgiana distinta e paisagens pitorescas.',
   country: usa
 )
