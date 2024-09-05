@@ -23,6 +23,7 @@ class TripsController < ApplicationController
 
   def show
     @trip = Trip.find(params[:id])
+    @group = Group.find_by(trip: @trip)
     @plans = Plan.where(trip: @trip)
     @markers = @plans.map do |plan|
       { lat: plan.place.latitude, lng: plan.place.longitude }

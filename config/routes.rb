@@ -14,7 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :trips, only: %i[index show new create destroy] do
-    resources :group, only: %i[new create]
+    resources :groups, only: %i[new create]
+  end
+  resources :groups, only: [] do
+    resources :memberships, only: %i[new create]
   end
 
   resources :places, only: :show do

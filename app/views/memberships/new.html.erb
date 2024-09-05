@@ -1,0 +1,6 @@
+<div class="container">
+  <%= simple_form_for [@group, @membership] do |f| %>
+    <%= f.input :user_id, collection: @users, label_method: :last, value_method: :first %>
+    <%= f.submit 'Adicionar amigo ao seu roteiro', class: 'btn btn-outline-primary m-4' %>
+  <% end %>
+</div>
