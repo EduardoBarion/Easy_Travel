@@ -7,7 +7,6 @@
   <div class="carousel-inner">
     <div class="d-flex">
         <% @countries.each do |country| %>
-          <!-- Adicionei uma tag <li> para cada item da lista -->
             <article class="cardcountry m-4">
               <img
                 class="cardcountry__background"
@@ -24,7 +23,6 @@
                 <button class="cardcountry__button">Read more</button>
               </div>
             </article>
-          <!-- Fechei a tag <li> -->
         <% end %>
     </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -37,3 +35,4 @@
     </button>
   </div>
 </div>
+
