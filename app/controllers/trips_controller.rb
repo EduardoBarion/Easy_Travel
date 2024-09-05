@@ -6,7 +6,6 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @plans = Plan.where(trip: @trip)
-
   end
 
   def destroy

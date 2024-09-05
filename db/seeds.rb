@@ -9,6 +9,8 @@
 #   end
 
 puts 'Cleaning DB...'
+Membership.destroy_all
+Group.destroy_all
 Plan.destroy_all
 Trip.destroy_all
 User.destroy_all
@@ -945,3 +947,25 @@ plan2 = Plan.new(
 )
 plan2.save!
 puts 'Plans created.'
+
+puts 'Creating group...'
+group1 = Group.new(
+  name: 'Amigos para sempre',
+  trip: trip
+)
+group1.save!
+puts 'Groups created.'
+
+puts 'Creating 2 memberships...'
+membership1 = Membership.new(
+  group: group1,
+  user: user
+)
+membership1.save!
+
+membership2 = Membership.new(
+  group: group1,
+  user: admin
+)
+membership2.save!
+puts 'memberships created.'

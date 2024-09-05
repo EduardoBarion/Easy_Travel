@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_05_002733) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_05_145459) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,23 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_05_002733) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "description"
+  end
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.bigint "trip_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["trip_id"], name: "index_groups_on_trip_id"
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "group_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["group_id"], name: "index_memberships_on_group_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "places", force: :cascade do |t|
@@ -75,6 +92,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_05_002733) do
   end
 
   add_foreign_key "cities", "countries"
+  add_foreign_key "groups", "trips"
+  add_foreign_key "memberships", "groups"
+  add_foreign_key "memberships", "users"
   add_foreign_key "places", "cities"
   add_foreign_key "plans", "places"
   add_foreign_key "plans", "trips"
