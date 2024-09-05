@@ -1,9 +1,24 @@
-<div class="container">
-  <%= simple_form_for @trip do |f| %>
-    <%= f.input :name, label: 'Nome do roteiro:' %>
-    <%= f.input :date_start, label: 'Dia de partida:', as: :string, input_html: { type: 'date' } %>
-    <%= f.input :date_end, label: 'Dia de retorno:', as: :string, input_html: { type: 'date' } %>
-    <%= f.submit 'Criar novo roteiro', class: 'btn btn-outline-primary m-4' %>
-    <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
-  <% end %>
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('https://img.freepik.com/fotos-gratis/vista-superior-de-estatuetas-de-aviao-com-smartwatch-e-mascara-medica_23-2148748629.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <div class="container p-4" style="max-width: 600px; background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <h2 class="text-center mb-4" style="font-family: 'Arial', sans-serif; color: #4a4a4a;">Crie seu Roteiro de Viagem</h2>
+
+    <%= simple_form_for @trip do |f| %>
+      <div class="form-group">
+        <%= f.input :name, label: 'Nome do roteiro:', input_html: { class: 'form-control', style: 'border-radius: 8px; padding: 10px;' } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :date_start, label: 'Dia de partida:', as: :string, input_html: { type: 'date', class: 'form-control', style: 'border-radius: 8px; padding: 10px;' } %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :date_end, label: 'Dia de retorno:', as: :string, input_html: { type: 'date', class: 'form-control', style: 'border-radius: 8px; padding: 10px;' } %>
+      </div>
+
+      <div class="text-center mt-4">
+        <%= f.submit 'Criar novo roteiro', class: 'btn btn-primary', style: 'padding: 10px 20px; border-radius: 25px;' %>
+        <%= link_to "Home Page", root_path, class: 'btn btn-outline-secondary ml-2', style: 'padding: 10px 20px; border-radius: 25px;' %>
+      </div>
+    <% end %>
+  </div>
 </div>
