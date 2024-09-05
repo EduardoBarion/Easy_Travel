@@ -8,6 +8,7 @@ class PlacesController < ApplicationController
   def show
     @place = Place.find(params[:id])
     @plan = Plan.new
+    @markers = [{ lat: @place.latitude, lng: @place.longitude }]
   end
 
   private
