@@ -1,3 +1,4 @@
+
 <div class="py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://marinhoturismobuzios.com.br/wp-content/uploads/2018/10/viagem-internacional-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; width: 100%; height: 500px; display: flex; justify-content: flex-start; align-items: center; flex-direction: column; text-align: center; padding-top: 30px;">
     <div style="background-color: rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 10px;">
         <h1 style="color: #161D6F;"><em><strong>Easy Travel</strong></em> – Viajar e conhecer o Mundo nunca foi tão fácil!</h1>
@@ -14,54 +15,24 @@
 
    <p>Find me in app/views/pages/home.html.erb</p>
 
- 
+
 </div>
+
+<hr>
 
 <%= link_to "Lista de países", countries_path, class: "btn btn-primary" %>
 <%= link_to "Lista dos seus roteiros", trips_path, class: "btn btn-primary" %>
 <%= link_to "Criar novo roteiro", new_trip_path, class: "btn btn-primary" %>
 
+<hr>
 
-<%# Código do CARD COUNTRY %>
-<%# <article class="cardcountry">
-  <img
-    class="cardcountry__background"
-    src="http://www.w3.org/2000/svg"
-    alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
-    width="1920"
-    height="2193"
-  />
-  <div class="cardcountry__content | flow">
-    <div class="cardcountry__content--container | flow">
-      <h2 class="cardcountry__title">Colombia</h2>
-      <p class="cardcountry__description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-        labore laudantium deserunt fugiat numquam.
-      </p>
-    </div>
-    <button class="cardcountry__button">Read more</button>
-  </div>
-</article> %>
+<h2 class="text-center mt-5">Países mais visitadas</h2>
 
-<article class="cardcountry">
-  <img
-    class="cardcountry__background"
-    src="https://i.imgur.com/QYWAcXk.jpeg"
-    alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
-    width="1920"
-    height="2193"
-  />
-  <div class="cardcountry__content | flow">
-    <div class="cardcountry__content--container | flow">
-      <h2 class="cardcountry__title">Colombia</h2>
-      <p class="cardcountry__description">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum in
-        labore laudantium deserunt fugiat numquam.
-      </p>
-    </div>
-    <button class="cardcountry__button">Read more</button>
-  </div>
-</article>
+<div class="m-5">
+
+  <%= render 'pages/cardcountry',  country: @countries %>
+</div>
+
 
 <%# Código do FOOTER %>
 <div class="footer">

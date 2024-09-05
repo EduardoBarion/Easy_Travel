@@ -33,22 +33,32 @@ puts 'Fake users created.'
 
 puts 'Creating 4 countries...'
 espanha = Country.new(
-  name: 'Espanha'
+  name: 'Espanha',
+  description: 'Explore a vibrante Espanha: praias deslumbrantes, cidades históricas e uma rica cultura de tapas e flamenco. De Barcelona a Toledo, uma experiência inesquecível.'
 )
 espanha.save!
 
 inglaterra = Country.new(
-  name: 'Inglaterra'
+  name: 'Inglaterra',
+  description: 'Descubra a encantadora Inglaterra: ruas históricas de Londres, castelos majestosos e a beleza dos Cotswolds. Uma mistura perfeita de charme e tradição.'
+)
+inglaterra.save!
+
+inglaterra = Country.new(
+  name: 'Inglaterra',
+  description: 'Descubra a encantadora Inglaterra: ruas históricas de Londres, castelos majestosos e a beleza dos Cotswolds. Uma mistura perfeita de charme e tradição.'
 )
 inglaterra.save!
 
 usa = Country.new(
-  name: 'Estados Unidos'
+  name: 'EUA',
+  description: 'Aventure-se pelos Estados Unidos: paisagens espetaculares, grandes cidades e parques nacionais. De Nova York à Califórnia, descubra a diversidade e o dinamismo.'
 )
 usa.save!
 
 alemanha = Country.new(
-  name: 'Alemanha'
+  name: 'Alemanha',
+  description: 'Experimente a Alemanha: castelos de contos de fadas, cidades vibrantes e uma cultura rica. De Berlim a Munique, um mergulho fascinante na história e modernidade.'
 )
 alemanha.save!
 puts 'Countries created.'
