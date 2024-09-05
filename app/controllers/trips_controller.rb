@@ -7,20 +7,6 @@ class TripsController < ApplicationController
     @trips = Trip.where(id: trips_owned_by_user).or(Trip.where(id: trips_with_memberships))
   end
 
-  def show
-    @trip = Trip.find(params[:id])
-    @plans = Plan.where(trip: @trip)
-    @markers = @plans.map do |plan|
-      { lat: plan.place.latitude, lng: plan.place.longitude }
-    end
-  end
-
-  def destroy
-    @trip = Trip.find(params[:id])
-    @trip.destroy
-    redirect_to root_path
-  end
-
   def new
     @trip = Trip.new
   end
@@ -33,6 +19,20 @@ class TripsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @trip = Trip.find(params[:id])
+    @plans = Plan.where(trip: @trip)
+    @markers = @plans.map do |plan|
+      { lat: plan.place.latitude, lng: plan.place.longitude }
+    end
+  end
+
+  def destroy
+    @trip = Trip.find(params[:id])
+    @trip.destroy
+    redirect_to root_path
   end
 
   private
