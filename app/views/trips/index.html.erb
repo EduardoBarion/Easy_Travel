@@ -1,12 +1,15 @@
-<div class="mt-4">
-  <h1> Trips </h1>
-
-  <ul>
-    <% @trips.each do |trip| %>
-      <li><%= link_to trip.name, trip_path(trip) %></li>
-    <% end %>
-  </ul>
-
-  <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
-
+<div class="d-flex justify-content-center align-items-center" style="height: 100vh; background-image: url('https://www.enjoytrip.com.br/wp-content/uploads/2020/01/passagem-a%C3%A9rea_1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+  <div class="container p-4" style="max-width: 600px; background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); ">
+    <div class="mt-4">
+      <h1 class="text-center mb-4" style="font-family: 'Jazz LET'; color: #4a4a4a;">Trips 🧳</h1>
+      <ul class="list-unstyled text-center">
+        <% @trips.each do |trip| %>
+          <li class="mb-3"><%= link_to trip.name, trip_path(trip), class: "btn btn-outline-warning rounded-pill" %></li>
+        <% end %>
+      </ul>
+      <div class="text-center">
+        <%= link_to "<< Home Page", root_path, class: "btn btn-outline-secondary rounded-pill" %>
+      </div>
+    </div>
+  </div>
 </div>
