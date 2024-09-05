@@ -1,6 +1,6 @@
 <div class="container">
 <div class="p-4 d-flex justify-content-center">
-  <h1>Atrações</h1>
+  <h1 style="color: #161D6F;"><strong>Atrações</strong></h1>
 </div>
   <div class="row justify-content-start">
     <% @places.each do |place| %>
@@ -8,7 +8,7 @@
         <ul>
             <div class="card d-flex">
               <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"></svg>
-                <h3 class="nameattraction">Nome da atração</h3>
+                <h4 class="nameattraction"><%= place.name %></h4>
                   <div class="card__content">
                   <h5 class="card-title"><%= place.name %></h5>
                   <p class="card__description"><%= place.description %></p>
