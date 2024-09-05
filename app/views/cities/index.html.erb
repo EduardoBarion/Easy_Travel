@@ -1,11 +1,31 @@
-<div class="mt-4">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.brasileiraspelomundo.com/wp-content/uploads/2018/02/photo.jpg); background-size: cover; background-position: center; height: 60vh;">
+  <div class="container">
+    <h1>Nome do país!</h1>
+  </div>
+</div>
+
+<div class="container mt-4">
   <h1>Lista de cidades</h1>
 
-  <ul>
-    <% @cities.each do |city| %>
-      <li><%= link_to city.name, country_city_places_path(city.country, city) %></li>
-    <% end %>
-  </ul>
+  <% @cities.each do |city| %>
 
-  <%= link_to "Voltar para países", countries_path, class: "btn btn-outline-secondary" %>
+
+      <%= link_to country_city_places_path(city.country, city), style: "text-decoration: none; color: inherit;" do %>
+        <div class="cardcity mb-3" style="width: 100%; max-width: 100%; height: auto; display: block;">
+          <img class="cardcity-img-top" src="https://png.pngtree.com/thumb_back/fw800/background/20230831/pngtree-the-cityscape-shot-is-a-horizontal-view-of-the-sun-with-image_13102124.jpg" style="width: 100%; height: auto; object-fit: cover;">
+        </div></a>
+      <%end %>
+
+      <div class="cardcity-body">
+        <h5 class="cardcity-title"><%= city.name %></h5>
+        <p class="cardcity-text"><%= city.description %></p>
+      </div>
+
+      <hr>
+  <% end %>
+
+</div>
+
+<div style="text-align: center; margin: 40px; padding-botton: 40px;">
+  <%= link_to "Voltar para países", countries_path, class: "btn btn-outline-primary rounded-pill" %>
 </div>

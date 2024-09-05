@@ -136,6 +136,9 @@ GEM
     geocoder (1.8.3)
       base64 (>= 0.1.0)
       csv (>= 3.0.0)
+    geocoder (1.8.3)
+      base64 (>= 0.1.0)
+      csv (>= 3.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.5)
@@ -306,7 +309,9 @@ DEPENDENCIES
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
   geocoder
+<<<<<<< HEAD
   importmap-rails (~> 1.2.3)
+>>>>>>> master
   jbuilder
   pg (~> 1.1)
   puma (>= 5.0)
