@@ -1,28 +1,26 @@
-  <h1><strong><%= @trip.name %></strong></h1>
-    <div class="teste">
-    <% if @plans.exists? %>
-      <% @plans.each do |plan| %>
-        <div>
-          <ul>
-              <div class="card" style="width: 18rem;">
-                  <div class="card-body">
-                    <h5 class="card-title"><%= plan.place.name %></h5>
-                    <p class="card-text"><%= plan.suggestion %></p>
-                    <p class="card-text"><%= plan.place.price %></p>
-                    <%= link_to 'Deletar esse lugar', place_plan_path(plan_id: plan.id, place_id: plan.place_id), method: :delete, data: { turbo_method: :delete } %>
-                  </div>
-              </div>
-          </ul>
+<h1 style="color: #161D6F; text-align: center;"><strong><%= @trip.name %></strong></h1>
+<div class="teste" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+  <% if @plans.exists? %>
+    <% @plans.each do |plan| %>
+      <div style="margin-bottom: 20px;">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= plan.place.name %></h5>
+            <p class="card-text"><%= plan.suggestion %></p>
+            <p class="card-text"><%= plan.place.price %></p>
+            <%= link_to 'Deletar esse lugar', place_plan_path(plan_id: plan.id, place_id: plan.place_id), method: :delete, data: { turbo_method: :delete }, class: "btn btn-outline-primary rounded-pill" %>
+          </div>
         </div>
-      <% end %>
-      <div style="width: 100%; height: 600px;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
-      <%= link_to "Colocar mais atrações", root_path, class: "btn btn-primary" %>
-      <%= link_to "Lista dos seus roteiros", trips_path, class: "btn btn-primary" %>
-   <% end %>
+    <% end %>
+    <div style="width: 100%; height: 600px;"
+      data-controller="map"
+      data-map-markers-value="<%= @markers.to_json %>"
+      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
-  <%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete } %>
+    <%= link_to "Adicionar mais atrações", root_path, class: "btn btn-outline-primary rounded-pill" %>
+    <%= link_to "Lista dos seus roteiros", trips_path, class: "btn btn-outline-primary rounded-pill" %>
+  <% end %>
+</div>
+
+<%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete } %>
