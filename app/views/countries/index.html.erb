@@ -1,11 +1,38 @@
-<div class="mt-4">
-  <h1>Lista de países</h1>
+<div class="py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://bityl.co/RtPW); background-size: cover; background-repeat: no-repeat; background-position: center; width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+    <div style="background-color: rgba(255, 255, 255, 0.8); padding: 20px; border-radius: 10px;">
+        <h1 style="color: #161D6F;"><em><strong>Países pelo Mundo</strong></em> – Conheça mais sobre seu próximo destino!</h1>
+    </div>
+</div>
 
-  <ul>
-    <% @countries.each do |country| %>
-      <li><%= link_to country.name, country_cities_path(country) %></li>
-    <% end %>
-  </ul>
 
+<div class="mt-4" style="padding: 0 20px;">
+    <h2 style="color: #161D6F; text-align: center;"><strong>Confira nossos países em destaque</strong></h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
+      <% @countries.each do |country| %>
+        <%= link_to country_cities_path(country), class: "card-link" do %>
+          <article class="cardcountry" style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-decoration: none; background-color: #fff;">
+    
+            <img
+              class="cardcountry__background"
+              src="https://bityl.co/RtXH"
+              alt="Quadro cinza"
+              style="width: 100%; height: 100%; object-fit: cover; display: block;"
+            />
+            <div class="cardcountry__content | flow" style="padding: 15px;">
+              <div class="cardcountry__content--container | flow">
+                <h2 class="cardcountry__title" style="color: #161D6F;"><%= country.name %></h2>
+                <p class="cardcountry__description"><%= country.description %></p>
+              </div>
+              <button class="cardcountry__button" style="margin-top: 10px; background-color: #161D6F; color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px;">Descubra mais</button>
+            </div>
+          </article>
+        <% end %>
+      <% end %>
+    </div>
+</div>
+
+
+<div class="mt-4, container">
   <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
 </div>
