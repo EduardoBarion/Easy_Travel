@@ -1,20 +1,10 @@
 class TripsController < ApplicationController
   def index
-    @trips = Trip.all
-  end
+    trips_owned_by_user = Trip.where(user: current_user)
+    trips_with_memberships = Trip.joins(groups: :memberships)
+                                 .where(memberships: { user: current_user })
 
-  def show
-    @trip = Trip.find(params[:id])
-    @plans = Plan.where(trip: @trip)
-    @markers = @plans.map do |plan|
-      { lat: plan.place.latitude, lng: plan.place.longitude }
-    end
-  end
-
-  def destroy
-    @trip = Trip.find(params[:id])
-    @trip.destroy
-    redirect_to root_path
+    @trips = Trip.where(id: trips_owned_by_user).or(Trip.where(id: trips_with_memberships))
   end
 
   def new
@@ -29,6 +19,21 @@ class TripsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @trip = Trip.find(params[:id])
+    @group = Group.find_by(trip: @trip)
+    @plans = Plan.where(trip: @trip)
+    @markers = @plans.map do |plan|
+      { lat: plan.place.latitude, lng: plan.place.longitude }
+    end
+  end
+
+  def destroy
+    @trip = Trip.find(params[:id])
+    @trip.destroy
+    redirect_to root_path
   end
 
   private

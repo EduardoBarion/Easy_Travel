@@ -28,5 +28,5 @@
         </div>
     </div>
   </div>
-</div>
-</div>
+  <%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete } %>
+  <%= link_to 'Adicionar amigos', new_group_membership_path(@group), class: "btn btn-primary" %>
