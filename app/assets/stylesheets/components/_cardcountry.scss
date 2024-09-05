@@ -2,8 +2,8 @@
 
 :root {
   /* Colors */
-  --brand-color: hsl(46, 100%, 50%);
-  --black: hsl(0, 0%, 0%);
+  --brand-color: #0B2F9F;
+  --black: hsl(0, 0%, 100%);
   --white: hsl(0, 0%, 100%);
   /* Fonts */
   --font-title: "Montserrat", sans-serif;
@@ -26,14 +26,14 @@ p {
   margin: 0;
 }
 
-h2 {
+.cardcountry__title {
   font-size: 2.25rem;
   font-family: var(--font-title);
   color: var(--white);
   line-height: 1.1;
 }
 
-p {
+.cardcountry__description {
   font-family: var(--font-text);
   font-size: 1rem;
   line-height: 1.5;
@@ -49,9 +49,9 @@ p {
 .cardcountry {
   display: grid;
   place-items: center;
-  width: 80vw;
+  width: 20vw;
   max-width: 21.875rem;
-  height: 28.125rem;
+  height: 22rem;
   overflow: hidden;
   border-radius: 0.625rem;
   box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
@@ -74,7 +74,7 @@ p {
   flex-direction: column;
   justify-content: space-between;
   align-self: flex-end;
-  height: 55%;
+  height: 99%;
   padding: 12% 1.25rem 1.875rem;
   background: linear-gradient(
     180deg,
@@ -105,7 +105,8 @@ p {
 }
 
 .cardcountry__button {
-  padding: 0.75em 1.6em;
+  padding: 0.25em 1.6em;
+  margin-bottom: 2.13em;
   width: fit-content;
   width: -moz-fit-content; /* Prefijo necesario para Firefox  */
   font-variant: small-caps;
