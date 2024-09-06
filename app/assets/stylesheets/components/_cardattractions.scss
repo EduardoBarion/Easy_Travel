@@ -11,9 +11,10 @@
   justify-content: center;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  background-image: url('https://static.wixstatic.com/media/797e06_e43ce0d4729b4dcfaf781fc34ec7c945~mv2.jpg/v1/fill/w_640,h_652,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/797e06_e43ce0d4729b4dcfaf781fc34ec7c945~mv2.jpg');
+
   background-size: cover;
   background-position: center;
+
 }
 
 .card svg {
@@ -55,7 +56,7 @@
 .card__description {
   margin: 10px 0 0;
   font-size: 14px;
-  color: #777;
+  color: #777777;
   line-height: 1.4;
 }
 
@@ -64,6 +65,6 @@
   transform: rotate(-45deg);
 }
 
-.nameattraction{
-  color: #303032;
-}
+.nameattraction1{
+  color: rgba(0, 0, 0, 0.758);
+  }

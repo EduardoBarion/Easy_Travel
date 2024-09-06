@@ -1,6 +1,6 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.brasileiraspelomundo.com/wp-content/uploads/2018/02/photo.jpg); background-size: cover; background-position: center; height: 60vh;">
   <div class="container">
-    <h1>.</h1>
+    <h1 class = "fundo" style="background-color: rgba(255, 255, 255, 0.6); padding: 5px 10px; border-radius: 10px;">Nome do país!</h1>
   </div>
 </div>
 
@@ -12,7 +12,11 @@
 
       <%= link_to country_city_places_path(city.country, city), style: "text-decoration: none; color: inherit;" do %>
         <div class="cardcity mb-3" style="width: 100%; max-width: 100%; height: auto; display: block;">
-          <img class="cardcity-img-top" src="https://png.pngtree.com/thumb_back/fw800/background/20230831/pngtree-the-cityscape-shot-is-a-horizontal-view-of-the-sun-with-image_13102124.jpg" style="width: 100%; height: auto; object-fit: cover;">
+          <% if city.photo.valid? %>
+            <%= cl_image_tag city.photo.key, height: 300, width: 400, crop: :fill, class: "d-block w-100", alt: "Photo" %>
+          <% else %>
+            <img class="cardcity-img-top" src="https://png.pngtree.com/thumb_back/fw800/background/20230831/pngtree-the-cityscape-shot-is-a-horizontal-view-of-the-sun-with-image_13102124.jpg" style="width: 100%; height: auto; object-fit: cover;">
+          <% end %>
         </div></a>
       <%end %>
 
