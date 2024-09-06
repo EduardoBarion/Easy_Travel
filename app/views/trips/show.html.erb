@@ -1,29 +1,3 @@
-<h1 style="color: #161D6F; text-align: center;"><strong><%= @trip.name %></strong></h1>
-<div class="teste" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
-  <% if @plans.exists? %>
-    <% @plans.each do |plan| %>
-      <div style="margin-bottom: 20px;">
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title"><%= plan.place.name %></h5>
-            <p class="card-text"><%= plan.suggestion %></p>
-            <p class="card-text"><%= plan.place.price %></p>
-            <%= link_to 'Deletar esse lugar', place_plan_path(plan_id: plan.id, place_id: plan.place_id), method: :delete, data: { turbo_method: :delete }, class: "btn btn-outline-primary rounded-pill" %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-    <div style="width: 100%; height: 600px;"
-      data-controller="map"
-      data-map-markers-value="<%= @markers.to_json %>"
-      data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-    <%= link_to "Adicionar mais atrações", root_path, class: "btn btn-outline-primary rounded-pill" %>
-    <%= link_to "Lista dos seus roteiros", trips_path, class: "btn btn-outline-primary rounded-pill" %>
-  <% end %>
-</div>
-
-<%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete } %>
 <div class="container">
   <h1 class="p-5 text-center"><strong><%= @trip.name %></strong></h1>
 
@@ -31,28 +5,27 @@
     <div class="col-8">
       <% if @plans.exists? %>
         <% @plans.each do |plan| %>
-          <div class="card mb-3">
-            <div class="card-body">
-              <h5 class="card-title"><%= plan.place.name %></h5>
-              <p class="card-text"><%= plan.suggestion %></p>
-              <p class="card-text"><%= plan.place.price %></p>
-              <%= link_to 'Deletar esse lugar', place_plan_path(plan_id: plan.id, place_id: plan.place_id), method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" } %>
-            </div>
-          </div>
+            <div class="cardtrip my-3" style="width: 50rem;">
+                <div class="">
+                  <h5 class="cardtrip-title"><%= plan.place.name %></h5>
+                  <p class="cardtrip-text"><%= plan.suggestion %></p>
+                  <p class="cardtrip-text"><%= plan.place.price %></p>
+                  <%= link_to 'Deletar esta atração', place_plan_path(plan_id: plan.id, place_id: plan.place_id), method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "btn btn-outline-dark rounded-pill" %>
+                </div>
+              </div>
         <% end %>
-        <%= link_to "Colocar mais atrações", root_path, class: "btn btn-primary" %>
-        <%= link_to "Lista dos seus roteiros", trips_path, class: "btn btn-primary" %>
-        <%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" } %>
       <% end %>
     </div>
 
       <div class="col-4">
-        <div style="width: 100%; height: 95%;"
+        <div style="width: 100%; height: 100%;"
           data-controller="map"
           data-map-markers-value="<%= @markers.to_json %>"
           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
     </div>
   </div>
-  <%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete } %>
-  <%= link_to 'Adicionar amigos', new_group_membership_path(@group), class: "btn btn-primary" %>
+<%= link_to "Colocar mais atrações", root_path, class: "m-3 btn btn-outline-primary rounded-pill" %>
+<%= link_to "Lista dos seus roteiros", trips_path, class: "m-3 btn btn-outline-primary rounded-pill" %>
+<%= link_to 'Adicionar amigos', new_group_membership_path(@group), class: "m-3 btn btn-outline-primary rounded-pill" %>
+<%= link_to 'Deletar roteiro', trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "m-3 btn btn-outline-primary rounded-pill" %>

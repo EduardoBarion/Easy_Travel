@@ -13,6 +13,10 @@ class PlacesController < ApplicationController
 
   private
 
+  def place_params
+    params.require(:place).permit(:photo)
+  end
+
   def set_city
     @city = City.find(params[:city_id])
   end
