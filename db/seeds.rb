@@ -185,7 +185,7 @@ barcelona6 = Place.new(
 barcelona6.save!
 
 barcelona7 = Place.new(
-  name: 'Parc de la Ciutadella',
+  name: 'Parque da Cidadela',
   address: 'Passeig de Picasso, 21, 08003 Barcelona, Espanha',
   price: 0.00,
   description: 'Um grande parque urbano no centro de Barcelona, ideal para passeios, piqueniques e relaxamento.',
@@ -205,7 +205,7 @@ barcelona8 = Place.new(
 barcelona8.save!
 
 barcelona9 = Place.new(
-  name: 'Mercado de La Boqueria',
+  name: 'La Boqueria',
   address: 'La Rambla, 91, 08001 Barcelona, Espanha',
   price: 0.00,
   description: 'Um vibrante mercado de alimentos em La Rambla, conhecido por sua variedade de produtos frescos e tapas.',
@@ -215,7 +215,7 @@ barcelona9 = Place.new(
 barcelona9.save!
 
 barcelona10 = Place.new(
-  name: 'Gothic Quarter (Barri Gòtic)',
+  name: 'Bairro Gótico',
   address: 'Barri Gòtic, 08002 Barcelona, Espanha',
   price: 0.00,
   description: 'O bairro medieval de Barcelona, repleto de ruas estreitas, praças encantadoras e edifícios históricos.',
@@ -325,7 +325,7 @@ madrid10 = Place.new(
 madrid10.save!
 
 londres1 = Place.new(
-  name: 'The British Museum',
+  name: 'British Museum',
   address: 'Great Russell St, London WC1B 3DG, United Kingdom',
   price: 0.0,
   description: 'Um dos museus mais importantes do mundo, com uma coleção abrangente de artefatos históricos e culturais de todas as partes do globo.',
@@ -335,7 +335,7 @@ londres1 = Place.new(
 londres1.save!
 
 londres2 = Place.new(
-  name: 'The Tower of London',
+  name: 'Torre de Londres',
   address: 'London EC3N 4AB, United Kingdom',
   price: 29.90,
   description: 'Um castelo histórico e uma antiga prisão, lar das Joias da Coroa e da famosa Torre Branca.',
@@ -345,8 +345,8 @@ londres2 = Place.new(
 londres2.save!
 
 londres3 = Place.new(
-  name: 'The London Eye',
-  address: 'Riverside Building, County Hall, London SE1 7PB, United Kingdom',
+  name: 'London Eye',
+  address: 'Riverside Building, London SE1 7PB, United Kingdom',
   price: 30.50,
   description: 'Uma roda-gigante de observação icônica às margens do Rio Tâmisa, proporcionando vistas panorâmicas da cidade.',
   review: 'Uma vista espetacular de Londres, especialmente ao pôr do sol.',
@@ -356,7 +356,7 @@ londres3.save!
 
 londres4 = Place.new(
   name: 'Westminster Abbey',
-  address: '20 Deans Yd, London SW1P 3PA, United Kingdom',
+  address: "Dean's Yard, London SW1P 3PA, United Kingdom",
   price: 25.0,
   description: 'Uma igreja gótica histórica, local de coroações, casamentos e sepultamentos de membros da realeza britânica.',
   review: 'Arquitetura impressionante e uma história fascinante por trás de cada canto.',
@@ -385,7 +385,7 @@ londres6 = Place.new(
 londres6.save!
 
 londres7 = Place.new(
-  name: 'St. Paul’s Cathedral',
+  name: 'Catedral de St. Paul',
   address: 'St. Paul’s Churchyard, London EC4M 8AD, United Kingdom',
   price: 20.0,
   description: 'Uma das catedrais mais icônicas do Reino Unido, famosa por sua grande cúpula e impressionante interior.',
@@ -395,7 +395,7 @@ londres7 = Place.new(
 londres7.save!
 
 londres8 = Place.new(
-  name: 'The Natural History Museum',
+  name: 'Museu de História Natural',
   address: 'Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom',
   price: 0.0,
   description: 'Um museu com coleções de história natural mundialmente famosas, incluindo dinossauros, minerais e muito mais.',
@@ -415,7 +415,7 @@ londres9 = Place.new(
 londres9.save!
 
 londres10 = Place.new(
-  name: 'The Victoria and Albert Museum',
+  name: 'Museu Victoria and Albert',
   address: 'Cromwell Rd, South Kensington, London SW7 2RL, United Kingdom',
   price: 0.0,
   description: 'Um museu dedicado às artes decorativas e ao design, com uma vasta coleção que abrange séculos.',
@@ -425,101 +425,101 @@ londres10 = Place.new(
 londres10.save!
 
 bath1 = Place.new(
-  name: 'The British Museum',
-  address: 'Great Russell St, London WC1B 3DG, United Kingdom',
-  price: 0.0,
-  description: 'Um dos museus mais importantes do mundo, com uma coleção abrangente de artefatos históricos e culturais de todas as partes do globo.',
-  review: 'Entrada gratuita e uma experiência cultural imperdível em Londres.',
+  name: 'Termas Romanas',
+  address: 'Stall St, Bath BA1 1LZ, Reino Unido',
+  price: 28.00,
+  description: 'Explore as impressionantes ruínas das antigas termas romanas e o templo dedicado à deusa Minerva.',
+  review: 'Uma fascinante viagem no tempo com uma história rica e bem preservada.',
   city: bath
 )
 bath1.save!
 
 bath2 = Place.new(
-  name: 'The Tower of London',
-  address: 'London EC3N 4AB, United Kingdom',
-  price: 29.90,
-  description: 'Um castelo histórico e uma antiga prisão, lar das Joias da Coroa e da famosa Torre Branca.',
-  review: 'Uma visita fascinante com guias animados e muitas histórias para descobrir.',
+  name: 'Abadia de Bath',
+  address: '12 Kingston Parade, Bath BA1 1LT, Reino Unido',
+  price: 18.00,
+  description: 'Uma majestosa igreja gótica com vitrais deslumbrantes e uma rica história religiosa.',
+  review: 'Arquitetura impressionante e um ambiente espiritual único.',
   city: bath
 )
 bath2.save!
 
 bath3 = Place.new(
-  name: 'The London Eye',
-  address: 'Riverside Building, County Hall, London SE1 7PB, United Kingdom',
-  price: 30.50,
-  description: 'Uma roda-gigante de observação icônica às margens do Rio Tâmisa, proporcionando vistas panorâmicas da cidade.',
-  review: 'Uma vista espetacular de Londres, especialmente ao pôr do sol.',
+  name: 'Royal Crescent',
+  address: 'Royal Crescent, Bath BA1 2LS, Reino Unido',
+  price: 0.0,
+  description: 'Um famoso conjunto de edifícios georgianos em forma de meia-lua, com um belo jardim central.',
+  review: 'Uma maravilha arquitetônica e uma ótima oportunidade para fotos.',
   city: bath
 )
 bath3.save!
 
 bath4 = Place.new(
-  name: 'Westminster Abbey',
-  address: '20 Deans Yd, London SW1P 3PA, United Kingdom',
-  price: 25.0,
-  description: 'Uma igreja gótica histórica, local de coroações, casamentos e sepultamentos de membros da realeza britânica.',
-  review: 'Arquitetura impressionante e uma história fascinante por trás de cada canto.',
+  name: 'The Circus',
+  address: 'The Circus, Bath BA1 2ET, Reino Unido',
+  price: 0.0,
+  description: 'Um círculo de edifícios georgianos projetados por John Wood, o Velho, com uma arquitetura impressionante.',
+  review: 'Um exemplo notável da arquitetura georgiana, perfeito para uma caminhada.',
   city: bath
 )
 bath4.save!
 
 bath5 = Place.new(
-  name: 'Buckingham Palace',
-  address: 'London SW1A 1AA, United Kingdom',
-  price: 26.50,
-  description: 'A residência oficial da Rainha em Londres, famosa pela Troca da Guarda e pelos esplêndidos State Rooms.',
-  review: 'Uma espiada no coração da monarquia britânica com uma experiência de visita única.',
+  name: 'Pulteney Bridge',
+  address: 'Pulteney Bridge, Bath BA2 4AT, Reino Unido',
+  price: 0.0,
+  description: 'Uma ponte histórica sobre o rio Avon, conhecida por suas lojas em ambos os lados da ponte.',
+  review: 'Uma visão encantadora da cidade com ótimas oportunidades para fotos.',
   city: bath
 )
 bath5.save!
 
 bath6 = Place.new(
-  name: 'Tate Modern',
-  address: 'Bankside, London SE1 9TG, United Kingdom',
-  price: 0.0,
-  description: 'Um dos museus de arte moderna mais famosos do mundo, localizado em uma antiga usina elétrica.',
-  review: 'Entrada gratuita e uma incrível coleção de arte contemporânea de classe mundial.',
+  name: 'Centro Jane Austen',
+  address: '40 Gay Street, Bath BA1 2NT, Reino Unido',
+  price: 12.00,
+  description: 'Um museu dedicado à vida e obra da famosa escritora Jane Austen, que passou parte de sua vida em Bath.',
+  review: 'Uma imersão na vida de Jane Austen com exibições interessantes e uma loja charmosa.',
   city: bath
 )
 bath6.save!
 
 bath7 = Place.new(
-  name: 'St. Paul’s Cathedral',
-  address: 'St. Paul’s Churchyard, London EC4M 8AD, United Kingdom',
-  price: 20.0,
-  description: 'Uma das catedrais mais icônicas do Reino Unido, famosa por sua grande cúpula e impressionante interior.',
-  review: 'Um símbolo de resiliência e beleza com vistas deslumbrantes da cúpula.',
+  name: 'Thermae Bath Spa',
+  address: 'The Hetling Pump Room, Hot Bath St, Bath BA1 1SJ, Reino Unido',
+  price: 45.00,
+  description: 'Um spa moderno que utiliza as águas termais naturais de Bath, com vistas panorâmicas da cidade.',
+  review: 'Uma experiência relaxante e revigorante com uma vista deslumbrante da cidade.',
   city: bath
 )
 bath7.save!
 
 bath8 = Place.new(
-  name: 'The Natural History Museum',
-  address: 'Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom',
-  price: 0.0,
-  description: 'Um museu com coleções de história natural mundialmente famosas, incluindo dinossauros, minerais e muito mais.',
-  review: 'Um dia educativo e divertido para toda a família, com entrada gratuita.',
+  name: 'No. 1 Royal Crescent',
+  address: 'No. 1 Royal Crescent, Bath BA1 2LR, Reino Unido',
+  price: 12.00,
+  description: 'Um museu situado em uma das casas do Royal Crescent, oferecendo uma visão detalhada da vida durante a era georgiana.',
+  review: 'Uma ótima chance de ver como era a vida no século XVIII com uma decoração autêntica.',
   city: bath
 )
 bath8.save!
 
 bath9 = Place.new(
-  name: 'The Shard',
-  address: '32 London Bridge St, London SE1 9SG, United Kingdom',
-  price: 32.00,
-  description: 'O edifício mais alto do Reino Unido, oferecendo uma vista de 360 graus da cidade a partir do seu deck de observação.',
-  review: 'Vistas incríveis da cidade, especialmente ao anoitecer.',
+  name: 'Museu e Jardins Americanos',
+  address: 'Claverton Manor, Bath BA2 7BD, Reino Unido',
+  price: 12.00,
+  description: 'Um museu que exibe arte e artefatos americanos, além de belos jardins que são agradáveis para passeios.',
+  review: 'Uma experiência cultural interessante com jardins encantadores.',
   city: bath
 )
 bath9.save!
 
 bath10 = Place.new(
-  name: 'The Victoria and Albert Museum',
-  address: 'Cromwell Rd, South Kensington, London SW7 2RL, United Kingdom',
-  price: 0.0,
-  description: 'Um museu dedicado às artes decorativas e ao design, com uma vasta coleção que abrange séculos.',
-  review: 'Entrada gratuita para um mergulho fascinante no mundo das artes e do design.',
+  name: 'Museu Holburne',
+  address: 'Great Pulteney St, Bath BA2 4DB, Reino Unido',
+  price: 12.00,
+  description: 'Um museu de arte situado em um elegante edifício georgiano, com uma coleção de arte e artefatos decorativos.',
+  review: 'Uma coleção variada de arte em um edifício histórico deslumbrante.',
   city: bath
 )
 bath10.save!
@@ -535,7 +535,7 @@ newyork1 = Place.new(
 newyork1.save!
 
 newyork2 = Place.new(
-  name: 'Statue of Liberty',
+  name: 'Estatua da Liberdade',
   address: 'Liberty Island, New York, NY, USA',
   price: 24.00,
   description: 'Um dos monumentos mais icônicos dos Estados Unidos, simbolizando liberdade e esperança para milhões de imigrantes que chegaram ao país.',
@@ -545,7 +545,7 @@ newyork2 = Place.new(
 newyork2.save!
 
 newyork3 = Place.new(
-  name: 'Empire State Building',
+  name: 'Empire State',
   address: '350 5th Ave, New York, NY, USA',
   price: 44.00,
   description: 'Um dos arranha-céus mais famosos do mundo, oferecendo vistas panorâmicas incríveis de Nova Iorque.',
@@ -565,7 +565,7 @@ newyork4 = Place.new(
 newyork4.save!
 
 newyork5 = Place.new(
-  name: 'The Metropolitan Museum of Art',
+  name: 'Museu Metropolitano de Arte',
   address: '1000 5th Ave, New York, NY, USA',
   price: 30.00,
   description: 'Um dos maiores e mais renomados museus de arte do mundo, com uma coleção vasta que abrange 5.000 anos de arte.',
@@ -585,7 +585,7 @@ newyork6 = Place.new(
 newyork6.save!
 
 newyork7 = Place.new(
-  name: 'Museum of Modern Art (MoMA)',
+  name: 'Museu de Arte Moderna (MoMA)',
   address: '11 W 53rd St, New York, NY, USA',
   price: 25.00,
   description: 'Um dos museus de arte moderna mais influentes do mundo, com uma coleção que inclui obras de Picasso, Van Gogh e Warhol.',
@@ -605,7 +605,7 @@ newyork8 = Place.new(
 newyork8.save!
 
 newyork9 = Place.new(
-  name: 'One World Observatory',
+  name: 'Observatório One World',
   address: '117 West St, New York, NY, USA',
   price: 43.00,
   description: 'Um observatório no topo do One World Trade Center, oferecendo vistas deslumbrantes de 360 graus de Nova Iorque.',
@@ -625,7 +625,7 @@ newyork10 = Place.new(
 newyork10.save!
 
 lasvegas1 = Place.new(
-  name: 'The Strip',
+  name: 'Strip',
   address: 'Las Vegas Blvd, Las Vegas, NV, USA',
   price: 0.0,
   description: 'A avenida mais famosa de Las Vegas, repleta de hotéis luxuosos, cassinos, restaurantes e espetáculos mundialmente conhecidos.',
@@ -635,7 +635,7 @@ lasvegas1 = Place.new(
 lasvegas1.save!
 
 lasvegas2 = Place.new(
-  name: 'Bellagio Fountains',
+  name: 'Fontes do Bellagio',
   address: '3600 S Las Vegas Blvd, Las Vegas, NV, USA',
   price: 0.0,
   description: 'Um espetáculo de fontes dançantes em frente ao hotel Bellagio, sincronizado com música e luzes.',
@@ -665,7 +665,7 @@ lasvegas4 = Place.new(
 lasvegas4.save!
 
 lasvegas5 = Place.new(
-  name: 'Red Rock Canyon National Conservation Area',
+  name: 'Área de Conservação Nacional do Red Rock Canyon',
   address: '1000 Scenic Loop Dr, Las Vegas, NV, USA',
   price: 20.00,
   description: 'Uma área de conservação natural com formações rochosas impressionantes, trilhas para caminhadas e vistas deslumbrantes do deserto de Nevada.',
@@ -675,7 +675,7 @@ lasvegas5 = Place.new(
 lasvegas5.save!
 
 lasvegas6 = Place.new(
-  name: 'The Neon Museum',
+  name: 'Museu do Neon',
   address: '770 Las Vegas Blvd N, Las Vegas, NV, USA',
   price: 20.00,
   description: 'Museu ao ar livre dedicado à preservação dos icônicos letreiros luminosos de Las Vegas.',
@@ -705,7 +705,7 @@ lasvegas8 = Place.new(
 lasvegas8.save!
 
 lasvegas9 = Place.new(
-  name: 'Hoover Dam',
+  name: 'Represa Hoover',
   address: 'Hoover Dam, Boulder City, NV, USA',
   price: 30.00,
   description: 'Uma impressionante obra de engenharia situada na fronteira entre Nevada e Arizona, oferecendo visitas guiadas e vistas magníficas do Rio Colorado.',
@@ -725,7 +725,7 @@ lasvegas10 = Place.new(
 lasvegas10.save!
 
 berlin1 = Place.new(
-  name: 'Brandenburg Gate',
+  name: 'Portal de Barndemburgo',
   address: 'Pariser Platz, 10117 Berlin, Germany',
   price: 0.0,
   description: 'Um dos marcos mais icônicos de Berlim, símbolo de paz e unidade, situado no coração da cidade.',
@@ -735,7 +735,7 @@ berlin1 = Place.new(
 berlin1.save!
 
 berlin2 = Place.new(
-  name: 'Berlin TV Tower (Fernsehturm)',
+  name: 'Torre de TV de Berlin (Fernsehturm)',
   address: 'Panoramastrasse 1A, 10178 Berlin, Germany',
   price: 21.5,
   description: 'A estrutura mais alta de Berlim, oferecendo uma vista panorâmica espetacular da cidade a partir do seu deck de observação.',
@@ -745,7 +745,7 @@ berlin2 = Place.new(
 berlin2.save!
 
 berlin3 = Place.new(
-  name: 'Pergamon Museum',
+  name: 'Museu Pergamon',
   address: 'Bodestraße 1-3, 10178 Berlin, Germany',
   price: 12.0,
   description: 'Um museu mundialmente famoso, lar de artefatos históricos, incluindo o Altar de Pérgamo e o Portão de Ishtar.',
@@ -755,7 +755,7 @@ berlin3 = Place.new(
 berlin3.save!
 
 berlin4 = Place.new(
-  name: 'Berlin Wall Memorial',
+  name: 'Memorial do Muro de Berlin',
   address: 'Bernauer Str. 111, 13355 Berlin, Germany',
   price: 0.0,
   description: 'Um memorial que preserva a história do Muro de Berlim, com exposições ao ar livre e um centro de documentação.',
@@ -785,7 +785,7 @@ berlin6 = Place.new(
 berlin6.save!
 
 berlin7 = Place.new(
-  name: 'Museum Island',
+  name: 'Ilha dos Museus',
   address: 'Museum Island, Berlin, Germany',
   price: 19.0,
   description: 'Um complexo de cinco museus renomados, incluindo o Museu de Pérgamo, o Neues Museum e a Alte Nationalgalerie.',
@@ -815,7 +815,7 @@ berlin9 = Place.new(
 berlin9.save!
 
 berlin10 = Place.new(
-  name: 'Berlin Cathedral (Berliner Dom)',
+  name: 'Catedral de Berlim',
   address: 'Am Lustgarten, 10178 Berlin, Germany',
   price: 9.0,
   description: 'Uma impressionante catedral protestante em estilo renascentista com um impressionante domo verde e vistas panorâmicas da cidade.',
@@ -855,7 +855,7 @@ munich3 = Place.new(
 munich3.save!
 
 munich4 = Place.new(
-  name: 'Deutsches Museum',
+  name: 'Museu Deutsches',
   address: 'Museumsinsel 1, 80538 München, Germany',
   price: 14.0,
   description: 'O maior museu de ciência e tecnologia do mundo, com exposições interativas para todas as idades.',
@@ -875,7 +875,7 @@ munich5 = Place.new(
 munich5.save!
 
 munich6 = Place.new(
-  name: 'BMW Museum',
+  name: 'Museu BMW',
   address: 'Am Olympiapark 2, 80809 München, Germany',
   price: 10.0,
   description: 'Um museu dedicado à história da BMW, apresentando carros clássicos, motos e inovações tecnológicas.',
