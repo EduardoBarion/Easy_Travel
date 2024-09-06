@@ -1,21 +1,20 @@
+
 <div class="container">
 <div class="p-4 d-flex justify-content-center">
   <h1 style="color: #161D6F;"><strong>Atrações</strong></h1>
 </div>
   <div class="row justify-content-start">
     <% @places.each do |place| %>
-      <div class="col-3">
-        <ul>
-            <div class="card d-flex">
-              <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg"></svg>
-                <h4 class="nameattraction"><%= place.name %></h4>
-                  <div class="card__content">
-                  <h5 class="card-title"><%= place.name %></h5>
-                  <p class="card__description"><%= place.description %></p>
-                  <%= link_to 'Saiba mais', place_path(place), class: "btn btn-primary mt-2" %>
-                </div>
-            </div>
-        </ul>
+      <% bg_img = place.photo.valid? ? cl_image_path(place.photo.key) : "'https://static.wixstatic.com/media/797e06_e43ce0d4729b4dcfaf781fc34ec7c945~mv2.jpg/v1/fill/w_640,h_652,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/797e06_e43ce0d4729b4dcfaf781fc34ec7c945~mv2.jpg'" %>
+      <div class="col-3 my-2">
+        <div class="card d-flex" style="background-image: url('<%= bg_img %>')">
+          <h4 class="nameattraction1" style="background-color: rgba(255, 255, 255, 0.6); padding: 5px 10px; border-radius: 10px; max-width: 100%;"><%= place.name %></h4>
+          <div class="card__content">
+            <h5 class="card__title"><%= place.name %></h5>
+            <p class="card__description"><%= place.description %></p>
+            <%= link_to 'Saiba mais', place_path(place), class: "btn btn-primary mt-2" %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

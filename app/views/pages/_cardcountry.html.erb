@@ -8,13 +8,7 @@
     <div class="d-flex">
         <% @countries.each do |country| %>
             <article class="cardcountry m-4">
-              <img
-                class="cardcountry__background"
-                src="https://i.imgur.com/QYWAcXk.jpeg"
-                alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
-                width="1920"
-                height="2193"
-              />
+              <%= cl_image_tag country.photo.key, height: 300, width: 400, crop: :fill, class: "d-block w-100", alt: "Photo" %>
               <div class="cardcountry__content | flow">
                 <div class="cardcountry__content--container | flow">
                   <h2 class="cardcountry__title"><%= country.name %></h2>
@@ -35,4 +29,3 @@
     </button>
   </div>
 </div>
-
