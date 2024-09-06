@@ -1,28 +1,29 @@
-
-<div class="py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://marinhoturismobuzios.com.br/wp-content/uploads/2018/10/viagem-internacional-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; width: 100%; height: 500px; display: flex; justify-content: flex-start; align-items: center; flex-direction: column; text-align: center; padding-top: 30px;">
-    <div style="background-color: rgba(255, 255, 255, 0.4); padding: 20px; border-radius: 10px;">
-        <h1 style="color: #161D6F;"><em><strong>Easy Travel</strong></em> – Viajar e conhecer o Mundo nunca foi tão fácil!</h1>
-        <h2 style="color: #161D6F;">Seu roteiro pronto em alguns cliques!</h2>
+<div class="py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://marinhoturismobuzios.com.br/wp-content/uploads/2018/10/viagem-internacional-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; width: 100%; height: 500px; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
+    <div style="background-color: rgba(255, 255, 255, 0.6); padding: 40px 60px; border-radius: 10px; max-width: 90%;">
+        <h1 style="color: #161D6F; font-size: 3.0em; line-height: 1.2em; margin-bottom: 20px;"><em><strong>Easy Travel</strong></em> – Viajar pelo Mundo nunca foi tão fácil!</h1>
+        <h2 style="color: #161D6F; font-size: 2.5em;">Seu roteiro pronto em alguns cliques!</h2>
     </div>
 </div>
 
+<div class="container" style="margin-top: 40px;">
+  <h1 style="color: #161D6F;"><strong>Easy Travel</strong></h1>
+  <p style="text-align: justify; font-size: 1.5em; margin-top: 15px;">
+    Este é o site ideal para quem deseja explorar o mundo de maneira prática e personalizada. Nossa plataforma ajuda você a criar roteiros de viagem sob medida, levando em conta suas preferências e interesses. Com apenas alguns cliques, você pode planejar itinerários únicos que combinam pontos turísticos, restaurantes, hotéis e atividades imperdíveis, tudo pensado especialmente para você.<strong> Com Easy Travel, sua próxima aventura começa fácil, rápida e do seu jeito!</strong>
+  </p>
+</div>
 
-<div class="container">
-  <h1 style="color: #161D6F;"><em><strong>Easy Travel</strong></em></h1>
-    <p style="text-align: justify;">
-      Easy Travel é o site ideal para quem deseja explorar o mundo de maneira prática e personalizada. Nossa plataforma ajuda você a criar roteiros de viagem sob medida, levando em conta suas preferências e interesses. Com apenas alguns cliques, você pode planejar itinerários únicos que combinam pontos turísticos, restaurantes, hotéis e atividades imperdíveis, tudo pensado especialmente para você. No Easy Travel, sua próxima aventura começa fácil, rápida e do seu jeito!
-    </p>
+
+
+<hr>
+<div class="container d-flex justify-content-center">
+  <%= link_to "Explore Destinos", countries_path, class: "btn btn-primary btn-lg mx-3" %>
+  <%= link_to "Meus Roteiros", trips_path, class: "btn btn-primary btn-lg mx-3" %>
+  <%= link_to "Criar Novo Roteiro", new_trip_path, class: "btn btn-primary btn-lg mx-3" %>
 </div>
 
 <hr>
-<div class="container">
-  <%= link_to "Lista de países", countries_path, class: "btn btn-primary" %>
-  <%= link_to "Lista dos seus roteiros", trips_path, class: "btn btn-primary" %>
-  <%= link_to "Criar novo roteiro", new_trip_path, class: "btn btn-primary" %>
-</div>
-<hr>
 
-<h2 class="text-center mt-5", style="color: #161D6F;">Países mais visitados</h2>
+<h2 class="text-center mt-5", style="color: #161D6F; font-size: 2.5em; font-family: 'Arial', sans-serif;"><strong>Destinos mais pesquisados</strong></h2>
 
 <div class="m-5">
 
