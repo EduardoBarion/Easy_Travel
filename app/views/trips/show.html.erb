@@ -1,9 +1,11 @@
-
+<%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete } %>
+<div class="container">
   <h1 class="p-5 text-center"><strong><%= @trip.name %></strong></h1>
   <div class="row m-3">
     <div class="col-8">
       <% if @plans.exists? %>
         <% @plans.each do |plan| %>
+
           <div class="cardtrip for-icon my-3" style="width: 50rem;">
             <div >
               <h5 class="cardtrip-title"><%= plan.place.name %></h5>
@@ -13,8 +15,12 @@
             </div>
           </div>
         <% end %>
+        <%= link_to "Colocar mais atrações", root_path, class: "btn btn-outline-primary rounded-pill" %>
+        <%= link_to "Lista dos seus roteiros", trips_path, class: "btn btn-outline-primary rounded-pill" %>
+        <%= link_to 'Deletar', trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" } %>
       <% end %>
     </div>
+
     <div class="col-4">
       <div style="width: 100%; height: 97%;"
            data-controller="map"
