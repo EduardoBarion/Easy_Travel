@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #0B2F9F;
+  background: #292942;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -19,7 +19,7 @@
 }
 
 .navbar-newgreen {
-  background-color: #0B2F9F;
+  background-color: #292942;
 }
 
 .navbar-margin {
@@ -28,4 +28,15 @@
 
 .nav-link {
   color: #f9f5f5;
+}
+
+.nav-link:hover {
+color: $primary;
+}
+
+.written-logo {
+  font-family: Pacifico;
+  color: #ffff;
+  font-size: 36px;
+  text-shadow: 2px 2px 10px $light-blue;
 }
