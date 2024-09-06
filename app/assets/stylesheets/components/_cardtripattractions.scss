@@ -2,14 +2,13 @@
   position: relative;
   width: 300px;
   height: 200px;
-  background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
+  background: linear-gradient(-45deg, #0e1261 0%, #122cf1 100%);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-  background-image: url('https://static.wixstatic.com/media/797e06_e43ce0d4729b4dcfaf781fc34ec7c945~mv2.jpg/v1/fill/w_640,h_652,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/797e06_e43ce0d4729b4dcfaf781fc34ec7c945~mv2.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -45,10 +44,11 @@
   opacity: 1;
 }
 
-.cardtrip__title {
+.cardtrip-title {
   margin: 0;
-  font-size: 30px;
-  color: #333;
+  font-size: 300%;
+  color: #e4e4e4;
+  text-shadow: 2px 2px #000000;
   font-weight: 700;
   text-align: left; /* Alinha o texto à esquerda */
 }
@@ -68,4 +68,15 @@
 
 .nameattraction{
   color: #303032;
+}
+
+.for-icon {
+  position: relative;
+}
+
+.fa-x {
+  position: absolute;
+  color: #e4e4e4;
+  bottom: 160px;
+  left: 760px;
 }
