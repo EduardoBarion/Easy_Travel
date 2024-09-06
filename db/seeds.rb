@@ -11,7 +11,7 @@
 require "open-uri"
 
 country1 = URI.open("https://cdn.pixabay.com/photo/2016/10/21/19/05/spain-1758851_1280.png")
-country2 = URI.open("https://w7.pngwing.com/pngs/32/643/png-transparent-england-world-map-map-england-flag-logo-world.png")
+country2 = URI.open("https://img.freepik.com/vetores-premium/bandeira-no-mapa-da-inglaterra-em-fundo-cinza_8559-94.jpg")
 country3 = URI.open("https://logisber.com/contenido/subidas/2022/10/exportar-a-brasil.jpg")
 country4 = URI.open("https://img.freepik.com/vetores-premium/icone-de-mapa-de-pais-dos-eua-com-as-cores-da-bandeira-dos-eua_24911-4698.jpg")
 country5 = URI.open("https://www.coladaweb.com/wp-content/uploads/2014/12/Mapa-Alemanha.png")
