@@ -6,13 +6,13 @@
 
 
 <div class="mt-4" style="padding: 0 20px;">
-    <h2 style="color: #161D6F; text-align: center;"><strong>Confira nossos países em destaque</strong></h2>
+    <h2 style="color: #161D6F; text-align: center;"><strong>Confira nossos países em destaque:</strong></h2>
 
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
       <% @countries.each do |country| %>
         <%= link_to country_cities_path(country), class: "card-link" do %>
           <article class="cardcountry" style="width: 300px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-decoration: none; background-color: #fff;">
-    
+
             <img
               class="cardcountry__background"
               src="https://bityl.co/RtXH"
@@ -33,6 +33,6 @@
 </div>
 
 
-<div class="mt-4, container">
-  <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
+<div class="container d-flex justify-content-center", style="margin-top: 40px;">
+  <%= link_to "Home Page", root_path, class: "btn btn-outline-primary rounded-pill" %>
 </div>
