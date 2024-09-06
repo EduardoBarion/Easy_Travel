@@ -6,7 +6,7 @@
 
 
 <div class="mt-4" style="padding: 0 20px;">
-    <h2 style="color: #161D6F; text-align: center;"><strong>Confira nossos países em destaque</strong></h2>
+    <h2 style="color: #161D6F; text-align: center;"><strong>Confira nossos países em destaque:</strong></h2>
 
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 20px;">
       <% @countries.each do |country| %>
@@ -28,6 +28,6 @@
 </div>
 
 
-<div class="container mb-4 ">
-  <%= link_to "Home Page", root_path, class: "btn btn-outline-secondary" %>
+<div class="container d-flex justify-content-center", style="margin-top: 40px;">
+  <%= link_to "Home Page", root_path, class: "btn btn-outline-primary rounded-pill" %>
 </div>
