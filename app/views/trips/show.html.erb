@@ -1,6 +1,18 @@
 <div class="container">
-  <h1 class="p-5 text-center" style="color: #161D6F; font-size: 3em;"><strong><%= @trip.name %></strong></h1>
-  <div class="row m-3">
+  <h1 class="pt-5 px-5 text-center" style="color: #161D6F; font-size: 3em;"><strong><%= @trip.name %></strong></h1>
+
+  <% if @trip.date_start.present? %>
+    <h1 class="text-center" style="color: #161D6F; font-size: 1em;"><strong> Dia de partida- <%= @trip.date_start %></strong></h1>
+  <% else %>
+  <% end %>
+
+  <% if @trip.date_end.present? %>
+    <h1 class="text-center" style="color: #161D6F; font-size: 1em;"><strong> Dia de volta- <%= @trip.date_end %></strong></h1>
+  <% else %>
+  <% end %>
+
+
+   <div class="row m-3">
     <div class="col-8">
       <% if @plans.exists? %>
         <% @plans.each do |plan| %>
@@ -25,18 +37,20 @@
       </div>
     </div>
   </div>
-  <%= link_to countries_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-    <i class="fa-solid fa-plus"></i> Adicionar atrações
+  <div class="d-flex justify-content-center">
+    <%= link_to trips_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
+      <i class="fa-solid fa-list"></i> Lista dos seus roteiros
+    <% end %>
+    <%= link_to countries_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
+      <i class="fa-solid fa-plus"></i> Adicionar atrações
+    <% end %>
+    <%= link_to new_group_membership_path(@group), class: "m-3 btn btn-outline-primary rounded-pill", data: { "bs-toggle" => "modal", "bs-target" => "#exampleModal" } do %>
+      <i class="fa-solid fa-user-plus"></i> Adicionar um amigo
+    <% end %>
+    <%= link_to trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "m-3 btn btn-outline-primary rounded-pill" do %>
+    <i class="fa-regular fa-trash-can"></i> Deletar roteiro
   <% end %>
-  <%= link_to new_group_membership_path(@group), class: "m-3 btn btn-outline-primary rounded-pill", data: { "bs-toggle" => "modal", "bs-target" => "#exampleModal" } do %>
-    <i class="fa-solid fa-user-plus"></i> Adicionar um amigo
-  <% end %>
-  <%= link_to trips_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-    <i class="fa-solid fa-list"></i> Lista dos seus roteiros
-  <% end %>
-  <%= link_to trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-  <i class="fa-regular fa-trash-can"></i> Deletar roteiro
-<% end %>
+  </div>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

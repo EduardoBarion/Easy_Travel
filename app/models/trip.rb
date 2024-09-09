@@ -6,6 +6,8 @@ class Trip < ApplicationRecord
 
   after_create :create_initial_group
 
+  validates :name, presence: true
+
   private
 
   def create_initial_group
