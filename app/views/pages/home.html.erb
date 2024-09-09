@@ -20,13 +20,17 @@
 
 <hr>
 
-<h2 class="text-center mt-5", style="color: #161D6F; font-size: 2.5em; font-family: 'Pacifico', sans-serif;"><strong>Destinos mais pesquisados</strong></h2>
-
+<h2 class="text-center mt-5", style="color: #161D6F; font-size: 2.5em; font-family: 'Pacifico', sans-serif;"><strong>Destinos mais pesquisados - </strong></h2>
 <div class="m-5">
-
-  <%= render 'pages/cardcountry',  country: @countries %>
+  <%= render 'pages/pesquisados',  country: @countries %>
 </div>
 
+<hr>
+
+<h2 class="text-center mt-5", style="color: #161D6F; font-size: 2.5em; font-family: 'Pacifico', sans-serif;"><strong>Destinos mais visitados - </strong></h2>
+<div class="m-5">
+  <%= render 'pages/visitados',  country: @countries %>
+</div>
 
 <%# Código do FOOTER %>
 <div class="footer">

@@ -187,4 +187,9 @@ p {
     transition: opacity 500ms ease-in, transform 500ms ease-in;
     transition-delay: 500ms;
   }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%; /* Reduz a largura dos controles do carrossel */
+  }
 }
