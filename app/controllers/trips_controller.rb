@@ -38,6 +38,14 @@ class TripsController < ApplicationController
     redirect_to root_path
   end
 
+  def join
+    trip = Trip.find_by(invite_token: params[:invite_token])
+    redirect_to trip_path(trip)
+    membership = Membership.create(user: current_user)
+    group = Group.find_by(trip: trip)
+    membership.update(group: group)
+  end
+
   private
 
   def trip_params

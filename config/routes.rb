@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :trips, only: %i[index show new create destroy] do
     resources :groups, only: %i[new create]
   end
+
+  get 'trips/:invite_token/join', to: 'trips#join', as: 'join_trip'
+
   resources :groups, only: [] do
     resources :memberships, only: %i[new create]
   end
