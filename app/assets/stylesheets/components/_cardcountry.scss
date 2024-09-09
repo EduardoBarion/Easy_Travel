@@ -176,7 +176,7 @@ p {
   .cardcountry:focus-within .cardcountry__button {
     opacity: 1;
     transition: opacity 500ms ease-in;
-    transition-delay: 1000ms;
+    transition-delay: 500ms;
   }
 
   .cardcountry:hover .cardcountry__title::after,
