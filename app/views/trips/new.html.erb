@@ -16,8 +16,12 @@
       </div>
 
       <div class="text-center mt-4">
-        <%= f.submit 'Criar novo roteiro', class: 'btn btn-primary', style: 'padding: 10px 20px; border-radius: 25px;' %>
-        <%= link_to "Home Page", root_path, class: 'btn btn-outline-secondary ml-2', style: 'padding: 10px 20px; border-radius: 25px;' %>
+        <%= button_tag(type: 'submit', class: 'btn btn-primary mx-2', style: 'padding: 10px 20px; border-radius: 25px;') do %>
+          <i class="fa-solid fa-plus"></i> Criar novo roteiro
+        <% end %>
+        <%= link_to root_path, class: 'btn btn-primary mx-2', style: 'padding: 10px 20px; border-radius: 25px;' do %>
+          <i class="fa-solid fa-house"></i> Home Page
+        <% end %>
       </div>
     <% end %>
   </div>

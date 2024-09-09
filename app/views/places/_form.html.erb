@@ -2,8 +2,12 @@
   <div class="container">
     <%= simple_form_for [place, plan] do |f| %>
       <%= f.association :trip, label: 'Roteiro:', collection: current_user.trips %>
-      <%= f.submit 'Adicionar', class: 'btn btn-outline-primary m-4' %>
+      <%= button_tag(type: 'submit', class: 'btn btn-primary mb-3', style: 'padding: 10px 20px; border-radius: 25px;') do %>
+        <i class="fa-solid fa-plus"></i> Adicionar
+      <% end %>
     <% end %>
   </div>
 <% end %>
-<%= link_to "Criar novo roteiro", new_trip_path %>
+<%= link_to new_trip_path, class: 'btn btn-primary mx-2', style: 'padding: 10px 20px; border-radius: 25px;' do %>
+  <i class="fa-solid fa-book-atlas"></i> Criar novo roteiro
+<% end %>

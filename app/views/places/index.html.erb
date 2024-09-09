@@ -20,6 +20,8 @@
   </div>
 
   <div class= "p-4 d-flex justify-content-center">
-    <%= link_to "Voltar para cidades", country_cities_path(@city.country), class: "btn btn-outline-primary rounded-pill" %>
+    <%= link_to country_cities_path(@city.country), class: 'btn btn-primary mb-5', style: 'padding: 10px 20px; border-radius: 25px;' do %>
+      <i class="fa-solid fa-city"></i> Voltar para cidades
+    <% end %>
   </div>
 </div>

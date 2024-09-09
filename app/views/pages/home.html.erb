@@ -5,6 +5,9 @@
     <div style="background-color: rgba(255, 255, 255, 0.7); padding: 20px 20px; border-radius: 10px; max-width: 90%;">
         <h1 style="color: #161D6F; font-size: 3.0em; line-height: 1.2em; margin-bottom: 20px;"><strong>Easy Travel</strong> – Viajar pelo Mundo nunca foi tão fácil!</h1>
         <h2 style="color: #161D6F; font-size: 2.5em;">Seu roteiro pronto em alguns cliques!</h2>
+        <%= link_to countries_path, class: "m-3 btn btn-outline-dark rounded-pill btn-lg mx-3" do %>
+          <i class="fa-solid fa-location-dot"></i> Explore Destinos
+        <% end %>
     </div>
 </div>
 
@@ -13,15 +16,6 @@
   <p style="text-align: justify; font-size: 1.5em; margin-top: 15px;">
     Este é o site ideal para quem deseja explorar o mundo de maneira prática e personalizada. Nossa plataforma ajuda você a criar roteiros de viagem sob medida, levando em conta suas preferências e interesses. Com apenas alguns cliques, você pode planejar itinerários únicos que combinam pontos turísticos, restaurantes, hotéis e atividades imperdíveis, tudo pensado especialmente para você.<strong> Com Easy Travel, sua próxima aventura começa fácil, rápida e do seu jeito!</strong>
   </p>
-</div>
-
-
-
-<hr>
-<div class="container d-flex justify-content-center">
-  <%= link_to "Explore Destinos", countries_path, class: "btn btn-outline-primary rounded-pill btn-lg mx-3" %>
-  <%= link_to "Meus Roteiros", trips_path, class: "btn btn-outline-primary rounded-pill btn-lg mx-3" %>
-  <%= link_to "Criar Novo Roteiro", new_trip_path, class: "btn btn-outline-primary rounded-pill btn-lg mx-3" %>
 </div>
 
 <hr>
