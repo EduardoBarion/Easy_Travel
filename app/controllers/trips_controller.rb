@@ -17,7 +17,7 @@ class TripsController < ApplicationController
     if @trip.save
       redirect_to trips_path
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

@@ -16,6 +16,9 @@
         <li class="nav-item">
           <%= link_to "Meus Roteiros", trips_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to "Novo Roteiro", new_trip_path, class: "nav-link" %>
+        </li>
         <li class="nav-item dropdown">
           <% if user_signed_in? && current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
