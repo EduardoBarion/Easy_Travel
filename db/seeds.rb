@@ -56,6 +56,7 @@ user.save!
 puts 'Fake users created.'
 
 puts 'Creating 4 countries...'
+
 espanha = Country.new(
   name: 'Espanha',
   description: 'Explore a vibrante Espanha: praias deslumbrantes, cidades históricas e uma rica cultura de tapas e flamenco. De Barcelona a Toledo, uma experiência inesquecível.'
