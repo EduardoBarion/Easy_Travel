@@ -28,7 +28,7 @@
   <%= link_to countries_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
     <i class="fa-solid fa-plus"></i> Adicionar atrações
   <% end %>
-  <%= link_to new_group_membership_path(@group), class: "m-3 btn btn-outline-primary rounded-pill" do %>
+  <%= link_to new_group_membership_path(@group), class: "m-3 btn btn-outline-primary rounded-pill", data: { "bs-toggle" => "modal", "bs-target" => "#exampleModal" } do %>
     <i class="fa-solid fa-user-plus"></i> Adicionar um amigo
   <% end %>
   <%= link_to trips_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
@@ -37,3 +37,19 @@
   <%= link_to trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "m-3 btn btn-outline-primary rounded-pill" do %>
   <i class="fa-regular fa-trash-can"></i> Deletar roteiro
 <% end %>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Adicionar amigo ao seu roteiro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+              <%= render "groups/form", membership: @membership, group: @group %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
