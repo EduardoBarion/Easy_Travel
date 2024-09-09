@@ -10,9 +10,9 @@ class MembershipsController < ApplicationController
     @group = Group.find(params[:group_id])
     @membership.group = @group
     if @membership.save
-      redirect_to trip_path(@group.trip)
+      render turbo_stream: turbo_stream.replace("membership_form", partial: "groups/confirmed")
     else
-      render :new
+      render turbo_stream: turbo_stream.replace("membership_form", partial: "groups/form", locals: { group: @group, membership: @membership })
     end
   end
 
