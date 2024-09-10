@@ -8,7 +8,7 @@
 
 
 <div class="container mt-4">
-  <h1 style="color: #161D6F;"><strong>Cidades para Descobrir</strong></h1>
+  <h1 style="color: #161D6F;"><strong>Cities to Discover</strong></h1>
 
   <% @cities.each do |city| %>
 
@@ -24,8 +24,8 @@
       <%end %>
 
       <div class="cardcity-body">
-        <h5 class="cardcity-title"><%= city.name %></h5>
-        <p class="cardcity-text"><%= city.description %></p>
+        <h2 class="cardcity-title" style="color: #161D6F; margin-top: 15px;"><strong><%= city.name %></strong></h2>
+        <p class="cardcity-text" style="text-align: justify; font-size: 1.5em; margin-top: 15px;"><%= city.description %></p>
       </div>
 
       <hr>
@@ -35,6 +35,6 @@
 
 <div style="text-align: center; margin: 40px; padding-botton: 40px;">
   <%= link_to countries_path, class: 'btn btn-primary mb-5', style: 'padding: 10px 20px; border-radius: 25px;' do %>
-    <i class="fa-solid fa-flag"></i> Voltar para países
+    <i class="fa-solid fa-flag"></i> Back to Countries
   <% end %>
 </div>

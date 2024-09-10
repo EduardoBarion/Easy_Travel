@@ -14,10 +14,10 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Meus Roteiros", trips_path, class: "nav-link" %>
+          <%= link_to "My Itineraries", trips_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Novo Roteiro", new_trip_path, class: "nav-link" %>
+          <%= link_to "New Itinerary", new_trip_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
           <% if user_signed_in? && current_user.photo.attached? %>
@@ -26,8 +26,8 @@
             <%= image_tag "https://thumbs.dreamstime.com/b/vetor-de-%C3%ADcone-perfil-do-avatar-padr%C3%A3o-foto-usu%C3%A1rio-m%C3%ADdia-social-183042379.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Entrar", new_user_session_path, class: "dropdown-item" %>
-            <%= link_to "Cadastrar", new_user_registration_path, class: "dropdown-item" %>
+            <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } %>
           </div>
         </li>
