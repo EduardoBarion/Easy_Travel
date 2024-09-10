@@ -19,7 +19,7 @@
                   <h2 class="cardcountry__title"><%= country.name %></h2>
                   <p class="cardcountry__description"><%= country.description %></p>
                 </div>
-                <button class="cardcountry__button">Read more</button>
+                <%= link_to 'Read more', country_cities_path(country), class: 'cardcountry__button' %>
               </div>
             </article>
           <% end %>
