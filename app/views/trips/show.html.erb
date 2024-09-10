@@ -39,16 +39,16 @@
   </div>
   <div class="d-flex justify-content-center">
     <%= link_to countries_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-      <i class="fa-solid fa-plus"></i> Adicionar atrações
+      <i class="fa-solid fa-plus"></i> Add attractions
     <% end %>
     <%= link_to new_group_membership_path(@group), class: "m-3 btn btn-outline-primary rounded-pill", data: { "bs-toggle" => "modal", "bs-target" => "#exampleModal" } do %>
-      <i class="fa-solid fa-user-plus"></i> Adicionar um amigo
+      <i class="fa-solid fa-user-plus"></i> Add friend
     <% end %>
     <%= link_to trips_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-      <i class="fa-solid fa-list"></i> Lista dos seus roteiros
+      <i class="fa-solid fa-list"></i> All itineraries
     <% end %>
     <%= link_to trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-    <i class="fa-regular fa-trash-can"></i> Deletar roteiro
+    <i class="fa-regular fa-trash-can"></i> Delete itinerary
   <% end %>
   </div>
 
@@ -57,7 +57,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Adicionar amigo ao seu roteiro</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add friend to itinerary</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

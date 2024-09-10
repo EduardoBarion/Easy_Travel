@@ -1,7 +1,7 @@
 
 <div class="container">
 <div class="p-4 d-flex justify-content-center">
-  <h1 style="color: #0B2F9F;"><strong>Atrações</strong></h1>
+  <h1 style="color: #0B2F9F;"><strong>Attractions</strong></h1>
 </div>
   <div class="row justify-content-start">
     <% @places.each do |place| %>
@@ -21,7 +21,7 @@
 
   <div class= "p-4 d-flex justify-content-center">
     <%= link_to country_cities_path(@city.country), class: 'btn btn-primary mb-5', style: 'padding: 10px 20px; border-radius: 25px;' do %>
-      <i class="fa-solid fa-city"></i> Voltar para cidades
+      <i class="fa-solid fa-city"></i> Back to cities
     <% end %>
   </div>
 </div>

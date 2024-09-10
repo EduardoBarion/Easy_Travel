@@ -1,13 +1,13 @@
 <%= turbo_frame_tag "plan_form" do %>
   <div class="container">
     <%= simple_form_for [place, plan] do |f| %>
-      <%= f.association :trip, label: 'Roteiro:', collection: current_user.trips %>
+      <%= f.association :trip, label: 'Itinerary:', collection: current_user.trips %>
       <%= button_tag(type: 'submit', class: 'btn btn-primary mb-3', style: 'padding: 10px 20px; border-radius: 25px;') do %>
-        <i class="fa-solid fa-plus"></i> Adicionar
+        <i class="fa-solid fa-plus"></i> Add
       <% end %>
     <% end %>
   </div>
 <% end %>
 <%= link_to new_trip_path, class: 'btn btn-primary mx-2', style: 'padding: 10px 20px; border-radius: 25px;' do %>
-  <i class="fa-solid fa-book-atlas"></i> Criar novo roteiro
+  <i class="fa-solid fa-book-atlas"></i> Create new itinerary
 <% end %>

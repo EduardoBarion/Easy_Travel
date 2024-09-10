@@ -1,5 +1,6 @@
-<h1>Atração adicionada</h1>
+<h1>Attraction added to itinerary- </h1>
 <p>
-  <%= link_to "Ver outras atrações", country_city_places_path(@place.city.country, @place.city), class: 'btn btn-outline-primary' %>
-   <%= link_to "Ver roteiro", trip_path(@plan.trip_id), class: 'btn btn-outline-primary' %>
+  <%= link_to "Back to attractions", country_city_places_path(@place.city.country, @place.city), class: 'btn btn-outline-primary' %>
+   <%= link_to "See itinerary", trip_path(@plan.trip_id), class: 'btn btn-outline-primary' %>
 </p>
+<hr class="mb-4">
