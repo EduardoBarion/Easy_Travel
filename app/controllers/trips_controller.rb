@@ -25,7 +25,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @group = Group.find_by(trip: @trip)
     @membership = Membership.new
-    @users = User.pluck(:id, :email)
+    @users = User.pluck(:id, :username)
     @plans = Plan.where(trip: @trip)
     @markers = @plans.map do |plan|
       { lat: plan.place.latitude, lng: plan.place.longitude }
