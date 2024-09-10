@@ -20,11 +20,11 @@ country4 = URI.open("https://www.universal-assistance.com/br-blog/wp-content/upl
 #Alemanha ok
 country5 = URI.open("https://cdn.segurospromo.com.br/2019/11/seguro-viagem-alemanha.jpg")
 
-ny = URI.open("https://www.urbanparkgru.com.br/dicas-de-viagem/wp-content/uploads/2019/09/viagem-para-nova-york.jpg")
+newy = URI.open("https://www.escolhaviajar.com/wp-content/uploads/2018/03/fotos-de-nova-york-64.jpg")
 la = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2018/05/los-angeles-hollywood-creditos-thinkstock-147308809.jpg")
 mi = URI.open("https://static.voegol.com.br/voegol/inline-images/Pag-de-Destinos_Miami_CROP-MOBILE.png")
 sf = URI.open("https://turismoetc.com.br/wp-content/uploads/2019/10/golden-gate-bridge.jpg")
-ch = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc1rOnCLAIRK-DHH7PWc2Fsrm54fiHMBNnnw&s")
+chi = URI.open("https://dreamsintercambios.com.br/static/cd3bd123e2dbe4933f9e9bd31788f081/e170b/chicago-imagem-conheca-a-cidade-de-chicago.webp")
 
 attraction1 = URI.open("https://pontospravoar.com/wp-content/uploads/2023/07/Berlim.jpg")
 attraction2 = URI.open("https://media.istockphoto.com/id/489776362/pt/foto/panorama-de-horizonte-de-berlim-com-torre-de-televis%C3%A3o-ao-p%C3%B4r-do-sol-alemanha.jpg?s=612x612&w=0&k=20&c=JsSZwxEuELzIQbAfyFGmndwv0g9Rpds3YfgipAsoqO4=")
@@ -133,35 +133,35 @@ bath.save!
 
 ny = City.create!(
   name: "Nova Iorque",
-  country: usa,
-  lat: 42.71,
-  lng: -78.41,
+  country: usa
 )
+ny.photo.attach(io: newy, filename: "photo_city.png", content_type: "image/jpg")
+
+
 los_angeles = City.create!(
-  name: "Miami",
-  country: usa,
-  lat: 34.02,
-  lng: -118.74,
+  name: "los angeles",
+  country: usa
 )
+los_angeles.photo.attach(io: la, filename: "photo_city.png", content_type: "image/jpg")
+
+
 miami = City.create!(
   name: "Miami",
-  country: usa,
-  lat: 25.78,
-  lng: -80.31,
-)
+  country: usa
+ )
+miami.photo.attach(io: mi, filename: "photo_city.png", content_type: "image/jpg")
+
 san_francisco = City.create!(
   name: "San Francisco",
-  country: usa,
-  lat: 37.75,
-  lng: -122.52,
+  country: usa
 )
+san_francisco.photo.attach(io: sf, filename: "photo_city.png", content_type: "image/jpg")
 
 chicago = City.create!(
   name: "Chicago",
-  country: usa,
-  lat: 41.88,
-  lng: -87.63,
+  country: usa
 )
+chicago.photo.attach(io: chi, filename: "photo_city.png", content_type: "image/jpg")
 
 berlin = City.new(
   name: 'Berlin',
@@ -679,107 +679,7 @@ newyork10 = Place.new(
 )
 newyork10.save!
 
-lasvegas1 = Place.new(
-  name: 'The Strip',
-  address: 'Las Vegas Blvd, Las Vegas, NV, USA',
-  price: 0.0,
-  description: 'A avenida mais famosa de Las Vegas, repleta de hotéis luxuosos, cassinos, restaurantes e espetáculos mundialmente conhecidos.',
-  review: 'A energia do The Strip é contagiante, com atrações para todos os gostos e uma atmosfera vibrante dia e noite.',
-  city: lasvegas
-)
-lasvegas1.save!
-
-lasvegas2 = Place.new(
-  name: 'Bellagio Fountains',
-  address: '3600 S Las Vegas Blvd, Las Vegas, NV, USA',
-  price: 0.0,
-  description: 'Um espetáculo de fontes dançantes em frente ao hotel Bellagio, sincronizado com música e luzes.',
-  review: 'As fontes do Bellagio são absolutamente hipnotizantes e um dos pontos altos de qualquer visita a Las Vegas.',
-  city: lasvegas
-)
-lasvegas2.save!
-
-lasvegas3 = Place.new(
-  name: 'Fremont Street Experience',
-  address: 'Fremont St, Las Vegas, NV, USA',
-  price: 0.0,
-  description: 'Uma rua coberta no centro de Las Vegas, famosa por seus shows de luzes, música ao vivo e atividades emocionantes como a tirolesa.',
-  review: 'A Fremont Street é uma mistura de nostalgia e modernidade, com uma atmosfera única e entretenimento para toda a família.',
-  city: lasvegas
-)
-lasvegas3.save!
-
-lasvegas4 = Place.new(
-  name: 'The High Roller',
-  address: '3545 S Las Vegas Blvd, Las Vegas, NV, USA',
-  price: 34.75,
-  description: 'A maior roda-gigante do mundo, oferecendo vistas panorâmicas espetaculares de Las Vegas.',
-  review: 'Uma experiência incrível, especialmente ao pôr do sol, quando as luzes da cidade começam a brilhar.',
-  city: lasvegas
-)
-lasvegas4.save!
-
-lasvegas5 = Place.new(
-  name: 'Red Rock Canyon National Conservation Area',
-  address: '1000 Scenic Loop Dr, Las Vegas, NV, USA',
-  price: 20.00,
-  description: 'Uma área de conservação natural com formações rochosas impressionantes, trilhas para caminhadas e vistas deslumbrantes do deserto de Nevada.',
-  review: 'Um refúgio perfeito da agitação da cidade, oferecendo uma beleza natural impressionante.',
-  city: lasvegas
-)
-lasvegas5.save!
-
-lasvegas6 = Place.new(
-  name: 'The Neon Museum',
-  address: '770 Las Vegas Blvd N, Las Vegas, NV, USA',
-  price: 20.00,
-  description: 'Museu ao ar livre dedicado à preservação dos icônicos letreiros luminosos de Las Vegas.',
-  review: 'Uma viagem nostálgica pela história de Las Vegas, com letreiros antigos que são verdadeiras obras de arte.',
-  city: lasvegas
-)
-lasvegas6.save!
-
-lasvegas7 = Place.new(
-  name: 'Caesars Palace',
-  address: '3570 S Las Vegas Blvd, Las Vegas, NV, USA',
-  price: 0.0,
-  description: 'Um dos hotéis e cassinos mais icônicos de Las Vegas, conhecido por sua arquitetura inspirada na Roma antiga e pelo seu famoso Coliseu.',
-  review: 'O Caesars Palace é um marco de Las Vegas, oferecendo luxo e entretenimento em grande estilo.',
-  city: lasvegas
-)
-lasvegas7.save!
-
-lasvegas8 = Place.new(
-  name: 'Stratosphere Tower',
-  address: '2000 S Las Vegas Blvd, Las Vegas, NV, USA',
-  price: 20.00,
-  description: 'A torre mais alta de Las Vegas, com atrações emocionantes como passeios de adrenalina e um deck de observação com vistas incríveis.',
-  review: 'Para quem busca emoções fortes e vistas deslumbrantes, a Stratosphere Tower é imperdível.',
-  city: lasvegas
-)
-lasvegas8.save!
-
-lasvegas9 = Place.new(
-  name: 'Hoover Dam',
-  address: 'Hoover Dam, Boulder City, NV, USA',
-  price: 30.00,
-  description: 'Uma impressionante obra de engenharia situada na fronteira entre Nevada e Arizona, oferecendo visitas guiadas e vistas magníficas do Rio Colorado.',
-  review: 'A Hoover Dam é uma maravilha da engenharia, com uma história fascinante e vistas que valem a viagem.',
-  city: lasvegas
-)
-lasvegas9.save!
-
-lasvegas10 = Place.new(
-  name: 'The Venetian',
-  address: '3355 S Las Vegas Blvd, Las Vegas, NV, USA',
-  price: 0.0,
-  description: 'Um hotel e cassino de luxo inspirado em Veneza, completo com canais, gôndolas e arquitetura que recria a cidade italiana.',
-  review: 'O The Venetian é uma experiência única, transportando os visitantes para a charmosa Veneza no meio do deserto.',
-  city: lasvegas
-)
-lasvegas10.save!
-
-berlin1 = Place.new(
+  berlin1 = Place.new(
   name: 'Brandenburg Gate',
   address: 'Pariser Platz, 10117 Berlin, Germany',
   price: 0.0,
