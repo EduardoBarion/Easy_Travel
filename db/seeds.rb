@@ -133,7 +133,7 @@ australia.save!
 puts 'Countries created.'
 
 puts 'Creating 5 USA cities...'
-ny = City.new(
+ny = City.create!(
   name: 'New York',
   description: 'An iconic global city, famous for its towering skyline, landmarks such as the Statue of Liberty and Central Park, and a vibrant cultural scene that includes world-class theaters, museums, and art galleries. New York is a bustling metropolis known for its diversity, energy, and as a hub for business, fashion, and entertainment.',
   country: usa
