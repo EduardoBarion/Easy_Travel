@@ -9,12 +9,16 @@
 #   end
 
 require "open-uri"
-
-country1 = URI.open("https://cdn.pixabay.com/photo/2016/10/21/19/05/spain-1758851_1280.png")
-country2 = URI.open("https://img.freepik.com/vetores-premium/bandeira-no-mapa-da-inglaterra-em-fundo-cinza_8559-94.jpg")
-country3 = URI.open("https://logisber.com/contenido/subidas/2022/10/exportar-a-brasil.jpg")
-country4 = URI.open("https://img.freepik.com/vetores-premium/icone-de-mapa-de-pais-dos-eua-com-as-cores-da-bandeira-dos-eua_24911-4698.jpg")
-country5 = URI.open("https://www.coladaweb.com/wp-content/uploads/2014/12/Mapa-Alemanha.png")
+# Espanha ok
+country1 = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2021/06/Madrid.jpg")
+# Inglaterra ok
+country2 = URI.open("https://luniverstours.com/wp-content/uploads/2021/08/guia-brasileiro-em-londres-guia-em-londres-passeios-em-londres-1.jpeg")
+# Brasil ok
+country3 = URI.open("https://img.paraviagem.com.br/uploads/2015/04/destinos-pelo-brasil.jpg")
+#Eua ok
+country4 = URI.open("https://www.universal-assistance.com/br-blog/wp-content/uploads/2022/03/seguro-viagem-eua-blog-ua-br-1.jpg")
+#Alemanha ok
+country5 = URI.open("https://cdn.segurospromo.com.br/2019/11/seguro-viagem-alemanha.jpg")
 
 berlim = URI.open("https://pontospravoar.com/wp-content/uploads/2023/07/Berlim.jpg")
 munique = URI.open("https://wp.rotadeferias.com.br/wp-content/uploads/2022/10/Depositphotos_197063222_L.jpg")
