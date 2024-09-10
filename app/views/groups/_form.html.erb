@@ -6,3 +6,9 @@
     <% end %>
   </div>
 <% end %>
+<div class="d-flex justify-content-center">
+  <p> <strong> Compartilhe este link para adicioná-los: </strong> </p>
+</div>
+<div class="d-flex justify-content-center">
+  <%= link_to join_trip_url(@trip.invite_token), join_trip_url(@trip.invite_token) %>
+</div>

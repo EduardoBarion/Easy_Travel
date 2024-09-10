@@ -38,14 +38,14 @@
     </div>
   </div>
   <div class="d-flex justify-content-center">
-    <%= link_to trips_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-      <i class="fa-solid fa-list"></i> Lista dos seus roteiros
-    <% end %>
     <%= link_to countries_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
       <i class="fa-solid fa-plus"></i> Adicionar atrações
     <% end %>
     <%= link_to new_group_membership_path(@group), class: "m-3 btn btn-outline-primary rounded-pill", data: { "bs-toggle" => "modal", "bs-target" => "#exampleModal" } do %>
       <i class="fa-solid fa-user-plus"></i> Adicionar um amigo
+    <% end %>
+    <%= link_to trips_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
+      <i class="fa-solid fa-list"></i> Lista dos seus roteiros
     <% end %>
     <%= link_to trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "m-3 btn btn-outline-primary rounded-pill" do %>
     <i class="fa-regular fa-trash-can"></i> Deletar roteiro

@@ -9,12 +9,17 @@
 #   end
 
 require "open-uri"
+# Espanha ok
+country1 = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2021/06/Madrid.jpg")
+# Inglaterra ok
+country2 = URI.open("https://luniverstours.com/wp-content/uploads/2021/08/guia-brasileiro-em-londres-guia-em-londres-passeios-em-londres-1.jpeg")
+# Brasil ok
+country3 = URI.open("https://img.paraviagem.com.br/uploads/2015/04/destinos-pelo-brasil.jpg")
+#Eua ok
+country4 = URI.open("https://www.universal-assistance.com/br-blog/wp-content/uploads/2022/03/seguro-viagem-eua-blog-ua-br-1.jpg")
+#Alemanha ok
+country5 = URI.open("https://cdn.segurospromo.com.br/2019/11/seguro-viagem-alemanha.jpg")
 
-country1 = URI.open("https://cdn.pixabay.com/photo/2016/10/21/19/05/spain-1758851_1280.png")
-country2 = URI.open("https://img.freepik.com/vetores-premium/bandeira-no-mapa-da-inglaterra-em-fundo-cinza_8559-94.jpg")
-country3 = URI.open("https://logisber.com/contenido/subidas/2022/10/exportar-a-brasil.jpg")
-country4 = URI.open("https://img.freepik.com/vetores-premium/icone-de-mapa-de-pais-dos-eua-com-as-cores-da-bandeira-dos-eua_24911-4698.jpg")
-country5 = URI.open("https://www.coladaweb.com/wp-content/uploads/2014/12/Mapa-Alemanha.png")
 berlim = URI.open("https://pontospravoar.com/wp-content/uploads/2023/07/Berlim.jpg")
 munique = URI.open("https://wp.rotadeferias.com.br/wp-content/uploads/2022/10/Depositphotos_197063222_L.jpg")
 
@@ -23,7 +28,6 @@ attraction2 = URI.open("https://media.istockphoto.com/id/489776362/pt/foto/panor
 attraction3 = URI.open("https://cdn.britannica.com/58/176458-050-AEFE3264/Ishtar-Gate-Berlin-Pergamon-Museum.jpg")
 attraction4 = URI.open("https://cdn.forevervacation.com/uploads/digital/assets/berlin-wall-memorial.jpeg")
 attraction5 = URI.open("https://cdn.pixabay.com/photo/2019/08/09/09/31/checkpoint-charlie-4394712_960_720.jpg")
-
 attraction6 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdKmfJc1vHX7DrDADIMin-XlPnsr9YV2excg&s")
 attraction7 = URI.open("https://turismo.eurodicas.com.br/wp-content/uploads/2023/12/ilha-dos-museus-em-berlim.jpeg")
 attraction8 = URI.open("https://images.musement.com/cover/0002/65/east-side-gallery-berlin_header-164457.jpeg")
@@ -44,13 +48,15 @@ puts 'DB cleaned.'
 puts 'Creating 2 fake users...'
 admin = User.new(
   email: 'admin@admin.com',
-  password: '123456'
+  password: '123456',
+  username: 'Eduzin'
 )
 admin.save!
 
 user = User.new(
   email: 'user@user.com',
-  password: '123456'
+  password: '123456',
+  username: 'Duduzin'
 )
 user.save!
 puts 'Fake users created.'
@@ -964,48 +970,3 @@ munich10 = Place.new(
 )
 munich10.save!
 puts 'Attractions created.'
-
-puts 'Creating trip...'
-trip = Trip.create!(
-  user: user,
-  name: "Europa"
-)
-puts 'trip created.'
-
-puts 'Creating 2 plans...'
-plan1 = Plan.new(
-  suggestion: 'Platzl 9, 80331 München, Germany',
-  place: munich10,
-  trip: trip
-)
-plan1.save!
-
-plan2 = Plan.new(
-  suggestion: 'Platzl 9, 80331 München, Germany',
-  place: munich10,
-  trip: trip
-)
-plan2.save!
-puts 'Plans created.'
-
-puts 'Creating group...'
-group1 = Group.new(
-  name: 'Amigos para sempre',
-  trip: trip
-)
-group1.save!
-puts 'Groups created.'
-
-puts 'Creating 2 memberships...'
-membership1 = Membership.new(
-  group: group1,
-  user: user
-)
-membership1.save!
-
-membership2 = Membership.new(
-  group: group1,
-  user: admin
-)
-membership2.save!
-puts 'memberships created.'
