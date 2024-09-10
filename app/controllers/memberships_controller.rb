@@ -2,7 +2,7 @@ class MembershipsController < ApplicationController
   def new
     @group = Group.find(params[:group_id])
     @membership = Membership.new
-    @users = User.pluck(:id, :email)
+    @users = User.pluck(:id, :username)
   end
 
   def create
