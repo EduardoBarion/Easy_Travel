@@ -1,18 +1,6 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://bityl.co/Rwnc); background-size: cover; background-position: center; height: 60vh; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
-  <div class="container" style="display: inline-block;">
-    <h1 class="fundo" style="background-color: rgba(255, 255, 255, 0.8); padding: 10px 20px; border-radius: 10px; display: inline-block; white-space: nowrap; font-size: 3em; color: #161D6F">
-      <strong><%= @cities[-1].country.name %></strong>
-    </h1>
-  </div>
-</div>
-
-
-<div class="container mt-4">
-  <h1 style="color: #0B2F9F;"><strong>Cities to Discover</strong></h1>
-
+<div class="container mt-5">
+  <h1 class="d-flex justify-content-center my-3" style="color: #0B2F9F;"><strong>Cities in <%= @country.name %> </strong></h1>
   <% @cities.each do |city| %>
-
-
       <%= link_to country_city_places_path(city.country, city), style: "text-decoration: none; color: inherit;" do %>
         <div class="cardcity mb-3" style="width: 100%; max-width: 100%; height: auto; display: block;">
           <% if city.photo.valid? %>

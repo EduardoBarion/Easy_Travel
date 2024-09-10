@@ -9,39 +9,20 @@
 #   end
 
 require "open-uri"
-# Espanha ok
+
 country1 = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2021/06/Madrid.jpg")
-# Inglaterra ok
 country2 = URI.open("https://luniverstours.com/wp-content/uploads/2021/08/guia-brasileiro-em-londres-guia-em-londres-passeios-em-londres-1.jpeg")
-# Brasil ok
 country3 = URI.open("https://www.submarinoviagens.com.br/media/17699717/shutterstock_422575195.jpg")
-#Eua ok
 country4 = URI.open("https://www.universal-assistance.com/br-blog/wp-content/uploads/2022/03/seguro-viagem-eua-blog-ua-br-1.jpg")
-#Alemanha ok
 country5 = URI.open("https://cdn.segurospromo.com.br/2019/11/seguro-viagem-alemanha.jpg")
 
-newy = URI.open("https://www.escolhaviajar.com/wp-content/uploads/2018/03/fotos-de-nova-york-64.jpg")
+newy = URI.open("https://www.viajenaviagem.com/wp-content/uploads/2014/02/nova-york-vista-one-world-observatory.jpg.webp")
 la = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2018/05/los-angeles-hollywood-creditos-thinkstock-147308809.jpg")
 mi = URI.open("https://static.voegol.com.br/voegol/inline-images/Pag-de-Destinos_Miami_CROP-MOBILE.png")
 sf = URI.open("https://turismoetc.com.br/wp-content/uploads/2019/10/golden-gate-bridge.jpg")
 chi = URI.open("https://dreamsintercambios.com.br/static/cd3bd123e2dbe4933f9e9bd31788f081/e170b/chicago-imagem-conheca-a-cidade-de-chicago.webp")
 
-attraction1 = URI.open("https://pontospravoar.com/wp-content/uploads/2023/07/Berlim.jpg")
-attraction2 = URI.open("https://media.istockphoto.com/id/489776362/pt/foto/panorama-de-horizonte-de-berlim-com-torre-de-televis%C3%A3o-ao-p%C3%B4r-do-sol-alemanha.jpg?s=612x612&w=0&k=20&c=JsSZwxEuELzIQbAfyFGmndwv0g9Rpds3YfgipAsoqO4=")
-attraction3 = URI.open("https://cdn.britannica.com/58/176458-050-AEFE3264/Ishtar-Gate-Berlin-Pergamon-Museum.jpg")
-attraction4 = URI.open("https://cdn.forevervacation.com/uploads/digital/assets/berlin-wall-memorial.jpeg")
-attraction5 = URI.open("https://cdn.pixabay.com/photo/2019/08/09/09/31/checkpoint-charlie-4394712_960_720.jpg")
-attraction6 = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdKmfJc1vHX7DrDADIMin-XlPnsr9YV2excg&s")
-attraction7 = URI.open("https://turismo.eurodicas.com.br/wp-content/uploads/2023/12/ilha-dos-museus-em-berlim.jpeg")
-attraction8 = URI.open("https://images.musement.com/cover/0002/65/east-side-gallery-berlin_header-164457.jpeg")
-attraction9 = URI.open("https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/11/c3/ae/48.jpg")
-attraction10 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/141227_Berliner_Dom.jpg/1200px-141227_Berliner_Dom.jpg")
-
 puts 'Cleaning DB...'
-Membership.destroy_all
-Group.destroy_all
-Plan.destroy_all
-Trip.destroy_all
 User.destroy_all
 Place.destroy_all
 City.destroy_all
@@ -64,829 +45,330 @@ user = User.new(
 user.save!
 puts 'Fake users created.'
 
-puts 'Creating 4 countries...'
+puts 'Creating 12 countries...'
 
 espanha = Country.new(
-  name: 'Espanha',
-  description: 'Explore a vibrante Espanha: praias deslumbrantes, cidades históricas e uma rica cultura de tapas e flamenco. De Barcelona a Toledo, uma experiência inesquecível.'
+  name: 'Spain',
+  description: 'Discover vibrant Spain: stunning beaches, historic cities, and a rich culture of tapas and flamenco. From Barcelona to Seville, experience a blend of tradition and modernity that promises an unforgettable adventure.'
 )
 espanha.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
 espanha.save!
 
 inglaterra = Country.new(
-  name: 'Inglaterra',
-  description: 'Descubra a encantadora Inglaterra: ruas históricas de Londres, castelos majestosos e a beleza dos Cotswolds. Uma mistura perfeita de charme e tradição.'
+  name: 'England',
+  description: 'Explore the diverse United Kingdom: historic landmarks, charming villages, and a vibrant cultural scene. From London’s iconic sights to the scenic beauty of Scotland, experience a rich tapestry of tradition and modernity.'
 )
 inglaterra.photo.attach(io: country2, filename: "photo_country.png", content_type: "image/jpg")
 inglaterra.save!
 
 brasil = Country.new(
-  name: 'Brasil',
-  description: 'Descubra o vibrante Brasil: praias paradisíacas do Rio de Janeiro, a exuberância da Floresta Amazónica e a cultura rica do Nordeste. Uma mistura fascinante de natureza exuberante e diversidade cultural.'
+  name: 'Brazil',
+  description: 'Experience the lively Brazil: breathtaking beaches, vibrant festivals, and a rich cultural heritage. From the Carnival of Rio to the Amazon rainforest, immerse yourself in a country full of color, rhythm, and natural wonders.'
 )
 brasil.photo.attach(io: country3, filename: "photo_country.png", content_type: "image/jpg")
 brasil.save!
 
 usa = Country.new(
-  name: 'EUA',
-  description: 'Aventure-se pelos Estados Unidos: paisagens espetaculares, grandes cidades e parques nacionais. De Nova York à Califórnia, descubra a diversidade e o dinamismo.'
+  name: 'United States',
+  description: 'Discover the vast USA: diverse landscapes, iconic landmarks, and a melting pot of cultures. From the bustling streets of New York to the natural beauty of the Grand Canyon, enjoy a dynamic and varied adventure across this expansive country.'
 )
 usa.photo.attach(io: country4, filename: "photo_country.png", content_type: "image/jpg")
 usa.save!
 
 alemanha = Country.new(
-  name: 'Alemanha',
-  description: 'Experimente a Alemanha: castelos de contos de fadas, cidades vibrantes e uma cultura rica. De Berlim a Munique, um mergulho fascinante na história e modernidade.'
+  name: 'Germany',
+  description: 'Uncover the charm of Germany: medieval towns, cutting-edge cities, and a rich history. From the fairytale castles of Bavaria to the vibrant culture of Berlin, experience a country where tradition and innovation meet.'
 )
 alemanha.photo.attach(io: country5, filename: "photo_country.png", content_type: "image/jpg")
 alemanha.save!
+
+belgium = Country.new(
+  name: 'Belgium',
+  description: 'Explore Belgium: a charming blend of medieval towns, impressive architecture, and a rich culinary scene. From Brussels to Bruges, indulge in fine chocolates, waffles, and beers while soaking up the historical and cultural ambiance.'
+)
+belgium.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+belgium.save!
+
+portugal = Country.new(
+  name: 'Portugal',
+  description: 'Discover Portugal: a captivating destination with stunning coastlines, historic cities, and a vibrant culture. From Lisbon’s charming streets to Porto’s famous wines, enjoy a rich blend of history, tradition, and modern attractions.'
+)
+portugal.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+portugal.save!
+
+france = Country.new(
+  name: 'France',
+  description: 'Experience France: a country renowned for its exquisite cuisine, iconic landmarks, and world-class art. From Paris’s Eiffel Tower to the vineyards of Bordeaux, immerse yourself in a rich cultural journey full of romance and elegance.'
+)
+france.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+france.save!
+
+mexico = Country.new(
+  name: 'Mexico',
+  description: 'Uncover Mexico: a vibrant land of rich traditions, colorful festivals, and stunning landscapes. From the ancient ruins of Chichen Itza to the beautiful beaches of Cancun, experience a blend of history, culture, and natural beauty.'
+)
+mexico.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+mexico.save!
+
+chile = Country.new(
+  name: 'Chile',
+  description: 'Discover Chile: a land of diverse landscapes and rich cultural heritage. From the arid Atacama Desert to the lush vineyards of the Central Valley, explore stunning natural wonders and vibrant cities like Santiago and Valparaíso.'
+)
+chile.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+chile.save!
+
+japan = Country.new(
+  name: 'Japan',
+  description: 'Explore Japan: a unique blend of ancient traditions and cutting-edge modernity. From the serene temples of Kyoto to the bustling streets of Tokyo, experience a culture of elegance, innovation, and natural beauty.'
+)
+japan.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+japan.save!
+
+australia = Country.new(
+  name: 'Australia',
+  description: 'Discover Australia: a diverse land of stunning landscapes, vibrant cities, and unique wildlife. From the Great Barrier Reef to Sydney’s iconic Opera House, enjoy a mix of natural wonders and urban adventures in this vast and exciting country.'
+)
+australia.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+australia.save!
 puts 'Countries created.'
 
-puts 'Creating 2 cities for each country...'
-barcelona = City.new(
-  name: 'Barcelona',
-  description: 'Uma cidade costeira famosa por suas obras arquitetônicas de Gaudí, praias ensolaradas e vida noturna animada.',
-  country: espanha
-)
-barcelona.save!
-
-madrid = City.new(
-  name: 'Madrid',
-  description: 'A vibrante capital da Espanha, conhecida por sua rica herança cultural, museus renomados e arquitetura impressionante.',
-  country: espanha
-)
-madrid.save!
-
-londres = City.new(
-  name: 'Londres',
-  description: 'A capital icônica da Inglaterra, famosa por sua história rica, marcos como o Big Ben e o Palácio de Buckingham, e uma cena cultural vibrante, incluindo teatros, museus e galerias de arte de classe mundial.',
-  country: inglaterra
-)
-londres.save!
-
-bath = City.new(
-  name: 'Bath',
-  description: 'Uma charmosa cidade na Inglaterra, famosa por suas termas romanas bem preservadas, arquitetura georgiana distinta e paisagens pitorescas.',
-  country: inglaterra
-)
-bath.save!
-
-ny = City.create!(
-  name: "Nova Iorque",
-ny = City.new(
-  name: 'Nova York',
-  description: 'A capital icônica da Inglaterra, famosa por sua história rica, marcos como o Big Ben e o Palácio de Buckingham, e uma cena cultural vibrante, incluindo teatros, museus e galerias de arte de classe mundial.',
-  country: usa
-)
-ny.photo.attach(io: newy, filename: "photo_city.png", content_type: "image/jpg")
-
+puts 'Creating 5 USA cities...'
 los_angeles = City.create!(
-  name: "los angeles",
+  name: "Los Angeles",
+  description: 'Known as the entertainment capital of the world, Los Angeles is home to Hollywood, famous beaches, and a diverse cultural landscape. This sprawling city is renowned for its sunny weather, glamorous lifestyle, and its role as a major hub for the film and television industry.',
   country: usa
 )
 los_angeles.photo.attach(io: la, filename: "photo_city.png", content_type: "image/jpg")
 
 miami = City.create!(
   name: "Miami",
+  description: 'A vibrant coastal city known for its stunning beaches, lively nightlife, and diverse cultural influences, especially from Latin America and the Caribbean. Miami is a hotspot for art, design, and cuisine, with a tropical climate that attracts visitors year-round.',
   country: usa
- )
+)
 miami.photo.attach(io: mi, filename: "photo_city.png", content_type: "image/jpg")
 
 san_francisco = City.create!(
   name: "San Francisco",
+  description: 'Famous for its hilly streets, iconic Golden Gate Bridge, and rich history, San Francisco is a cultural and technological hub. Known for its liberal atmosphere, historic cable cars, and proximity to Silicon Valley, the city offers a unique blend of innovation and tradition.',
   country: usa
 )
 san_francisco.photo.attach(io: sf, filename: "photo_city.png", content_type: "image/jpg")
 
 chicago = City.create!(
   name: "Chicago",
+  description: 'A major city on the shores of Lake Michigan, Chicago is known for its impressive architecture, deep-dish pizza, and a rich cultural scene. The Windy City boasts world-class museums, vibrant neighborhoods, and a strong tradition in music, particularly jazz and blues.',
   country: usa
 )
 chicago.photo.attach(io: chi, filename: "photo_city.png", content_type: "image/jpg")
 
-berlin = City.new(
-  name: 'Berlin',
-  description: 'A capital dinâmica da Alemanha, famosa por sua história profunda, marcos icônicos como o Portão de Brandemburgo e o Muro de Berlim, além de uma cena cultural vibrante com museus, galerias e vida noturna diversificada.',
-  country: alemanha
+ny = City.create!(
+  name: 'New York',
+  description: 'An iconic global city, famous for its towering skyline, landmarks such as the Statue of Liberty and Central Park, and a vibrant cultural scene that includes world-class theaters, museums, and art galleries. New York is a bustling metropolis known for its diversity, energy, and as a hub for business, fashion, and entertainment.',
+  country: usa
 )
-berlin.save!
+ny.photo.attach(io: newy, filename: "photo_city.png", content_type: "image/jpg")
+puts 'Cities created.'
 
-munich = City.new(
-  name: 'Munique',
-  description: 'A encantadora capital da Baviera, conhecida por sua rica herança cultural, cervejarias históricas, festivais famosos como a Oktoberfest e uma combinação única de tradição e modernidade em suas paisagens e arquitetura.',
-  country: alemanha
-)
-munich.save!
-puts 'Countries created.'
-
-puts 'Creating 10 attractions for every city...'
-barcelona1 = Place.new(
-  name: 'Sagrada Família',
-  address: 'Carrer de Mallorca, 401, 08013 Barcelona, Espanha',
-  price: 26.00,
-  description: 'Uma das obras-primas de Antoni Gaudí, uma basílica impressionante e icônica com arquitetura única e detalhes elaborados.',
-  review: 'Uma visita obrigatória em Barcelona, com sua arquitetura extraordinária e construção ainda em andamento.',
-  city: barcelona
-)
-barcelona1.save!
-
-barcelona2 = Place.new(
-  name: 'Parc Güell',
-  address: 'Carrer d\'Olot, 5, 08024 Barcelona, Espanha',
-  price: 10.00,
-  description: 'Um parque público projetado por Antoni Gaudí, conhecido por seus mosaicos coloridos e formas arquitetônicas inusitadas.',
-  review: 'Um lugar encantador para passeios, com vistas panorâmicas e uma arquitetura vibrante e divertida.',
-  city: barcelona
-)
-barcelona2.save!
-
-barcelona3 = Place.new(
-  name: 'La Rambla',
-  address: 'La Rambla, 08002 Barcelona, Espanha',
-  price: 0.00,
-  description: 'Uma famosa avenida em Barcelona, repleta de lojas, restaurantes e artistas de rua, perfeita para passeios e compras.',
-  review: 'O coração vibrante de Barcelona, ótimo para explorar a vida urbana e absorver a atmosfera local.',
-  city: barcelona
-)
-barcelona3.save!
-
-barcelona4 = Place.new(
-  name: 'Casa Batlló',
-  address: 'Passeig de Gràcia, 43, 08007 Barcelona, Espanha',
-  price: 35.00,
-  description: 'Um dos edifícios mais icônicos de Antoni Gaudí, conhecido por suas fachadas coloridas e design inovador.',
-  review: 'Uma experiência fascinante com uma arquitetura inovadora e interior deslumbrante.',
-  city: barcelona
-)
-barcelona4.save!
-
-barcelona5 = Place.new(
-  name: 'Casa Milà (La Pedrera)',
-  address: 'Passeig de Gràcia, 92, 08008 Barcelona, Espanha',
-  price: 25.00,
-  description: 'Outro marco de Gaudí, famoso por sua fachada ondulada e interiores distintos, oferecendo uma visão única da arquitetura modernista.',
-  review: 'Uma peça de arquitetura impressionante com um design muito diferente do convencional.',
-  city: barcelona
-)
-barcelona5.save!
-
-barcelona6 = Place.new(
-  name: 'Museu Picasso',
-  address: 'Carrer Montcada, 15-23, 08003 Barcelona, Espanha',
-  price: 12.00,
-  description: 'Museu dedicado a Pablo Picasso, com uma vasta coleção de suas obras e uma visão profunda sobre sua evolução artística.',
-  review: 'Uma excelente forma de explorar a trajetória de Picasso e apreciar suas obras mais importantes.',
-  city: barcelona
-)
-barcelona6.save!
-
-barcelona7 = Place.new(
-  name: 'Parc de la Ciutadella',
-  address: 'Passeig de Picasso, 21, 08003 Barcelona, Espanha',
-  price: 0.00,
-  description: 'Um grande parque urbano no centro de Barcelona, ideal para passeios, piqueniques e relaxamento.',
-  review: 'Um espaço verde maravilhoso para escapar da agitação da cidade e desfrutar da natureza.',
-  city: barcelona
-)
-barcelona7.save!
-
-barcelona8 = Place.new(
-  name: 'Camp Nou',
-  address: 'Carrer d\'Aristides Maillol, 12, 08028 Barcelona, Espanha',
-  price: 25.00,
-  description: 'O icônico estádio do FC Barcelona, oferecendo tours e uma visão fascinante da história do clube.',
-  review: 'Um paraíso para os fãs de futebol e uma visita obrigatória para os admiradores do FC Barcelona.',
-  city: barcelona
-)
-barcelona8.save!
-
-barcelona9 = Place.new(
-  name: 'Mercado de La Boqueria',
-  address: 'La Rambla, 91, 08001 Barcelona, Espanha',
-  price: 0.00,
-  description: 'Um vibrante mercado de alimentos em La Rambla, conhecido por sua variedade de produtos frescos e tapas.',
-  review: 'Um local ideal para experimentar as delícias locais e vivenciar a atmosfera animada de um mercado espanhol.',
-  city: barcelona
-)
-barcelona9.save!
-
-barcelona10 = Place.new(
-  name: 'Gothic Quarter (Barri Gòtic)',
-  address: 'Barri Gòtic, 08002 Barcelona, Espanha',
-  price: 0.00,
-  description: 'O bairro medieval de Barcelona, repleto de ruas estreitas, praças encantadoras e edifícios históricos.',
-  review: 'Um labirinto de história e cultura, ótimo para explorar a arquitetura antiga e absorver o charme da cidade.',
-  city: barcelona
-)
-barcelona10.save!
-
-madrid1 = Place.new(
-  name: 'Museu do Prado',
-  address: 'Calle de Felipe IV, s/n, 28014 Madrid, Espanha',
-  price: 15.00,
-  description: 'O principal museu de arte de Madrid, conhecido por sua vasta coleção de obras-primas europeias, incluindo pinturas de Velázquez e Goya.',
-  review: 'Um dos museus mais impressionantes da Europa, com uma coleção de arte excepcional.',
-  city: madrid
-)
-madrid1.save!
-
-madrid2 = Place.new(
-  name: 'Palácio Real de Madrid',
-  address: 'Calle de Bailén, s/n, 28071 Madrid, Espanha',
-  price: 13.00,
-  description: 'A residência oficial dos reis da Espanha, um palácio grandioso com impressionantes salões e jardins.',
-  review: 'Uma visita obrigatória para apreciar a opulência e a história real de Madrid.',
-  city: madrid
-)
-madrid2.save!
-
-madrid3 = Place.new(
-  name: 'Parque do Retiro',
-  address: 'Plaza de la Independencia, 7, 28001 Madrid, Espanha',
-  price: 0.00,
-  description: 'Um grande parque urbano no centro de Madrid, perfeito para passeios relaxantes, passeios de barco e apreciar a natureza.',
-  review: 'Um oásis de tranquilidade no coração da cidade, ótimo para um passeio ao ar livre.',
-  city: madrid
-)
-madrid3.save!
-
-madrid4 = Place.new(
-  name: 'Museu Nacional Centro de Arte Reina Sofia',
-  address: 'Calle de Santa Isabel, 52, 28012 Madrid, Espanha',
-  price: 10.00,
-  description: 'Museu dedicado à arte moderna e contemporânea, conhecido por abrigar o famoso "Guernica" de Picasso.',
-  review: 'Uma galeria fascinante com algumas das obras mais importantes da arte moderna.',
-  city: madrid
-)
-madrid4.save!
-
-madrid5 = Place.new(
-  name: 'Templo de Debod',
-  address: 'Calle de Ferraz, 1, 28008 Madrid, Espanha',
-  price: 0.00,
-  description: 'Templo egípcio antigo que foi reconstruído em Madrid, oferecendo uma vista única e uma experiência histórica.',
-  review: 'Um lugar único para conhecer a história egípcia e desfrutar de vistas panorâmicas da cidade.',
-  city: madrid
-)
-madrid5.save!
-
-madrid6 = Place.new(
-  name: 'Gran Vía',
-  address: 'Gran Vía, 28013 Madrid, Espanha',
-  price: 0.00,
-  description: 'Uma das avenidas mais importantes de Madrid, conhecida por seus edifícios imponentes, teatros e lojas.',
-  review: 'Ótima para compras, entretenimento e sentir a vibração de Madrid.',
-  city: madrid
-)
-madrid6.save!
-
-madrid7 = Place.new(
-  name: 'Praça Mayor',
-  address: 'Plaza Mayor, 28012 Madrid, Espanha',
-  price: 0.00,
-  description: 'Uma grande praça retangular no centro histórico de Madrid, cercada por edifícios históricos e cheia de cafés e restaurantes.',
-  review: 'Um ótimo lugar para apreciar a arquitetura e a atmosfera vibrante de Madrid.',
-  city: madrid
-)
-madrid7.save!
-
-madrid8 = Place.new(
-  name: 'Estádio Santiago Bernabéu',
-  address: 'Avenida de Concha Espina, 1, 28036 Madrid, Espanha',
-  price: 25.00,
-  description: 'O icônico estádio do Real Madrid, oferecendo tours e uma visão da história do futebol.',
-  review: 'Um paraíso para os fãs de futebol e uma experiência impressionante para todos.',
-  city: madrid
-)
-madrid8.save!
-
-madrid9 = Place.new(
-  name: 'Museu Thyssen-Bornemisza',
-  address: 'Paseo del Prado, 8, 28014 Madrid, Espanha',
-  price: 13.00,
-  description: 'Museu de arte com uma vasta coleção de obras de diferentes períodos, incluindo desde o Renascimento até o século XX.',
-  review: 'Uma excelente adição ao circuito de museus de Madrid com uma coleção diversificada e de alta qualidade.',
-  city: madrid
-)
-madrid9.save!
-
-madrid10 = Place.new(
-  name: 'Mercado de San Miguel',
-  address: 'Plaza de San Miguel, s/n, 28005 Madrid, Espanha',
-  price: 0.00,
-  description: 'Um mercado gastronômico coberto, ideal para provar uma variedade de tapas e produtos locais.',
-  review: 'Um paraíso para os amantes da gastronomia, com uma variedade incrível de sabores e produtos.',
-  city: madrid
-)
-madrid10.save!
-
-londres1 = Place.new(
-  name: 'The British Museum',
-  address: 'Great Russell St, London WC1B 3DG, United Kingdom',
-  price: 0.0,
-  description: 'Um dos museus mais importantes do mundo, com uma coleção abrangente de artefatos históricos e culturais de todas as partes do globo.',
-  review: 'Entrada gratuita e uma experiência cultural imperdível em Londres.',
-  city: londres
-)
-londres1.save!
-
-londres2 = Place.new(
-  name: 'The Tower of London',
-  address: 'London EC3N 4AB, United Kingdom',
-  price: 29.90,
-  description: 'Um castelo histórico e uma antiga prisão, lar das Joias da Coroa e da famosa Torre Branca.',
-  review: 'Uma visita fascinante com guias animados e muitas histórias para descobrir.',
-  city: londres
-)
-londres2.save!
-
-londres3 = Place.new(
-  name: 'The London Eye',
-  address: 'Riverside Building, County Hall, London SE1 7PB, United Kingdom',
-  price: 30.50,
-  description: 'Uma roda-gigante de observação icônica às margens do Rio Tâmisa, proporcionando vistas panorâmicas da cidade.',
-  review: 'Uma vista espetacular de Londres, especialmente ao pôr do sol.',
-  city: londres
-)
-londres3.save!
-
-londres4 = Place.new(
-  name: 'Westminster Abbey',
-  address: '20 Deans Yd, London SW1P 3PA, United Kingdom',
-  price: 25.0,
-  description: 'Uma igreja gótica histórica, local de coroações, casamentos e sepultamentos de membros da realeza britânica.',
-  review: 'Arquitetura impressionante e uma história fascinante por trás de cada canto.',
-  city: londres
-)
-londres4.save!
-
-londres5 = Place.new(
-  name: 'Buckingham Palace',
-  address: 'London SW1A 1AA, United Kingdom',
-  price: 26.50,
-  description: 'A residência oficial da Rainha em Londres, famosa pela Troca da Guarda e pelos esplêndidos State Rooms.',
-  review: 'Uma espiada no coração da monarquia britânica com uma experiência de visita única.',
-  city: londres
-)
-londres5.save!
-
-londres6 = Place.new(
-  name: 'Tate Modern',
-  address: 'Bankside, London SE1 9TG, United Kingdom',
-  price: 0.0,
-  description: 'Um dos museus de arte moderna mais famosos do mundo, localizado em uma antiga usina elétrica.',
-  review: 'Entrada gratuita e uma incrível coleção de arte contemporânea de classe mundial.',
-  city: londres
-)
-londres6.save!
-
-londres7 = Place.new(
-  name: 'St. Paul’s Cathedral',
-  address: 'St. Paul’s Churchyard, London EC4M 8AD, United Kingdom',
-  price: 20.0,
-  description: 'Uma das catedrais mais icônicas do Reino Unido, famosa por sua grande cúpula e impressionante interior.',
-  review: 'Um símbolo de resiliência e beleza com vistas deslumbrantes da cúpula.',
-  city: londres
-)
-londres7.save!
-
-londres8 = Place.new(
-  name: 'The Natural History Museum',
-  address: 'Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom',
-  price: 0.0,
-  description: 'Um museu com coleções de história natural mundialmente famosas, incluindo dinossauros, minerais e muito mais.',
-  review: 'Um dia educativo e divertido para toda a família, com entrada gratuita.',
-  city: londres
-)
-londres8.save!
-
-londres9 = Place.new(
-  name: 'The Shard',
-  address: '32 London Bridge St, London SE1 9SG, United Kingdom',
-  price: 32.00,
-  description: 'O edifício mais alto do Reino Unido, oferecendo uma vista de 360 graus da cidade a partir do seu deck de observação.',
-  review: 'Vistas incríveis da cidade, especialmente ao anoitecer.',
-  city: londres
-)
-londres9.save!
-
-londres10 = Place.new(
-  name: 'The Victoria and Albert Museum',
-  address: 'Cromwell Rd, South Kensington, London SW7 2RL, United Kingdom',
-  price: 0.0,
-  description: 'Um museu dedicado às artes decorativas e ao design, com uma vasta coleção que abrange séculos.',
-  review: 'Entrada gratuita para um mergulho fascinante no mundo das artes e do design.',
-  city: londres
-)
-londres10.save!
-
-bath1 = Place.new(
-  name: 'The British Museum',
-  address: 'Great Russell St, London WC1B 3DG, United Kingdom',
-  price: 0.0,
-  description: 'Um dos museus mais importantes do mundo, com uma coleção abrangente de artefatos históricos e culturais de todas as partes do globo.',
-  review: 'Entrada gratuita e uma experiência cultural imperdível em Londres.',
-  city: bath
-)
-bath1.save!
-
-bath2 = Place.new(
-  name: 'The Tower of London',
-  address: 'London EC3N 4AB, United Kingdom',
-  price: 29.90,
-  description: 'Um castelo histórico e uma antiga prisão, lar das Joias da Coroa e da famosa Torre Branca.',
-  review: 'Uma visita fascinante com guias animados e muitas histórias para descobrir.',
-  city: bath
-)
-bath2.save!
-
-bath3 = Place.new(
-  name: 'The London Eye',
-  address: 'Riverside Building, County Hall, London SE1 7PB, United Kingdom',
-  price: 30.50,
-  description: 'Uma roda-gigante de observação icônica às margens do Rio Tâmisa, proporcionando vistas panorâmicas da cidade.',
-  review: 'Uma vista espetacular de Londres, especialmente ao pôr do sol.',
-  city: bath
-)
-bath3.save!
-
-bath4 = Place.new(
-  name: 'Westminster Abbey',
-  address: '20 Deans Yd, London SW1P 3PA, United Kingdom',
-  price: 25.0,
-  description: 'Uma igreja gótica histórica, local de coroações, casamentos e sepultamentos de membros da realeza britânica.',
-  review: 'Arquitetura impressionante e uma história fascinante por trás de cada canto.',
-  city: bath
-)
-bath4.save!
-
-bath5 = Place.new(
-  name: 'Buckingham Palace',
-  address: 'London SW1A 1AA, United Kingdom',
-  price: 26.50,
-  description: 'A residência oficial da Rainha em Londres, famosa pela Troca da Guarda e pelos esplêndidos State Rooms.',
-  review: 'Uma espiada no coração da monarquia britânica com uma experiência de visita única.',
-  city: bath
-)
-bath5.save!
-
-bath6 = Place.new(
-  name: 'Tate Modern',
-  address: 'Bankside, London SE1 9TG, United Kingdom',
-  price: 0.0,
-  description: 'Um dos museus de arte moderna mais famosos do mundo, localizado em uma antiga usina elétrica.',
-  review: 'Entrada gratuita e uma incrível coleção de arte contemporânea de classe mundial.',
-  city: bath
-)
-bath6.save!
-
-bath7 = Place.new(
-  name: 'St. Paul’s Cathedral',
-  address: 'St. Paul’s Churchyard, London EC4M 8AD, United Kingdom',
-  price: 20.0,
-  description: 'Uma das catedrais mais icônicas do Reino Unido, famosa por sua grande cúpula e impressionante interior.',
-  review: 'Um símbolo de resiliência e beleza com vistas deslumbrantes da cúpula.',
-  city: bath
-)
-bath7.save!
-
-bath8 = Place.new(
-  name: 'The Natural History Museum',
-  address: 'Cromwell Rd, South Kensington, London SW7 5BD, United Kingdom',
-  price: 0.0,
-  description: 'Um museu com coleções de história natural mundialmente famosas, incluindo dinossauros, minerais e muito mais.',
-  review: 'Um dia educativo e divertido para toda a família, com entrada gratuita.',
-  city: bath
-)
-bath8.save!
-
-bath9 = Place.new(
-  name: 'The Shard',
-  address: '32 London Bridge St, London SE1 9SG, United Kingdom',
-  price: 32.00,
-  description: 'O edifício mais alto do Reino Unido, oferecendo uma vista de 360 graus da cidade a partir do seu deck de observação.',
-  review: 'Vistas incríveis da cidade, especialmente ao anoitecer.',
-  city: bath
-)
-bath9.save!
-
-bath10 = Place.new(
-  name: 'The Victoria and Albert Museum',
-  address: 'Cromwell Rd, South Kensington, London SW7 2RL, United Kingdom',
-  price: 0.0,
-  description: 'Um museu dedicado às artes decorativas e ao design, com uma vasta coleção que abrange séculos.',
-  review: 'Entrada gratuita para um mergulho fascinante no mundo das artes e do design.',
-  city: bath
-)
-bath10.save!
-
-newyork1 = Place.new(
-  name: 'Central Park',
-  address: 'New York, NY, USA',
-  price: 0.0,
-  description: 'Um vasto parque urbano no coração de Manhattan, oferecendo áreas verdes, trilhas, lagos e atividades recreativas para todas as idades.',
-  review: 'Um oásis tranquilo em meio ao caos da cidade. Perfeito para um passeio relaxante ou um piquenique.',
-  city: ny
-)
-newyork1.save!
-
-newyork2 = Place.new(
-  name: 'Statue of Liberty',
-  address: 'Liberty Island, New York, NY, USA',
-  price: 24.00,
-  description: 'Um dos monumentos mais icônicos dos Estados Unidos, simbolizando liberdade e esperança para milhões de imigrantes que chegaram ao país.',
-  review: 'Uma visita essencial para quem quer entender a história e os valores dos Estados Unidos.',
-  city: ny
-)
-newyork2.save!
-
-newyork3 = Place.new(
-  name: 'Empire State Building',
-  address: '350 5th Ave, New York, NY, USA',
-  price: 44.00,
-  description: 'Um dos arranha-céus mais famosos do mundo, oferecendo vistas panorâmicas incríveis de Nova Iorque.',
-  review: 'A vista do topo é de tirar o fôlego, especialmente ao entardecer.',
-  city: ny
-)
-newyork3.save!
-
-newyork4 = Place.new(
-  name: 'Times Square',
-  address: 'New York, NY, USA',
-  price: 0.0,
-  description: 'O coração pulsante de Manhattan, famoso por seus letreiros luminosos, lojas e teatros da Broadway.',
-  review: 'A energia e as luzes de Times Square são simplesmente incomparáveis. Um lugar que nunca dorme.',
-  city: ny
-)
-newyork4.save!
-
-newyork5 = Place.new(
-  name: 'The Metropolitan Museum of Art',
-  address: '1000 5th Ave, New York, NY, USA',
-  price: 30.00,
-  description: 'Um dos maiores e mais renomados museus de arte do mundo, com uma coleção vasta que abrange 5.000 anos de arte.',
-  review: 'Um destino imperdível para os amantes de arte e cultura. Reserve pelo menos um dia inteiro para explorar.',
-  city: ny
-)
-newyork5.save!
-
-newyork6 = Place.new(
-  name: 'Brooklyn Bridge',
-  address: 'New York, NY, USA',
-  price: 0.0,
-  description: 'Uma das pontes mais antigas e reconhecidas dos Estados Unidos, conectando Manhattan ao Brooklyn com vistas espetaculares da cidade.',
-  review: 'Caminhar pela Brooklyn Bridge ao entardecer é uma experiência mágica.',
-  city: ny
-)
-newyork6.save!
-
-newyork7 = Place.new(
-  name: 'Museum of Modern Art (MoMA)',
-  address: '11 W 53rd St, New York, NY, USA',
-  price: 25.00,
-  description: 'Um dos museus de arte moderna mais influentes do mundo, com uma coleção que inclui obras de Picasso, Van Gogh e Warhol.',
-  review: 'O MoMA é um tesouro para qualquer pessoa interessada em arte moderna.',
-  city: ny
-)
-newyork7.save!
-
-newyork8 = Place.new(
-  name: 'Broadway',
-  address: 'Broadway, New York, NY, USA',
+puts 'Creating 10 attractions for San Francisco...'
+sanfran1 = Place.new(
+  name: 'Golden Gate Bridge',
+  address: 'San Francisco, CA, USA',
   price: 100.00,
-  description: 'O epicentro do teatro americano, famoso por seus musicais e peças de renome mundial.',
-  review: 'Assistir a um show da Broadway é uma experiência imperdível para qualquer visitante de Nova Iorque.',
-  city: ny
+  description: 'An iconic suspension bridge offering stunning views of the bay and city. A must-see landmark of San Francisco.',
+  review: 'Walking across the Golden Gate Bridge is an unforgettable experience with breathtaking views.',
+  city: san_francisco
 )
-newyork8.save!
+sanfran1.save!
 
-newyork9 = Place.new(
-  name: 'One World Observatory',
-  address: '117 West St, New York, NY, USA',
-  price: 43.00,
-  description: 'Um observatório no topo do One World Trade Center, oferecendo vistas deslumbrantes de 360 graus de Nova Iorque.',
-  review: 'Uma homenagem emocionante e uma vista incomparável. Altamente recomendado.',
-  city: ny
+sanfran2 = Place.new(
+  name: 'Alcatraz Island',
+  address: 'San Francisco, CA, USA',
+  price: 39.00,
+  description: 'A former prison turned museum, located on an island in the bay. Known for its intriguing history and captivating tours.',
+  review: 'An eerie but fascinating visit. The audio tour provides a deep insight into the lives of former inmates.',
+  city: san_francisco
 )
-newyork9.save!
+sanfran2.save!
 
-newyork10 = Place.new(
-  name: 'Rockefeller Center',
-  address: '45 Rockefeller Plaza, New York, NY, USA',
-  price: 0.0,
-  description: 'Um complexo comercial icônico, famoso pela pista de patinação no gelo e pela árvore de Natal durante o inverno.',
-  review: 'O Rockefeller Center é um lugar cheio de história e charme, especialmente durante as festas de fim de ano.',
-  city: ny
+sanfran3 = Place.new(
+  name: 'Fisherman\'s Wharf',
+  address: 'San Francisco, CA, USA',
+  price: 100.00,
+  description: 'A bustling waterfront area known for its seafood, shopping, and street performances. Home to Pier 39 and the sea lions.',
+  review: 'A lively area with plenty to see and do. Great for a leisurely stroll and enjoying fresh seafood.',
+  city: san_francisco
 )
-newyork10.save!
+sanfran3.save!
 
-  berlin1 = Place.new(
-  name: 'Brandenburg Gate',
-  address: 'Pariser Platz, 10117 Berlin, Germany',
-  price: 0.0,
-  description: 'Um dos marcos mais icônicos de Berlim, símbolo de paz e unidade, situado no coração da cidade.',
-  review: 'Um lugar histórico e simbólico que é uma parada obrigatória para qualquer visitante de Berlim.',
-  city: berlin
+sanfran4 = Place.new(
+  name: 'Golden Gate Park',
+  address: 'San Francisco, CA, USA',
+  price: 100.00,
+  description: 'A large urban park with gardens, museums, and recreational areas. Ideal for outdoor activities and relaxation.',
+  review: 'A beautiful park with something for everyone. The Japanese Tea Garden is a highlight.',
+  city: san_francisco
 )
-berlin1.photo.attach(io: attraction1, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin1.save!
+sanfran4.save!
 
-berlin2 = Place.new(
-  name: 'Berlin TV Tower (Fernsehturm)',
-  address: 'Panoramastrasse 1A, 10178 Berlin, Germany',
-  price: 21.5,
-  description: 'A estrutura mais alta de Berlim, oferecendo uma vista panorâmica espetacular da cidade a partir do seu deck de observação.',
-  review: 'Uma experiência imperdível com vistas deslumbrantes, especialmente ao pôr do sol.',
-  city: berlin
+sanfran5 = Place.new(
+  name: 'Exploratorium',
+  address: 'Pier 15, San Francisco, CA, USA',
+  price: 30.00,
+  description: 'An interactive science museum offering hands-on exhibits for all ages. A great place to explore and learn through play.',
+  review: 'An engaging experience for both kids and adults. Interactive exhibits make learning fun.',
+  city: san_francisco
 )
-berlin2.photo.attach(io: attraction2, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin2.save!
+sanfran5.save!
 
-berlin3 = Place.new(
-  name: 'Pergamon Museum',
-  address: 'Bodestraße 1-3, 10178 Berlin, Germany',
-  price: 12.0,
-  description: 'Um museu mundialmente famoso, lar de artefatos históricos, incluindo o Altar de Pérgamo e o Portão de Ishtar.',
-  review: 'Uma coleção impressionante que transporta os visitantes para civilizações antigas.',
-  city: berlin
+sanfran6 = Place.new(
+  name: 'Chinatown',
+  address: 'San Francisco, CA, USA',
+  price: 80.00,
+  description: 'The oldest and one of the largest Chinatowns in North America. Known for its vibrant culture, shops, and restaurants.',
+  review: 'A colorful neighborhood with excellent food and unique shops. A must-visit for experiencing local culture.',
+  city: san_francisco
 )
-berlin3.photo.attach(io: attraction3, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin3.save!
+sanfran6.save!
 
-berlin4 = Place.new(
-  name: 'Berlin Wall Memorial',
-  address: 'Bernauer Str. 111, 13355 Berlin, Germany',
-  price: 0.0,
-  description: 'Um memorial que preserva a história do Muro de Berlim, com exposições ao ar livre e um centro de documentação.',
-  review: 'Um local impactante para aprender sobre a história dividida de Berlim e seus efeitos duradouros.',
-  city: berlin
+sanfran7 = Place.new(
+  name: 'San Francisco Museum of Modern Art (SFMOMA)',
+  address: '151 3rd St, San Francisco, CA, USA',
+  price: 25.00,
+  description: 'A major modern art museum featuring works by renowned artists such as Jackson Pollock and Andy Warhol.',
+  review: 'A top-notch museum with impressive exhibits. Perfect for art lovers and modern art enthusiasts.',
+  city: san_francisco
 )
-berlin4.photo.attach(io: attraction4, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin4.save!
+sanfran7.save!
 
-berlin5 = Place.new(
-  name: 'Checkpoint Charlie',
-  address: 'Friedrichstraße 43-45, 10117 Berlin, Germany',
-  price: 0.0,
-  description: 'O mais famoso ponto de passagem entre Berlim Oriental e Ocidental durante a Guerra Fria, agora um museu ao ar livre.',
-  review: 'Uma experiência histórica emocionante que revive os dias tensos da Guerra Fria.',
-  city: berlin
+sanfran8 = Place.new(
+  name: 'Palace of Fine Arts',
+  address: '3301 Lyon St, San Francisco, CA, USA',
+  price: 40.00,
+  description: 'A stunning Beaux-Arts structure surrounded by a lagoon. A picturesque spot for leisurely walks and photography.',
+  review: 'A beautiful and serene location. Ideal for a relaxing walk or a peaceful picnic.',
+  city: san_francisco
 )
-berlin5.photo.attach(io: attraction5, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin5.save!
+sanfran8.save!
 
-berlin6 = Place.new(
-  name: 'Reichstag Building',
-  address: 'Platz der Republik 1, 11011 Berlin, Germany',
-  price: 0.0,
-  description: 'O edifício do parlamento alemão, com uma cúpula de vidro moderna que oferece vistas panorâmicas da cidade.',
-  review: 'Um edifício histórico com uma cúpula impressionante e entrada gratuita com reserva antecipada.',
-  city: berlin
+sanfran9 = Place.new(
+  name: 'Cable Car Ride',
+  address: 'San Francisco, CA, USA',
+  price: 85.00,
+  description: 'Experience a historic and scenic ride on San Francisco\'s famous cable cars. A fun way to explore the city’s hills.',
+  review: 'A quintessential San Francisco experience. Enjoy the unique charm and views of the city.',
+  city: san_francisco
 )
-berlin6.photo.attach(io: attraction6, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin6.save!
+sanfran9.save!
 
-berlin7 = Place.new(
-  name: 'Museum Island',
-  address: 'Museum Island, Berlin, Germany',
-  price: 19.0,
-  description: 'Um complexo de cinco museus renomados, incluindo o Museu de Pérgamo, o Neues Museum e a Alte Nationalgalerie.',
-  review: 'Um paraíso cultural com coleções de arte e história de todo o mundo.',
-  city: berlin
+sanfran10 = Place.new(
+  name: 'Coit Tower',
+  address: '1 Telegraph Hill Blvd, San Francisco, CA, USA',
+  price: 10.00,
+  description: 'A historic tower offering panoramic views of the city and bay. Features murals from the 1930s inside.',
+  review: 'Great views and interesting history. The murals inside are a nice bonus.',
+  city: san_francisco
 )
-berlin7.photo.attach(io: attraction7, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin7.save!
+sanfran10.save!
+puts 'Attractions for San Francisco created.'
 
-berlin8 = Place.new(
-  name: 'East Side Gallery',
-  address: 'Mühlenstraße 3-100, 10243 Berlin, Germany',
-  price: 0.0,
-  description: 'A maior galeria de arte ao ar livre do mundo, com pinturas de artistas de todo o mundo ao longo do antigo Muro de Berlim.',
-  review: 'Uma exibição vibrante de arte e história que reflete a luta pela liberdade.',
-  city: berlin
+puts 'Creating 10 restaurants for San Francisco...'
+sanfran11 = Place.new(
+  name: 'Zuni Café',
+  address: '1658 Market St, San Francisco, CA, USA',
+  price: 75.00,
+  description: 'A beloved restaurant known for its wood-fired pizzas and roasted chicken, offering a cozy and inviting atmosphere.',
+  review: 'The roasted chicken is legendary, and the ambiance is perfect for a relaxed dining experience.',
+  city: san_francisco
 )
-berlin8.photo.attach(io: attraction8, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin8.save!
+sanfran11.save!
 
-berlin9 = Place.new(
-  name: 'Charlottenburg Palace',
-  address: 'Spandauer Damm 20-24, 14059 Berlin, Germany',
-  price: 14.0,
-  description: 'Um esplêndido palácio barroco com jardins deslumbrantes, refletindo a grandiosidade da Prússia.',
-  review: 'Uma visita encantadora ao maior palácio de Berlim, com interiores ricamente decorados.',
-  city: berlin
+sanfran12 = Place.new(
+  name: 'Tadich Grill',
+  address: '240 California St, San Francisco, CA, USA',
+  price: 70.00,
+  description: 'San Francisco’s oldest restaurant, famous for its seafood and classic American dishes, with a historic charm.',
+  review: 'A historic gem with outstanding seafood. The cioppino is a must-try.',
+  city: san_francisco
 )
-berlin9.photo.attach(io: attraction9, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin9.save!
+sanfran12.save!
 
-berlin10 = Place.new(
-  name: 'Berlin Cathedral (Berliner Dom)',
-  address: 'Am Lustgarten, 10178 Berlin, Germany',
-  price: 9.0,
-  description: 'Uma impressionante catedral protestante em estilo renascentista com um impressionante domo verde e vistas panorâmicas da cidade.',
-  review: 'Uma obra-prima arquitetônica com vistas deslumbrantes do topo de sua cúpula.',
-  city: berlin
+sanfran13 = Place.new(
+  name: 'Gary Danko',
+  address: '800 N Point St, San Francisco, CA, USA',
+  price: 250.00,
+  description: 'An upscale restaurant known for its fine dining and exceptional service, featuring a menu of French and American cuisine.',
+  review: 'An exquisite dining experience with impeccable service. Perfect for special occasions.',
+  city: san_francisco
 )
-berlin10.photo.attach(io: attraction10, filename: "photo_attraction.png", content_type: "image/jpg")
-berlin10.save!
+sanfran13.save!
 
-munich1 = Place.new(
-  name: 'Marienplatz',
-  address: 'Marienplatz, 80331 München, Germany',
-  price: 0.0,
-  description: 'A principal praça de Munique, famosa pelo Neues Rathaus (Nova Prefeitura) com seu famoso Glockenspiel.',
-  review: 'Um ponto de encontro vibrante no coração da cidade, cheio de história e arquitetura impressionante.',
-  city: munich
+sanfran14 = Place.new(
+  name: 'La Taqueria',
+  address: '2889 Mission St, San Francisco, CA, USA',
+  price: 15.00,
+  description: 'A popular spot for authentic Mexican tacos and burritos, renowned for its flavorful and fresh ingredients.',
+  review: 'The best tacos in San Francisco! Always fresh and incredibly tasty.',
+  city: san_francisco
 )
-munich1.save!
+sanfran14.save!
 
-munich2 = Place.new(
-  name: 'Englischer Garten',
-  address: 'Englischer Garten, 80538 München, Germany',
-  price: 0.0,
-  description: 'Um dos maiores parques urbanos do mundo, conhecido por seus jardins, lagos e a famosa torre chinesa.',
-  review: 'Um refúgio tranquilo e verde no meio da cidade, perfeito para caminhadas e piqueniques.',
-  city: munich
+sanfran15 = Place.new(
+  name: 'Swan Oyster Depot',
+  address: '1517 Polk St, San Francisco, CA, USA',
+  price: 50.00,
+  description: 'A no-frills seafood spot famous for its fresh oysters, clam chowder, and seafood salads.',
+  review: 'Fantastic seafood in a casual setting. The oysters are incredibly fresh and delicious.',
+  city: san_francisco
 )
-munich2.save!
+sanfran15.save!
 
-munich3 = Place.new(
-  name: 'Nymphenburg Palace',
-  address: 'Schloss Nymphenburg 1, 80638 München, Germany',
-  price: 8.0,
-  description: 'Um magnífico palácio barroco com extensos jardins, salas ricamente decoradas e um museu de carruagens.',
-  review: 'Um passeio majestoso pela residência de verão da antiga família real da Baviera.',
-  city: munich
+sanfran16 = Place.new(
+  name: 'State Bird Provisions',
+  address: '1529 Fillmore St, San Francisco, CA, USA',
+  price: 100.00,
+  description: 'A unique dining experience offering a range of inventive American dishes served dim sum-style.',
+  review: 'A creative and delightful dining experience. The dim sum-style service adds a fun twist.',
+  city: san_francisco
 )
-munich3.save!
+sanfran16.save!
 
-munich4 = Place.new(
-  name: 'Deutsches Museum',
-  address: 'Museumsinsel 1, 80538 München, Germany',
-  price: 14.0,
-  description: 'O maior museu de ciência e tecnologia do mundo, com exposições interativas para todas as idades.',
-  review: 'Um dia fascinante de aprendizado e diversão para toda a família.',
-  city: munich
+sanfran17 = Place.new(
+  name: 'Saison',
+  address: '178 Townsend St, San Francisco, CA, USA',
+  price: 300.00,
+  description: 'A high-end restaurant specializing in modern American cuisine with a focus on seasonal and locally sourced ingredients.',
+  review: 'An unforgettable culinary experience with a focus on exceptional flavors and presentation.',
+  city: san_francisco
 )
-munich4.save!
+sanfran17.save!
 
-munich5 = Place.new(
-  name: 'Olympiapark',
-  address: 'Spiridon-Louis-Ring 21, 80809 München, Germany',
-  price: 0.0,
-  description: 'Um parque olímpico construído para os Jogos de 1972, com atrações como o Olympiaturm e o Sea Life Munich.',
-  review: 'Um local histórico para atividades ao ar livre, eventos e vistas panorâmicas de Munique.',
-  city: munich
+sanfran18 = Place.new(
+  name: 'Nopa',
+  address: '560 Divisadero St, San Francisco, CA, USA',
+  price: 50.00,
+  description: 'A trendy spot known for its organic and locally sourced dishes, offering a relaxed atmosphere and excellent service.',
+  review: 'Great food with a laid-back vibe. The organic ingredients make a noticeable difference in flavor.',
+  city: san_francisco
 )
-munich5.save!
+sanfran18.save!
 
-munich6 = Place.new(
-  name: 'BMW Museum',
-  address: 'Am Olympiapark 2, 80809 München, Germany',
-  price: 10.0,
-  description: 'Um museu dedicado à história da BMW, apresentando carros clássicos, motos e inovações tecnológicas.',
-  review: 'Um paraíso para os entusiastas de carros e tecnologia, com exposições modernas e interativas.',
-  city: munich
+sanfran19 = Place.new(
+  name: 'The Slanted Door',
+  address: '1 Ferry Building #3, San Francisco, CA, USA',
+  price: 60.00,
+  description: 'A modern Vietnamese restaurant offering fresh and flavorful dishes with a focus on local ingredients.',
+  review: 'Innovative Vietnamese cuisine with fresh ingredients. The flavors are vibrant and delicious.',
+  city: san_francisco
 )
-munich6.save!
+sanfran19.save!
 
-munich7 = Place.new(
-  name: 'Viktualienmarkt',
-  address: 'Viktualienmarkt 3, 80331 München, Germany',
-  price: 0.0,
-  description: 'Um famoso mercado de alimentos ao ar livre com barracas vendendo produtos locais, flores, queijos e embutidos.',
-  review: 'Um ótimo lugar para experimentar a culinária bávara e desfrutar da atmosfera local.',
-  city: munich
+sanfran20 = Place.new(
+  name: 'Boulevard',
+  address: '1 Mission St, San Francisco, CA, USA',
+  price: 150.00,
+  description: 'An elegant restaurant offering a sophisticated menu of French-inspired cuisine and a romantic setting.',
+  review: 'Perfect for a special night out. The food is exceptional, and the atmosphere is charming.',
+  city: san_francisco
 )
-munich7.save!
-
-munich8 = Place.new(
-  name: 'Allianz Arena',
-  address: 'Werner-Heisenberg-Allee 25, 80939 München, Germany',
-  price: 19.0,
-  description: 'O estádio de futebol do Bayern de Munique, conhecido por sua arquitetura inovadora e luzes LED que mudam de cor.',
-  review: 'Uma experiência emocionante para os fãs de futebol, com visitas guiadas aos bastidores.',
-  city: munich
-)
-munich8.save!
-
-munich9 = Place.new(
-  name: 'Munich Residenz',
-  address: 'Residenzstraße 1, 80333 München, Germany',
-  price: 9.0,
-  description: 'O maior palácio urbano da Alemanha, com opulentas salas e tesouros reais.',
-  review: 'Uma visita fascinante que explora a riqueza e a história dos monarcas da Baviera.',
-  city: munich
-)
-munich9.save!
-
-munich10 = Place.new(
-  name: 'Hofbräuhaus München',
-  address: 'Platzl 9, 80331 München, Germany',
-  price: 0.0,
-  description: 'Uma das cervejarias mais famosas do mundo, oferecendo cervejas tradicionais e culinária bávara em um ambiente animado.',
-  review: 'Uma experiência autêntica da cultura bávara com boa música, comida e, claro, cerveja!',
-  city: munich
-)
-munich10.save!
-puts 'Attractions created.'
+sanfran20.save!
+puts 'Restaurants for San Francisco created.'

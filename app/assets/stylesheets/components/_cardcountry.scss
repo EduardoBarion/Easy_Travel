@@ -193,4 +193,10 @@ p {
   .carousel-control-next {
     width: 5%; /* Reduz a largura dos controles do carrossel */
   }
+
+  .cover-image {
+    width: 400px;
+    height: 100%; /* Adjust to fit your design */
+    object-fit: cover;
+  }
 }
