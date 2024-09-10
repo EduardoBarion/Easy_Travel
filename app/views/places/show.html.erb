@@ -12,14 +12,14 @@
   data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
   <hr>
+  <button type="button" class="btn btn-primary mb-5 mx-2"  style="padding: 10px 20px; border-radius: 25px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    <i class="fa-solid fa-calendar-plus"></i> Adicionar ao roteiro
+  </button>
 
   <%= link_to country_city_places_path(@place.city.country, @place.city), class: 'btn btn-primary mb-5 mx-2', style: 'padding: 10px 20px; border-radius: 25px;' do %>
     <i class="fa-solid fa-place-of-worship"></i> Voltar para outras atrações
   <% end %>
 
-  <button type="button" class="btn btn-primary mb-5 mx-2"  style="padding: 10px 20px; border-radius: 25px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <i class="fa-solid fa-calendar-plus"></i> Adicionar ao roteiro
-  </button>
 </div>
 
   <%# Modal %>
