@@ -60,36 +60,36 @@ puts 'Fake users created.'
 puts 'Creating 4 countries...'
 
 espanha = Country.new(
-  name: 'Espanha',
-  description: 'Explore a vibrante Espanha: praias deslumbrantes, cidades históricas e uma rica cultura de tapas e flamenco. De Barcelona a Toledo, uma experiência inesquecível.'
+  name: 'Spain',
+  description: 'Explore vibrant Spain: stunning beaches, historic cities, and a rich culture of tapas and flamenco. From Barcelona to Toledo, an unforgettable experience.'
 )
 espanha.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
 espanha.save!
 
 inglaterra = Country.new(
-  name: 'Inglaterra',
-  description: 'Descubra a encantadora Inglaterra: ruas históricas de Londres, castelos majestosos e a beleza dos Cotswolds. Uma mistura perfeita de charme e tradição.'
+  name: 'England',
+  description: 'Discover enchanting England: the historic streets of London, majestic castles, and the beauty of the Cotswolds. A perfect blend of charm and tradition.'
 )
 inglaterra.photo.attach(io: country2, filename: "photo_country.png", content_type: "image/jpg")
 inglaterra.save!
 
 brasil = Country.new(
-  name: 'Brasil',
-  description: 'Descubra o vibrante Brasil: praias paradisíacas do Rio de Janeiro, a exuberância da Floresta Amazónica e a cultura rica do Nordeste. Uma mistura fascinante de natureza exuberante e diversidade cultural.'
+  name: 'Brazil',
+  description: 'Discover vibrant Brazil: the paradise beaches of Rio de Janeiro, the lushness of the Amazon Rainforest, and the rich culture of the Northeast. A fascinating blend of exuberant nature and cultural diversity.'
 )
 brasil.photo.attach(io: country3, filename: "photo_country.png", content_type: "image/jpg")
 brasil.save!
 
 usa = Country.new(
   name: 'EUA',
-  description: 'Aventure-se pelos Estados Unidos: paisagens espetaculares, grandes cidades e parques nacionais. De Nova York à Califórnia, descubra a diversidade e o dinamismo.'
+  description: 'Venture through the United States: spectacular landscapes, big cities, and national parks. From New York to California, discover diversity and dynamism.'
 )
 usa.photo.attach(io: country4, filename: "photo_country.png", content_type: "image/jpg")
 usa.save!
 
 alemanha = Country.new(
-  name: 'Alemanha',
-  description: 'Experimente a Alemanha: castelos de contos de fadas, cidades vibrantes e uma cultura rica. De Berlim a Munique, um mergulho fascinante na história e modernidade.'
+  name: 'Germany',
+  description: 'Experience Germany: fairy-tale castles, vibrant cities, and a rich culture. From Berlin to Munich, a fascinating dive into history and modernity.'
 )
 alemanha.photo.attach(io: country5, filename: "photo_country.png", content_type: "image/jpg")
 alemanha.save!
@@ -98,57 +98,57 @@ puts 'Countries created.'
 puts 'Creating 2 cities for each country...'
 barcelona = City.new(
   name: 'Barcelona',
-  description: 'Uma cidade costeira famosa por suas obras arquitetônicas de Gaudí, praias ensolaradas e vida noturna animada.',
+  description: 'A vibrant coastal city famous for Gaudís stunning architectural masterpieces, such as the Sagrada Família and Park Güell, sunny beaches like Barceloneta, and a lively nightlife. Explore its bustling markets, savor delicious Catalan cuisine, and immerse yourself in its rich cultural heritage, from Gothic quarters to contemporary art galleries. Barcelona offers a perfect blend of history, creativity, and excitement.',
   country: espanha
 )
 barcelona.save!
 
 madrid = City.new(
   name: 'Madrid',
-  description: 'A vibrante capital da Espanha, conhecida por sua rica herança cultural, museus renomados e arquitetura impressionante.',
+  description: 'The vibrant capital of Spain, known for its rich cultural heritage, world-renowned museums like the Prado and Reina Sofía, and impressive architecture. Stroll through historic neighborhoods, enjoy lively plazas like Puerta del Sol and Plaza Mayor, and experience the citys dynamic energy. From the grand Royal Palace to beautiful parks like Retiro, Madrid offers a perfect blend of tradition, art, and modernity, inviting visitors to discover its unique charm and warmth.',
   country: espanha
 )
 madrid.save!
 
 londres = City.new(
-  name: 'Londres',
-  description: 'A capital icônica da Inglaterra, famosa por sua história rica, marcos como o Big Ben e o Palácio de Buckingham, e uma cena cultural vibrante, incluindo teatros, museus e galerias de arte de classe mundial.',
+  name: 'London',
+  description: 'The iconic capital of England, renowned for its rich history, famous landmarks like Big Ben, Buckingham Palace, and the Tower of London, and a vibrant cultural scene. London is a city where tradition meets modernity, offering a world-class array of theaters, museums, and art galleries, such as the British Museum, the National Gallery, and the Tate Modern. Stroll along the banks of the River Thames, explore the diverse neighborhoods from Camden to Notting Hill, and experience a dynamic blend of history, innovation, and multicultural flair that makes London truly unique.',
   country: inglaterra
 )
 londres.save!
 
 bath = City.new(
   name: 'Bath',
-  description: 'Uma charmosa cidade na Inglaterra, famosa por suas termas romanas bem preservadas, arquitetura georgiana distinta e paisagens pitorescas.',
+  description: 'A charming city in England, renowned for its well-preserved Roman baths, distinctive Georgian architecture, and picturesque landscapes. Nestled in the rolling hills of Somerset, Bath offers a unique blend of history and elegance. Wander through its stunning streets lined with honey-colored buildings, visit the magnificent Bath Abbey, and relax in the soothing waters of its ancient thermal springs. With its rich cultural heritage, delightful shops, and vibrant arts scene, Bath is a perfect destination for those seeking beauty, tranquility, and a touch of history.',
   country: inglaterra
 )
 bath.save!
 
 ny = City.new(
-  name: 'Nova York',
-  description: 'A capital icônica da Inglaterra, famosa por sua história rica, marcos como o Big Ben e o Palácio de Buckingham, e uma cena cultural vibrante, incluindo teatros, museus e galerias de arte de classe mundial.',
+  name: 'New York',
+  description: 'An iconic metropolis known as "The City That Never Sleeps," famous for its towering skyscrapers, such as the Empire State Building, and world-renowned landmarks like Times Square, Central Park, and the Statue of Liberty. New York City is a vibrant cultural hub, offering an endless array of experiences, from Broadway theaters and world-class museums like the Metropolitan Museum of Art and MoMA, to its diverse neighborhoods filled with unique shops, restaurants, and nightlife. Whether you are exploring the historic streets of Manhattan, catching a show, or savoring international cuisine, New York offers a dynamic blend of excitement, diversity, and energy unlike any other city in the world.',
   country: usa
 )
 ny.save!
 
 lasvegas = City.new(
-  name: 'Las vegas',
-  description: 'Uma charmosa cidade na Inglaterra, famosa por suas termas romanas bem preservadas, arquitetura georgiana distinta e paisagens pitorescas.',
+  name: 'Las Vegas',
+  description: 'A dazzling city in the heart of the Nevada desert, known worldwide for its vibrant nightlife, luxury resorts, and world-class entertainment. Las Vegas is famed for its iconic Strip, a glittering boulevard lined with mega-casinos, themed hotels, and endless opportunities for excitement. Experience the thrill of gaming, catch a spectacular show featuring top entertainers, or dine in restaurants helmed by celebrity chefs. Beyond the casinos, explore unique attractions like the Bellagio Fountains, the High Roller Observation Wheel, and the nearby natural beauty of Red Rock Canyon. Whether you are seeking a high-energy adventure or a relaxing getaway, Las Vegas offers an unforgettable blend of glamour, excitement, and endless possibilities.',
   country: usa
 )
 lasvegas.save!
 
 berlin = City.new(
   name: 'Berlin',
-  description: 'A capital dinâmica da Alemanha, famosa por sua história profunda, marcos icônicos como o Portão de Brandemburgo e o Muro de Berlim, além de uma cena cultural vibrante com museus, galerias e vida noturna diversificada.',
+  description: 'The dynamic capital of Germany, known for its profound history, iconic landmarks such as the Brandenburg Gate and the Berlin Wall, and a vibrant cultural scene. Berlin is a city that seamlessly blends the past with the present, offering visitors a unique experience of both history and modernity. Discover world-class museums on Museum Island, explore contemporary art galleries, and stroll through historic sites like Checkpoint Charlie. Enjoy its diverse neighborhoods, from the trendy streets of Kreuzberg to the elegant avenues of Charlottenburg. With a thriving nightlife, renowned music festivals, and a rich tapestry of global cuisine, Berlin is a city of endless discovery, creativity, and excitement.',
   country: alemanha
 )
 berlin.photo.attach(io: berlim, filename: "photo_country.png", content_type: "image/jpg")
 berlin.save!
 
 munich = City.new(
-  name: 'Munique',
-  description: 'A encantadora capital da Baviera, conhecida por sua rica herança cultural, cervejarias históricas, festivais famosos como a Oktoberfest e uma combinação única de tradição e modernidade em suas paisagens e arquitetura.',
+  name: 'Munich',
+  description: 'The charming capital of Bavaria, renowned for its rich cultural heritage, historic beer halls, and world-famous festivals like Oktoberfest. Munich offers a unique blend of tradition and modernity, reflected in its stunning landscapes and diverse architecture. Stroll through the vibrant Marienplatz, explore the opulent Nymphenburg Palace, and enjoy a stein of beer in one of the citys historic breweries, such as Hofbräuhaus. With its picturesque parks like the English Garden, cutting-edge museums like the BMW Museum, and a lively arts and music scene, Munich presents an ideal mix of old-world charm and contemporary vibrancy. Whether you are savoring local Bavarian delicacies or marveling at its historic and modern architecture, Munich captivates visitors with its warm hospitality and dynamic spirit.',
   country: alemanha
 )
 munich.photo.attach(io: munique, filename: "photo_country.png", content_type: "image/jpg")

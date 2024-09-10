@@ -3,31 +3,31 @@
 
 <div class="py-5" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://marinhoturismobuzios.com.br/wp-content/uploads/2018/10/viagem-internacional-1.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; width: 100%; height: 500px; display: flex; justify-content: center; align-items: center; flex-direction: column; text-align: center;">
     <div style="background-color: rgba(255, 255, 255, 0.7); padding: 20px 20px; border-radius: 10px; max-width: 90%;">
-        <h1 style="color: #161D6F; font-size: 3.0em; line-height: 1.2em; margin-bottom: 20px;"><strong>Easy Travel</strong> – Viajar pelo Mundo nunca foi tão fácil!</h1>
-        <h2 style="color: #161D6F; font-size: 2.5em;">Seu roteiro pronto em alguns cliques!</h2>
+        <h1 style="color: #161D6F; font-size: 3.0em; line-height: 1.2em; margin-bottom: 20px;"><strong>Easy Travel</strong> – Traveling the World Has Never Been Easier!</h1>
+        <h2 style="color: #161D6F; font-size: 2.5em;">Your Itinerary Ready in a Few Clicks!</h2>
         <%= link_to countries_path, class: "m-3 btn btn-outline-dark rounded-pill btn-lg mx-3" do %>
-          <i class="fa-solid fa-location-dot"></i> Explore Destinos
+          <i class="fa-solid fa-location-dot"></i> Explore Destinations
         <% end %>
     </div>
 </div>
 
 <div class="container" style="margin-top: 40px;">
-  <h1 style="color: #161D6F; font-family: Pacifico; text-align: center;"><strong>Seu Próximo Destino, Sob Medida!</strong></h1>
+  <h1 style="color: #161D6F; font-family: Pacifico; text-align: center;"><strong>Your Next Destination, Tailor-Made!</strong></h1>
   <p style="text-align: justify; font-size: 1.5em; margin-top: 15px;">
-    Este é o site ideal para quem deseja explorar o mundo de maneira prática e personalizada. Nossa plataforma ajuda você a criar roteiros de viagem sob medida, levando em conta suas preferências e interesses. Com apenas alguns cliques, você pode planejar itinerários únicos que combinam pontos turísticos, restaurantes, hotéis e atividades imperdíveis, tudo pensado especialmente para você.<strong> Com Easy Travel, sua próxima aventura começa fácil, rápida e do seu jeito!</strong>
+    Here is the ideal website for those who want to explore the world in a practical and personalized way. Our platform helps you create customized travel itineraries tailored to your preferences and interests. With just a few clicks, you can plan unique journeys that combine tourist attractions, restaurants, hotels, and must-see activities, all designed especially for you.</strong>With Easy Travel, your next adventure begins easily, quickly, and your way!</strong>
   </p>
 </div>
 
 <hr>
 
-<h2 class="text-center mt-5", style="color: #161D6F; font-size: 2.5em; font-family: 'Pacifico', sans-serif;"><strong>Destinos mais pesquisados - </strong></h2>
+<h2 class="text-center mt-5", style="color: #161D6F; font-size: 2.5em; font-family: 'Pacifico', sans-serif;"><strong>Most Searched Destinations - </strong></h2>
 <div class="m-5">
   <%= render 'pages/pesquisados',  country: @countries %>
 </div>
 
 <hr>
 
-<h2 class="text-center mt-5", style="color: #161D6F; font-size: 2.5em; font-family: 'Pacifico', sans-serif;"><strong>Destinos mais visitados - </strong></h2>
+<h2 class="text-center mt-5", style="color: #161D6F; font-size: 2.5em; font-family: 'Pacifico', sans-serif;"><strong>Explore the World’s Hottest Destinations! </strong></h2>
 <div class="m-5">
   <%= render 'pages/visitados',  country: @countries %>
 </div>
