@@ -13,7 +13,7 @@
         <div class="d-flex justify-content-center">
           <% country_group.each do |country| %>
             <article class="cardcountry m-4">
-              <%= cl_image_tag country.photo.key, height: 300, width: 400, crop: :fill, class: "d-block w-100", alt: "Photo" %>
+              <%= cl_image_tag country.photo.key, crop: :fill, class: "d-block w-100 cover-image", alt: "Photo" %>
               <div class="cardcountry__content | flow">
                 <div class="cardcountry__content--container | flow">
                   <h2 class="cardcountry__title"><%= country.name %></h2>
