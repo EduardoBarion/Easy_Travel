@@ -44,13 +44,15 @@ puts 'DB cleaned.'
 puts 'Creating 2 fake users...'
 admin = User.new(
   email: 'admin@admin.com',
-  password: '123456'
+  password: '123456',
+  username: 'Eduzin'
 )
 admin.save!
 
 user = User.new(
   email: 'user@user.com',
-  password: '123456'
+  password: '123456',
+  username: 'Duduzin'
 )
 user.save!
 puts 'Fake users created.'
