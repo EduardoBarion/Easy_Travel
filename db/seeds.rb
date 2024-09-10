@@ -14,14 +14,17 @@ country1 = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2
 # Inglaterra ok
 country2 = URI.open("https://luniverstours.com/wp-content/uploads/2021/08/guia-brasileiro-em-londres-guia-em-londres-passeios-em-londres-1.jpeg")
 # Brasil ok
-country3 = URI.open("https://img.paraviagem.com.br/uploads/2015/04/destinos-pelo-brasil.jpg")
+country3 = URI.open("https://www.submarinoviagens.com.br/media/17699717/shutterstock_422575195.jpg")
 #Eua ok
 country4 = URI.open("https://www.universal-assistance.com/br-blog/wp-content/uploads/2022/03/seguro-viagem-eua-blog-ua-br-1.jpg")
 #Alemanha ok
 country5 = URI.open("https://cdn.segurospromo.com.br/2019/11/seguro-viagem-alemanha.jpg")
 
-berlim = URI.open("https://pontospravoar.com/wp-content/uploads/2023/07/Berlim.jpg")
-munique = URI.open("https://wp.rotadeferias.com.br/wp-content/uploads/2022/10/Depositphotos_197063222_L.jpg")
+ny = URI.open("https://www.urbanparkgru.com.br/dicas-de-viagem/wp-content/uploads/2019/09/viagem-para-nova-york.jpg")
+la = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2018/05/los-angeles-hollywood-creditos-thinkstock-147308809.jpg")
+mi = URI.open("https://static.voegol.com.br/voegol/inline-images/Pag-de-Destinos_Miami_CROP-MOBILE.png")
+sf = URI.open("https://turismoetc.com.br/wp-content/uploads/2019/10/golden-gate-bridge.jpg")
+ch = URI.open("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc1rOnCLAIRK-DHH7PWc2Fsrm54fiHMBNnnw&s")
 
 attraction1 = URI.open("https://pontospravoar.com/wp-content/uploads/2023/07/Berlim.jpg")
 attraction2 = URI.open("https://media.istockphoto.com/id/489776362/pt/foto/panorama-de-horizonte-de-berlim-com-torre-de-televis%C3%A3o-ao-p%C3%B4r-do-sol-alemanha.jpg?s=612x612&w=0&k=20&c=JsSZwxEuELzIQbAfyFGmndwv0g9Rpds3YfgipAsoqO4=")
@@ -128,26 +131,43 @@ bath = City.new(
 )
 bath.save!
 
-ny = City.new(
-  name: 'Nova York',
-  description: 'A capital icônica da Inglaterra, famosa por sua história rica, marcos como o Big Ben e o Palácio de Buckingham, e uma cena cultural vibrante, incluindo teatros, museus e galerias de arte de classe mundial.',
-  country: usa
+ny = City.create!(
+  name: "Nova Iorque",
+  country: usa,
+  lat: 42.71,
+  lng: -78.41,
 )
-ny.save!
+los_angeles = City.create!(
+  name: "Miami",
+  country: usa,
+  lat: 34.02,
+  lng: -118.74,
+)
+miami = City.create!(
+  name: "Miami",
+  country: usa,
+  lat: 25.78,
+  lng: -80.31,
+)
+san_francisco = City.create!(
+  name: "San Francisco",
+  country: usa,
+  lat: 37.75,
+  lng: -122.52,
+)
 
-lasvegas = City.new(
-  name: 'Las vegas',
-  description: 'Uma charmosa cidade na Inglaterra, famosa por suas termas romanas bem preservadas, arquitetura georgiana distinta e paisagens pitorescas.',
-  country: usa
+chicago = City.create!(
+  name: "Chicago",
+  country: usa,
+  lat: 41.88,
+  lng: -87.63,
 )
-lasvegas.save!
 
 berlin = City.new(
   name: 'Berlin',
   description: 'A capital dinâmica da Alemanha, famosa por sua história profunda, marcos icônicos como o Portão de Brandemburgo e o Muro de Berlim, além de uma cena cultural vibrante com museus, galerias e vida noturna diversificada.',
   country: alemanha
 )
-berlin.photo.attach(io: berlim, filename: "photo_country.png", content_type: "image/jpg")
 berlin.save!
 
 munich = City.new(
@@ -155,7 +175,6 @@ munich = City.new(
   description: 'A encantadora capital da Baviera, conhecida por sua rica herança cultural, cervejarias históricas, festivais famosos como a Oktoberfest e uma combinação única de tradição e modernidade em suas paisagens e arquitetura.',
   country: alemanha
 )
-munich.photo.attach(io: munique, filename: "photo_country.png", content_type: "image/jpg")
 munich.save!
 puts 'Countries created.'
 
