@@ -48,8 +48,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_09_233746) do
     t.bigint "country_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.float "lat"
-    t.float "lng"
     t.index ["country_id"], name: "index_cities_on_country_id"
   end
 
@@ -88,7 +86,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_09_233746) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
-    t.string "fsq_id"
     t.index ["city_id"], name: "index_places_on_city_id"
   end
 
