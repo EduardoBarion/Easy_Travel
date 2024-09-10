@@ -9,7 +9,6 @@ class PlacesController < ApplicationController
     @place = Place.find(params[:id])
     @plan = Plan.new
     @markers = [{ lat: @place.latitude, lng: @place.longitude }]
-    @trip = @plan.trip
   end
 
   private
