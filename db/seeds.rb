@@ -133,13 +133,6 @@ australia.save!
 puts 'Countries created.'
 
 puts 'Creating 5 USA cities...'
-ny = City.create!(
-  name: 'New York',
-  description: 'An iconic global city, famous for its towering skyline, landmarks such as the Statue of Liberty and Central Park, and a vibrant cultural scene that includes world-class theaters, museums, and art galleries. New York is a bustling metropolis known for its diversity, energy, and as a hub for business, fashion, and entertainment.',
-  country: usa
-)
-ny.photo.attach(io: newy, filename: "photo_city.png", content_type: "image/jpg")
-
 los_angeles = City.create!(
   name: "Los Angeles",
   description: 'Known as the entertainment capital of the world, Los Angeles is home to Hollywood, famous beaches, and a diverse cultural landscape. This sprawling city is renowned for its sunny weather, glamorous lifestyle, and its role as a major hub for the film and television industry.',
@@ -151,7 +144,7 @@ miami = City.create!(
   name: "Miami",
   description: 'A vibrant coastal city known for its stunning beaches, lively nightlife, and diverse cultural influences, especially from Latin America and the Caribbean. Miami is a hotspot for art, design, and cuisine, with a tropical climate that attracts visitors year-round.',
   country: usa
- )
+)
 miami.photo.attach(io: mi, filename: "photo_city.png", content_type: "image/jpg")
 
 san_francisco = City.create!(
@@ -167,13 +160,20 @@ chicago = City.create!(
   country: usa
 )
 chicago.photo.attach(io: chi, filename: "photo_city.png", content_type: "image/jpg")
+
+ny = City.create!(
+  name: 'New York',
+  description: 'An iconic global city, famous for its towering skyline, landmarks such as the Statue of Liberty and Central Park, and a vibrant cultural scene that includes world-class theaters, museums, and art galleries. New York is a bustling metropolis known for its diversity, energy, and as a hub for business, fashion, and entertainment.',
+  country: usa
+)
+ny.photo.attach(io: newy, filename: "photo_city.png", content_type: "image/jpg")
 puts 'Cities created.'
 
 puts 'Creating 10 attractions for San Francisco...'
 sanfran1 = Place.new(
   name: 'Golden Gate Bridge',
   address: 'San Francisco, CA, USA',
-  price: 0.0,
+  price: 100.00,
   description: 'An iconic suspension bridge offering stunning views of the bay and city. A must-see landmark of San Francisco.',
   review: 'Walking across the Golden Gate Bridge is an unforgettable experience with breathtaking views.',
   city: san_francisco
@@ -193,7 +193,7 @@ sanfran2.save!
 sanfran3 = Place.new(
   name: 'Fisherman\'s Wharf',
   address: 'San Francisco, CA, USA',
-  price: 0.0,
+  price: 100.00,
   description: 'A bustling waterfront area known for its seafood, shopping, and street performances. Home to Pier 39 and the sea lions.',
   review: 'A lively area with plenty to see and do. Great for a leisurely stroll and enjoying fresh seafood.',
   city: san_francisco
@@ -203,7 +203,7 @@ sanfran3.save!
 sanfran4 = Place.new(
   name: 'Golden Gate Park',
   address: 'San Francisco, CA, USA',
-  price: 0.0,
+  price: 100.00,
   description: 'A large urban park with gardens, museums, and recreational areas. Ideal for outdoor activities and relaxation.',
   review: 'A beautiful park with something for everyone. The Japanese Tea Garden is a highlight.',
   city: san_francisco
@@ -223,7 +223,7 @@ sanfran5.save!
 sanfran6 = Place.new(
   name: 'Chinatown',
   address: 'San Francisco, CA, USA',
-  price: 0.0,
+  price: 80.00,
   description: 'The oldest and one of the largest Chinatowns in North America. Known for its vibrant culture, shops, and restaurants.',
   review: 'A colorful neighborhood with excellent food and unique shops. A must-visit for experiencing local culture.',
   city: san_francisco
@@ -243,7 +243,7 @@ sanfran7.save!
 sanfran8 = Place.new(
   name: 'Palace of Fine Arts',
   address: '3301 Lyon St, San Francisco, CA, USA',
-  price: 0.0,
+  price: 40.00,
   description: 'A stunning Beaux-Arts structure surrounded by a lagoon. A picturesque spot for leisurely walks and photography.',
   review: 'A beautiful and serene location. Ideal for a relaxing walk or a peaceful picnic.',
   city: san_francisco
@@ -253,7 +253,7 @@ sanfran8.save!
 sanfran9 = Place.new(
   name: 'Cable Car Ride',
   address: 'San Francisco, CA, USA',
-  price: 8.00,
+  price: 85.00,
   description: 'Experience a historic and scenic ride on San Francisco\'s famous cable cars. A fun way to explore the city’s hills.',
   review: 'A quintessential San Francisco experience. Enjoy the unique charm and views of the city.',
   city: san_francisco
