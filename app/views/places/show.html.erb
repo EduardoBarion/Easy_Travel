@@ -30,7 +30,9 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <%= render "places/form", plan: @plan, place: @place %>
+        <%= turbo_frame_tag "plan_form" do %>
+          <%= render "places/form", plan: @plan, place: @place %>
+        <% end %>
       </div>
       <div class="modal-footer">
       </div>
