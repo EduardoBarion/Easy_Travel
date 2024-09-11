@@ -26,7 +26,7 @@ country12 = URI.open("https://estivarefratarios.com.br/wp-content/uploads/2019/0
 newy = URI.open("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEixc0VqgRw_J22Oj90737XWJ_SJngKkiNNUFhNsN_aQYoPViy7FNcDRu7rh3Pg1HrEOpX-7Z7hwug0hyphenhyphenngyAwPSQnK_ZUIjXd489f5vIeaoPzCyzji4iICk0idjjmxKuvAmy8FstUV_Zr4/s1600/new-york-city-wallpaper-tumblr.jpg")
 la = URI.open("https://i.ytimg.com/vi/H6-G5L1yrkE/maxresdefault.jpg")
 mi = URI.open("https://static.voegol.com.br/voegol/inline-images/Pag-de-Destinos_Miami_CROP-MOBILE.png")
-sf = URI.open("https://i.ytimg.com/vi/YE2HYo2ldEA/maxresdefault.jpg")
+sf = URI.open("https://i.ytimg.com/vi/90cBVp-BogA/maxresdefault.jpg")
 chi = URI.open("https://i.ytimg.com/vi/LrV0ffEfFQk/maxresdefault.jpg")
 
 sfa1 = URI.open("https://s3.us-west-2.amazonaws.com/images.actiontourguide.com/wp-content/uploads/2021/02/16085355/SF-Golden-Gate-Resized-scaled.jpg")
