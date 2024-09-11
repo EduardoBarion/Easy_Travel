@@ -1,3 +1,4 @@
+<%= turbo_stream_from "user_#{current_user.id}" %>
 <div class="d-flex justify-content-center align-items-center" style ="height: 100vh">
   <div class="container p-4" style="max-width: 600px; background-color: rgba(255, 255, 255, 0.6); border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); ">
     <div class="mt-4">
@@ -5,7 +6,9 @@
       <ul class="list-unstyled text-center">
         <div id="trips" class="trips">
           <% @trips.each do |trip| %>
-            <%= render "trips/trip", trip: trip %>
+            <%= turbo_frame_tag "trips" do %>
+              <%= render "trips/trip", trip: trip %>
+            <% end %>
           <% end %>
         </div>
       </ul>

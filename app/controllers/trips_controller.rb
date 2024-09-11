@@ -15,13 +15,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     if @trip.save
-      respond_to do |format|
-        format.turbo_stream do
-          render turbo_stream: turbo_stream.append(:trips, partial: "trips/trip",
-            locals: { trip: @trips })
-        end
-        format.html { redirect_to trips_path }
-      end
+      redirect_to trips_path
     else
       render :new, status: :unprocessable_entity
     end

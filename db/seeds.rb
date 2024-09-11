@@ -264,8 +264,8 @@ sanfran6 = Place.new(
 )
 sanfran6.photo.attach(io: sfa6, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran6.save!
-
 sanfran7 = Place.new(
+
   name: 'San Francisco- MOMA',
   address: '151 3rd St, San Francisco, CA, USA',
   price: 25.00,
