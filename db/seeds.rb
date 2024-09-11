@@ -23,11 +23,14 @@ country10 = URI.open("https://likechile.com/wp-content/uploads/2017/05/clima-em-
 country11 = URI.open("https://s1.static.brasilescola.uol.com.br/be/conteudo/images/807e500dace27730e03388e69edd8dc6.jpg")
 country12 = URI.open("https://estivarefratarios.com.br/wp-content/uploads/2019/09/Austr%C3%A1lia-Um-pa%C3%ADs-em-plena-ascens%C3%A3o.png")
 
-newy = URI.open("https://www.viajenaviagem.com/wp-content/uploads/2014/02/nova-york-vista-one-world-observatory.jpg.webp")
-la = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2018/05/los-angeles-hollywood-creditos-thinkstock-147308809.jpg")
+newy = URI.open("https://i.ytimg.com/vi/7S7smPw9EiE/sddefault.jpg")
+la = URI.open("https://i.ytimg.com/vi/VOM__NZAFQM/maxresdefault.jpg
+")
 mi = URI.open("https://static.voegol.com.br/voegol/inline-images/Pag-de-Destinos_Miami_CROP-MOBILE.png")
-sf = URI.open("https://turismoetc.com.br/wp-content/uploads/2019/10/golden-gate-bridge.jpg")
-chi = URI.open("https://dreamsintercambios.com.br/static/cd3bd123e2dbe4933f9e9bd31788f081/e170b/chicago-imagem-conheca-a-cidade-de-chicago.webp")
+sf = URI.open("https://cdn.slidesharecdn.com/ss_thumbnails/conociendo-150927230128-lva1-app6892-thumbnail.jpg?width=640&height=640&fit=bounds
+")
+chi = URI.open("https://i.ytimg.com/vi/LrV0ffEfFQk/maxresdefault.jpg
+")
 
 sfa1 = URI.open("https://s3.us-west-2.amazonaws.com/images.actiontourguide.com/wp-content/uploads/2021/02/16085355/SF-Golden-Gate-Resized-scaled.jpg")
 sfa2 = URI.open("https://www.usatoday.com/gcdn/-mm-/1abbac059a7e6f21ff3aa7e38760a41a48819119/c=0-217-2118-1414/local/-/media/2018/08/17/USATODAY/USATODAY/636701422865855661-GettyImages-632216604.jpg")
