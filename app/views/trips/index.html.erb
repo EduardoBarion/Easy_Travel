@@ -1,13 +1,16 @@
+<%= turbo_stream_from "user_#{current_user.id}" %>
 <div class="d-flex justify-content-center align-items-center" style ="height: 100vh">
   <div class="container p-4" style="max-width: 600px; background-color: rgba(255, 255, 255, 0.6); border-radius: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); ">
     <div class="mt-4">
       <h1 class="text-center mb-4" style="font-family: 'Jazz LET'; color: #4a4a4a;">Trips 🧳</h1>
       <ul class="list-unstyled text-center">
-        <% @trips.each do |trip| %>
-          <%= link_to trip_path(trip), class: "btn btn-outline-warning rounded-pill" do %>
-            <i class="fa-solid fa-map-location-dot"></i> <%= trip.name %>
+        <div id="trips" class="trips">
+          <% @trips.each do |trip| %>
+            <%= turbo_frame_tag "trips" do %>
+              <%= render "trips/trip", trip: trip %>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </ul>
       <div class="text-center">
         <%= link_to root_path, class: "btn btn-outline-secondary rounded-pill" do %>

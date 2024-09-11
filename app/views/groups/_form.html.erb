@@ -1,14 +1,14 @@
 <%= turbo_frame_tag "membership_form" do %>
   <div class="container">
     <%= simple_form_for [group, membership] do |f| %>
-      <%= f.input :user_id, collection: @users.sort, label_method: :last, value_method: :first %>
+      <%= f.association :user, collection: User.all.order(:username).pluck(:username, :id) %>
       <%= f.submit 'Add friend to itinerary', class: 'btn btn-outline-primary m-4' %>
     <% end %>
   </div>
-<div class="d-flex justify-content-center">
-  <p> <strong> Share this link to add your friends: </strong> </p>
-</div>
-<div class="d-flex justify-content-center">
-  <%= link_to join_trip_url(@trip.invite_token), join_trip_url(@trip.invite_token) %>
-</div>
+  <div class="d-flex justify-content-center">
+    <p> <strong> Share this link to add your friends: </strong> </p>
+  </div>
+  <div class="d-flex justify-content-center">
+    <%= link_to join_trip_url(group.trip.invite_token), join_trip_url(group.trip.invite_token) %>
+  </div>
 <% end %>

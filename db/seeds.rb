@@ -51,6 +51,7 @@ sfa19 = URI.open("https://i0.wp.com/salepepeamore.com/wp-content/uploads/2016/02
 sfa20 = URI.open("https://images.otstatic.com/prod1/31869098/4/huge.jpg")
 
 puts 'Cleaning DB...'
+Trip.destroy_all
 User.destroy_all
 Place.destroy_all
 City.destroy_all
@@ -263,8 +264,8 @@ sanfran6 = Place.new(
 )
 sanfran6.photo.attach(io: sfa6, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran6.save!
-
 sanfran7 = Place.new(
+
   name: 'San Francisco- MOMA',
   address: '151 3rd St, San Francisco, CA, USA',
   price: 25.00,
