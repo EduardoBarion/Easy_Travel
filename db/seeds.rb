@@ -29,6 +29,27 @@ mi = URI.open("https://static.voegol.com.br/voegol/inline-images/Pag-de-Destinos
 sf = URI.open("https://turismoetc.com.br/wp-content/uploads/2019/10/golden-gate-bridge.jpg")
 chi = URI.open("https://dreamsintercambios.com.br/static/cd3bd123e2dbe4933f9e9bd31788f081/e170b/chicago-imagem-conheca-a-cidade-de-chicago.webp")
 
+sfa1 = URI.open("https://s3.us-west-2.amazonaws.com/images.actiontourguide.com/wp-content/uploads/2021/02/16085355/SF-Golden-Gate-Resized-scaled.jpg")
+sfa2 = URI.open("https://www.usatoday.com/gcdn/-mm-/1abbac059a7e6f21ff3aa7e38760a41a48819119/c=0-217-2118-1414/local/-/media/2018/08/17/USATODAY/USATODAY/636701422865855661-GettyImages-632216604.jpg")
+sfa3 = URI.open("https://drupal8-prod.visitcalifornia.com/sites/drupal8-prod.visitcalifornia.com/files/VCW_D_SFcity_FishermanWharf_1280x642_sized.jpg")
+sfa4 = URI.open("https://media.cntraveler.com/photos/543d39fd00ac583c0af232fb/16:9/w_2560,c_limit/golden%20gate%20park-17.jpg")
+sfa5 = URI.open("https://gabreport.com/wp-content/uploads/2011/07/Exploratorium-Future-New-Home-at-Pier-17-Rendered-View-from-the-Waterfront.jpg")
+sfa6 = URI.open("https://ychef.files.bbci.co.uk/1280x720/p0h9y5p1.jpg")
+sfa7 = URI.open("https://cdn.thatch.in/cdn-cgi/image/width=3840,format=webp/images/149096/3z36pa.png")
+sfa8 = URI.open("https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg")
+sfa9 = URI.open("https://s.hdnux.com/photos/01/32/15/02/23646393/4/rawImage.jpg")
+sfa10 = URI.open("https://www.zhotelssf.com/content/uploads/2023/04/Coit-Tower.jpeg")
+sfa11 = URI.open("https://images.firstwefeast.com/complex/image/upload/c_fill,dpr_auto,f_auto,fl_lossy,g_face,q_auto,w_1280/igasvpmxawobtfnjdhqq.jpg")
+sfa12 = URI.open("https://wineandwhiskeyglobe.com/wp-content/uploads/2024/01/TadichEntry-scaled.jpg")
+sfa13 = URI.open("https://s.hdnux.com/photos/60/22/02/15351747/3/1236x0.jpg")
+sfa14 = URI.open("https://cdn.vox-cdn.com/thumbor/6WnVyWh9YJdOmV1Aa9XynU3CQ-A=/0x0:960x539/1200x800/filters:focal(404x194:556x346)/cdn.vox-cdn.com/uploads/chorus_image/image/62317581/16195691_1219703074734172_4366605602053428369_n.0.jpg")
+sfa15 = URI.open("https://img.delicious.com.au/JH7_hGCi/del/2018/08/swan-oyster-depot-line-by-tristan-lutze-85108-1.jpg")
+sfa16 = URI.open("https://res.cloudinary.com/the-infatuation/image/upload/q_auto,f_auto/cms/state-bird-interior-2")
+sfa17 = URI.open("https://res.cloudinary.com/the-infatuation/image/upload/q_auto,f_auto/cms/MaryLagier_SF_Saison_Interior_3")
+sfa18 = URI.open("https://offloadmedia.feverup.com/secretsanfrancisco.com/wp-content/uploads/2022/12/13023722/photoholgic-fn6x1TL290w-unsplash-1024x577.jpg")
+sfa19 = URI.open("https://i0.wp.com/salepepeamore.com/wp-content/uploads/2016/02/91ch-z-cwl1.jpg?fit=2352%2C1376&ssl=1")
+sfa20 = URI.open("https://images.otstatic.com/prod1/31869098/4/huge.jpg")
+
 puts 'Cleaning DB...'
 Trip.destroy_all
 User.destroy_all
@@ -186,6 +207,7 @@ sanfran1 = Place.new(
   review: 'Walking across the Golden Gate Bridge is an unforgettable experience with breathtaking views.',
   city: san_francisco
 )
+sanfran1.photo.attach(io: sfa1, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran1.save!
 
 sanfran2 = Place.new(
@@ -196,16 +218,18 @@ sanfran2 = Place.new(
   review: 'An eerie but fascinating visit. The audio tour provides a deep insight into the lives of former inmates.',
   city: san_francisco
 )
+sanfran2.photo.attach(io: sfa2, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran2.save!
 
 sanfran3 = Place.new(
-  name: 'Fisherman\'s Wharf',
+  name: "Fisherman's Wharf",
   address: 'San Francisco, CA, USA',
   price: 100.00,
   description: 'A bustling waterfront area known for its seafood, shopping, and street performances. Home to Pier 39 and the sea lions.',
   review: 'A lively area with plenty to see and do. Great for a leisurely stroll and enjoying fresh seafood.',
   city: san_francisco
 )
+sanfran3.photo.attach(io: sfa3, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran3.save!
 
 sanfran4 = Place.new(
@@ -216,6 +240,7 @@ sanfran4 = Place.new(
   review: 'A beautiful park with something for everyone. The Japanese Tea Garden is a highlight.',
   city: san_francisco
 )
+sanfran4.photo.attach(io: sfa4, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran4.save!
 
 sanfran5 = Place.new(
@@ -226,6 +251,7 @@ sanfran5 = Place.new(
   review: 'An engaging experience for both kids and adults. Interactive exhibits make learning fun.',
   city: san_francisco
 )
+sanfran5.photo.attach(io: sfa5, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran5.save!
 
 sanfran6 = Place.new(
@@ -236,16 +262,18 @@ sanfran6 = Place.new(
   review: 'A colorful neighborhood with excellent food and unique shops. A must-visit for experiencing local culture.',
   city: san_francisco
 )
+sanfran6.photo.attach(io: sfa6, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran6.save!
 
 sanfran7 = Place.new(
-  name: 'San Francisco Museum of Modern Art (SFMOMA)',
+  name: 'San Francisco- MOMA',
   address: '151 3rd St, San Francisco, CA, USA',
   price: 25.00,
   description: 'A major modern art museum featuring works by renowned artists such as Jackson Pollock and Andy Warhol.',
   review: 'A top-notch museum with impressive exhibits. Perfect for art lovers and modern art enthusiasts.',
   city: san_francisco
 )
+sanfran7.photo.attach(io: sfa7, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran7.save!
 
 sanfran8 = Place.new(
@@ -256,16 +284,18 @@ sanfran8 = Place.new(
   review: 'A beautiful and serene location. Ideal for a relaxing walk or a peaceful picnic.',
   city: san_francisco
 )
+sanfran8.photo.attach(io: sfa8, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran8.save!
 
 sanfran9 = Place.new(
   name: 'Cable Car Ride',
   address: 'San Francisco, CA, USA',
   price: 85.00,
-  description: 'Experience a historic and scenic ride on San Francisco\'s famous cable cars. A fun way to explore the city’s hills.',
+  description: "Experience a historic and scenic ride on San Francisco\'s famous cable cars. A fun way to explore the city's hills.",
   review: 'A quintessential San Francisco experience. Enjoy the unique charm and views of the city.',
   city: san_francisco
 )
+sanfran9.photo.attach(io: sfa9, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran9.save!
 
 sanfran10 = Place.new(
@@ -276,6 +306,7 @@ sanfran10 = Place.new(
   review: 'Great views and interesting history. The murals inside are a nice bonus.',
   city: san_francisco
 )
+sanfran10.photo.attach(io: sfa10, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran10.save!
 puts 'Attractions for San Francisco created.'
 
@@ -288,16 +319,18 @@ sanfran11 = Place.new(
   review: 'The roasted chicken is legendary, and the ambiance is perfect for a relaxed dining experience.',
   city: san_francisco
 )
+sanfran11.photo.attach(io: sfa11, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran11.save!
 
 sanfran12 = Place.new(
   name: 'Tadich Grill',
   address: '240 California St, San Francisco, CA, USA',
   price: 70.00,
-  description: 'San Francisco’s oldest restaurant, famous for its seafood and classic American dishes, with a historic charm.',
+  description: "San Francisco's oldest restaurant, famous for its seafood and classic American dishes, with a historic charm.",
   review: 'A historic gem with outstanding seafood. The cioppino is a must-try.',
   city: san_francisco
 )
+sanfran12.photo.attach(io: sfa12, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran12.save!
 
 sanfran13 = Place.new(
@@ -308,6 +341,7 @@ sanfran13 = Place.new(
   review: 'An exquisite dining experience with impeccable service. Perfect for special occasions.',
   city: san_francisco
 )
+sanfran13.photo.attach(io: sfa13, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran13.save!
 
 sanfran14 = Place.new(
@@ -318,6 +352,7 @@ sanfran14 = Place.new(
   review: 'The best tacos in San Francisco! Always fresh and incredibly tasty.',
   city: san_francisco
 )
+sanfran14.photo.attach(io: sfa14, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran14.save!
 
 sanfran15 = Place.new(
@@ -328,6 +363,7 @@ sanfran15 = Place.new(
   review: 'Fantastic seafood in a casual setting. The oysters are incredibly fresh and delicious.',
   city: san_francisco
 )
+sanfran15.photo.attach(io: sfa15, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran15.save!
 
 sanfran16 = Place.new(
@@ -338,6 +374,7 @@ sanfran16 = Place.new(
   review: 'A creative and delightful dining experience. The dim sum-style service adds a fun twist.',
   city: san_francisco
 )
+sanfran16.photo.attach(io: sfa16, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran16.save!
 
 sanfran17 = Place.new(
@@ -348,6 +385,7 @@ sanfran17 = Place.new(
   review: 'An unforgettable culinary experience with a focus on exceptional flavors and presentation.',
   city: san_francisco
 )
+sanfran17.photo.attach(io: sfa17, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran17.save!
 
 sanfran18 = Place.new(
@@ -358,6 +396,7 @@ sanfran18 = Place.new(
   review: 'Great food with a laid-back vibe. The organic ingredients make a noticeable difference in flavor.',
   city: san_francisco
 )
+sanfran18.photo.attach(io: sfa18, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran18.save!
 
 sanfran19 = Place.new(
@@ -368,6 +407,7 @@ sanfran19 = Place.new(
   review: 'Innovative Vietnamese cuisine with fresh ingredients. The flavors are vibrant and delicious.',
   city: san_francisco
 )
+sanfran19.photo.attach(io: sfa19, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran19.save!
 
 sanfran20 = Place.new(
@@ -378,5 +418,6 @@ sanfran20 = Place.new(
   review: 'Perfect for a special night out. The food is exceptional, and the atmosphere is charming.',
   city: san_francisco
 )
+sanfran20.photo.attach(io: sfa20, filename: "photo_attractions.png", content_type: "image/jpg")
 sanfran20.save!
 puts 'Restaurants for San Francisco created.'
