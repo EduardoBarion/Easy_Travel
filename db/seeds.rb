@@ -30,6 +30,7 @@ sf = URI.open("https://turismoetc.com.br/wp-content/uploads/2019/10/golden-gate-
 chi = URI.open("https://dreamsintercambios.com.br/static/cd3bd123e2dbe4933f9e9bd31788f081/e170b/chicago-imagem-conheca-a-cidade-de-chicago.webp")
 
 puts 'Cleaning DB...'
+Trip.destroy_all
 User.destroy_all
 Place.destroy_all
 City.destroy_all
