@@ -13,8 +13,15 @@ require "open-uri"
 country1 = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2021/06/Madrid.jpg")
 country2 = URI.open("https://luniverstours.com/wp-content/uploads/2021/08/guia-brasileiro-em-londres-guia-em-londres-passeios-em-londres-1.jpeg")
 country3 = URI.open("https://www.submarinoviagens.com.br/media/17699717/shutterstock_422575195.jpg")
-country4 = URI.open("https://www.universal-assistance.com/br-blog/wp-content/uploads/2022/03/seguro-viagem-eua-blog-ua-br-1.jpg")
+country4 = URI.open("https://inforel.org/wp-content/uploads/2022/04/O-Lobo-travestido-de-Cordeiro-como-os-EUA-lucram-com-a-Guerra-reproducao.jpg")
 country5 = URI.open("https://cdn.segurospromo.com.br/2019/11/seguro-viagem-alemanha.jpg")
+country6 = URI.open("https://vagaspelomundo.com.br/wp-content/uploads/2024/03/belgica-precisa-de-trabalhadores-estrangeiros.jpeg")
+country7 = URI.open("https://midias.eurodicas.com.br/wp-content/uploads/2024/07/regioes-de-portugal-1.jpg.webp")
+country8 = URI.open("https://tribunademinas.com.br/wp-content/uploads/2023/11/5-cidades-para-conhecer-na-Franca-alem-de-Paris-Mala-de-Aventuras-4.jpg")
+country9 = URI.open("https://www.vidadeturista.com/wp-content/uploads/2017/06/vista-de-cancun-mexico.jpg")
+country10 = URI.open("https://likechile.com/wp-content/uploads/2017/05/clima-em-Santiago-do-Chile-1.jpg")
+country11 = URI.open("https://s1.static.brasilescola.uol.com.br/be/conteudo/images/807e500dace27730e03388e69edd8dc6.jpg")
+country12 = URI.open("https://estivarefratarios.com.br/wp-content/uploads/2019/09/Austr%C3%A1lia-Um-pa%C3%ADs-em-plena-ascens%C3%A3o.png")
 
 newy = URI.open("https://www.viajenaviagem.com/wp-content/uploads/2014/02/nova-york-vista-one-world-observatory.jpg.webp")
 la = URI.open("https://www.cvc.com.br/dicas-de-viagem/wp-content/uploads/2018/05/los-angeles-hollywood-creditos-thinkstock-147308809.jpg")
@@ -86,49 +93,49 @@ belgium = Country.new(
   name: 'Belgium',
   description: 'Explore Belgium: a charming blend of medieval towns, impressive architecture, and a rich culinary scene. From Brussels to Bruges, indulge in fine chocolates, waffles, and beers while soaking up the historical and cultural ambiance.'
 )
-belgium.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+belgium.photo.attach(io: country6, filename: "photo_country.png", content_type: "image/jpg")
 belgium.save!
 
 portugal = Country.new(
   name: 'Portugal',
   description: 'Discover Portugal: a captivating destination with stunning coastlines, historic cities, and a vibrant culture. From Lisbon’s charming streets to Porto’s famous wines, enjoy a rich blend of history, tradition, and modern attractions.'
 )
-portugal.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+portugal.photo.attach(io: country7, filename: "photo_country.png", content_type: "image/jpg")
 portugal.save!
 
 france = Country.new(
   name: 'France',
   description: 'Experience France: a country renowned for its exquisite cuisine, iconic landmarks, and world-class art. From Paris’s Eiffel Tower to the vineyards of Bordeaux, immerse yourself in a rich cultural journey full of romance and elegance.'
 )
-france.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+france.photo.attach(io: country8, filename: "photo_country.png", content_type: "image/jpg")
 france.save!
 
 mexico = Country.new(
   name: 'Mexico',
   description: 'Uncover Mexico: a vibrant land of rich traditions, colorful festivals, and stunning landscapes. From the ancient ruins of Chichen Itza to the beautiful beaches of Cancun, experience a blend of history, culture, and natural beauty.'
 )
-mexico.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+mexico.photo.attach(io: country9, filename: "photo_country.png", content_type: "image/jpg")
 mexico.save!
 
 chile = Country.new(
   name: 'Chile',
   description: 'Discover Chile: a land of diverse landscapes and rich cultural heritage. From the arid Atacama Desert to the lush vineyards of the Central Valley, explore stunning natural wonders and vibrant cities like Santiago and Valparaíso.'
 )
-chile.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+chile.photo.attach(io: country10, filename: "photo_country.png", content_type: "image/jpg")
 chile.save!
 
 japan = Country.new(
   name: 'Japan',
   description: 'Explore Japan: a unique blend of ancient traditions and cutting-edge modernity. From the serene temples of Kyoto to the bustling streets of Tokyo, experience a culture of elegance, innovation, and natural beauty.'
 )
-japan.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+japan.photo.attach(io: country11, filename: "photo_country.png", content_type: "image/jpg")
 japan.save!
 
 australia = Country.new(
   name: 'Australia',
   description: 'Discover Australia: a diverse land of stunning landscapes, vibrant cities, and unique wildlife. From the Great Barrier Reef to Sydney’s iconic Opera House, enjoy a mix of natural wonders and urban adventures in this vast and exciting country.'
 )
-australia.photo.attach(io: country1, filename: "photo_country.png", content_type: "image/jpg")
+australia.photo.attach(io: country12, filename: "photo_country.png", content_type: "image/jpg")
 australia.save!
 puts 'Countries created.'
 
