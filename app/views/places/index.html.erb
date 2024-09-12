@@ -11,6 +11,7 @@
           <h4 class="nameattraction1" style="background-color: rgba(255, 255, 255, 0.6); padding: 5px 10px; border-radius: 10px; max-width: 100%;"><%= place.name %></h4>
           <div class="card__content">
             <h5 class="card__title"><%= place.name %></h5>
+            <p class="card-text">Price: <%= number_to_currency(place.price, unit: 'US$', format: '%u %n', separator: ',', delimiter: '.') %></p>
             <p class="card__description"><%= place.description %></p>
             <%= link_to 'Saiba mais', place_path(place), class: "btn btn-primary mt-2" %>
           </div>

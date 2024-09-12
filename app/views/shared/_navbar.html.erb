@@ -26,7 +26,9 @@
             <%= image_tag "https://thumbs.dreamstime.com/b/vetor-de-%C3%ADcone-perfil-do-avatar-padr%C3%A3o-foto-usu%C3%A1rio-m%C3%ADdia-social-183042379.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= current_user.username if current_user %>
+            <span class="dropdown-item-text" style="padding: 10px 15px;">
+              <%= current_user.username if current_user %>
+            </span>
             <%= link_to "Sign In", new_user_session_path, class: "dropdown-item" if current_user.nil? %>
             <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item" if current_user.nil? %>
             <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: { turbo_method: :delete } if current_user %>
