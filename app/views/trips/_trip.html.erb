@@ -1,0 +1,5 @@
+<div id="trip-<%= trip.id %>">
+  <%= link_to trip_path(trip), class: "btn btn-outline-warning rounded-pill", data: {turbo: false} do %>
+    <i class="fa-solid fa-map-location-dot"></i> <%= trip.name %>
+  <% end %>
+</div>

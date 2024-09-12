@@ -15,6 +15,7 @@ class PlacesController < ApplicationController
       @id_trips = group.trip_id
     end
     @trips = Trip.where(id: @id_trips)
+    @user_trips = Trip.where(user: current_user)
     @place = Place.find(params[:id])
     @plan = Plan.new
     @markers = [{ lat: @place.latitude, lng: @place.longitude }]
