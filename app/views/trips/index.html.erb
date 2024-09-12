@@ -4,18 +4,21 @@
     <div class="mt-4">
       <h1 class="text-center mb-4" style="font-family: 'Jazz LET'; color: #4a4a4a;">Trips 🧳</h1>
       <ul class="list-unstyled text-center">
-        <div id="trips" class="trips">
+        <div id="trips" class="trips p-4">
           <% @trips.each do |trip| %>
             <%= turbo_frame_tag "trips" do %>
               <%= render "trips/trip", trip: trip %>
             <% end %>
+            <br>
           <% end %>
+          <hr>
         </div>
       </ul>
       <div class="text-center">
         <%= link_to root_path, class: "btn btn-outline-secondary rounded-pill" do %>
           <i class="fa-solid fa-house"></i> Home Page
         <% end %>
+          <%= link_to "New Itinerary", new_trip_path, class: "btn btn-outline-success rounded-pill"%>
       </div>
     </div>
   </div>
