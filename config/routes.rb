@@ -24,8 +24,10 @@ Rails.application.routes.draw do
   end
 
   resources :places, only: :show do
-    resources :plans, only: %i[create destroy]
+    resources :plans, only: %i[create]
   end
+
+  resources :plans, only: %i[destroy]
 
   # Defines the root path route ("/")
   # root "posts#index"

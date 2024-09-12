@@ -6,16 +6,7 @@ class PlacesController < ApplicationController
   end
 
   def show
-    @memberships = Membership.where(user: current_user)
-    @memberships.each do |membership|
-      @id_groups = membership.group_id
-    end
-    @groups = Group.where(id: @id_groups)
-    @groups.each do |group|
-      @id_trips = group.trip_id
-    end
-    @trips = Trip.where(id: @id_trips)
-    @user_trips = Trip.where(user: current_user)
+    @trips = current_user.trips
     @place = Place.find(params[:id])
     @plan = Plan.new
     @markers = [{ lat: @place.latitude, lng: @place.longitude }]

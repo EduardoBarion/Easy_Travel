@@ -18,6 +18,7 @@ class Trip < ApplicationRecord
   end
 
   def create_initial_group
-    groups.create!
+    group = Group.create!(trip: self)
+    Membership.create!(group: group, user: user)
   end
 end
