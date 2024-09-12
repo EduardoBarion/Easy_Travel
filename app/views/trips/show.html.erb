@@ -1,69 +1,59 @@
-<div class="container">
-  <h1 class="pt-5 px-5 text-center" style="color: #161D6F; font-size: 3em;"><strong><%= @trip.name %></strong></h1>
+<%= turbo_stream_from "trip_#{@trip.id}" %>
+  <div class="container">
+    <h1 class="pt-5 px-5 text-center" style="color: #161D6F; font-size: 3em;"><strong><%= @trip.name %></strong></h1>
 
-  <% if @trip.date_start.present? %>
-    <h1 class="text-center" style="color: #161D6F; font-size: 1em;"><strong> Dia de partida- <%= @trip.date_start %></strong></h1>
-  <% else %>
-  <% end %>
+    <% if @trip.date_start.present? %>
+      <h1 class="text-center" style="color: #161D6F; font-size: 1em;"><strong> Dia de partida- <%= @trip.date_start %></strong></h1>
+    <% else %>
+    <% end %>
 
-  <% if @trip.date_end.present? %>
-    <h1 class="text-center" style="color: #161D6F; font-size: 1em;"><strong> Dia de volta- <%= @trip.date_end %></strong></h1>
-  <% else %>
-  <% end %>
+    <% if @trip.date_end.present? %>
+      <h1 class="text-center" style="color: #161D6F; font-size: 1em;"><strong> Dia de volta- <%= @trip.date_end %></strong></h1>
+    <% else %>
+    <% end %>
 
 
-   <div class="row m-3">
-    <div class="col-8">
-      <% if @plans.exists? %>
-        <% @plans.each do |plan| %>
-
-          <div class="cardtrip for-icon my-3" style="width: 50rem;">
-            <div >
-              <h5 class="cardtrip-title"><%= plan.place.name %></h5>
-              <%= link_to place_plan_path(plan_id: plan.id, place_id: plan.place_id), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Tem certeza que deseja deletar?" } do %>
-                <i class="fa-solid fa-x"></i>
-              <% end %>
-            </div>
-          </div>
+    <div class="row m-3">
+      <div class="col-8">
+        <% if @plans.exists? %>
+          <% @plans.each do |plan| %>
+            <%= turbo_frame_tag "cards" do %>
+              <%= render "trips/cardattraction", plan: plan, place: plan.place %>
+            <% end %>
+          <% end %>
         <% end %>
+      </div>
+
+       <%= render "map", trip: @trip, markers: @markers%>
+       
+    </div>
+    <div class="d-flex justify-content-center">
+      <%= link_to countries_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
+        <i class="fa-solid fa-plus"></i> Add attractions
       <% end %>
+      <%= link_to "#", class: "m-3 btn btn-outline-primary rounded-pill", data: { "bs-toggle" => "modal", "bs-target" => "#exampleModal" } do %>
+        <i class="fa-solid fa-user-plus"></i> Add friend
+      <% end %>
+      <%= link_to trips_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
+        <i class="fa-solid fa-list"></i> All itineraries
+      <% end %>
+      <%= link_to trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "m-3 btn btn-outline-primary rounded-pill" do %>
+      <i class="fa-regular fa-trash-can"></i> Delete itinerary
+    <% end %>
     </div>
 
-    <div class="col-4">
-      <div style="width: 100%; height: 97%;"
-           data-controller="map"
-           data-map-markers-value="<%= @markers.to_json %>"
-           data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add friend to itinerary</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+                <%= render "groups/form", membership: @membership, group: @group %>
+            </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="d-flex justify-content-center">
-    <%= link_to countries_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-      <i class="fa-solid fa-plus"></i> Add attractions
-    <% end %>
-    <%= link_to "#", class: "m-3 btn btn-outline-primary rounded-pill", data: { "bs-toggle" => "modal", "bs-target" => "#exampleModal" } do %>
-      <i class="fa-solid fa-user-plus"></i> Add friend
-    <% end %>
-    <%= link_to trips_path, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-      <i class="fa-solid fa-list"></i> All itineraries
-    <% end %>
-    <%= link_to trip_path, method: :delete, data: { turbo_method: :delete, confirm: "Tem certeza que deseja deletar?" }, class: "m-3 btn btn-outline-primary rounded-pill" do %>
-    <i class="fa-regular fa-trash-can"></i> Delete itinerary
-  <% end %>
-  </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add friend to itinerary</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-              <%= render "groups/form", membership: @membership, group: @group %>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>

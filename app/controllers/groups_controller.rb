@@ -1,8 +1,8 @@
 class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
-    @group.user = current_user
     if @group.save
+      Membership.create(group: @group, user: current_user)
       redirect_to trips_path
     else
       render :new

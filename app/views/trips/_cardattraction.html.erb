@@ -1,0 +1,10 @@
+<div id="plan-<%= plan.id %>">
+  <div class="cardtrip for-icon my-3" style="width: 50rem;">
+    <div>
+      <h5 class="cardtrip-title"><%= plan.place.name %></h5>
+      <%= link_to plan_path(plan), method: :delete, data: {  turbo_method: :delete, turbo_confirm: "Tem certeza que deseja deletar?", turbo_frame: "_top" } do %>
+                <i class="fa-solid fa-x"></i>
+              <% end %>
+    </div>
+  </div>
+</div>
