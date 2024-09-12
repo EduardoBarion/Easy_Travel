@@ -15,10 +15,12 @@
         </div>
       </ul>
       <div class="text-center">
-        <%= link_to root_path, class: "btn btn-outline-secondary rounded-pill" do %>
+        <%= link_to new_trip_path, class: "btn btn-outline-success rounded-pill mx-2" do %>
+          <i class="fa-solid fa-plus"></i> New Itinerary
+        <% end %>
+        <%= link_to root_path, class: "btn btn-outline-secondary rounded-pill mx-2" do %>
           <i class="fa-solid fa-house"></i> Home Page
         <% end %>
-          <%= link_to "New Itinerary", new_trip_path, class: "btn btn-outline-success rounded-pill"%>
       </div>
     </div>
   </div>

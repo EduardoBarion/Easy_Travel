@@ -1,7 +1,7 @@
-<div class="container mt-4">
+<div class="container p-4">
   <h2><%= @place.name %></h2>
   <h4> Attraction in <%= @place.city.name %>. </h4>
-  <p> For - <%= @place.price %> </p>
+  <p> For - <%= number_to_currency(@place.price, unit: 'US$', format: '%u %n', separator: ',', delimiter: '.') %> </p>
   <p> Address - <%= @place.address %> </p>
   <p> Attraction description - <%= @place.description %> </p>
   <p> Review - <%= @place.review %> </p>

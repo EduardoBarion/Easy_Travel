@@ -201,7 +201,7 @@ puts 'Cities created.'
 puts 'Creating 10 attractions for San Francisco...'
 sanfran1 = Place.new(
   name: 'Golden Gate Bridge',
-  address: 'San Francisco, CA, USA',
+  address: 'Golden Gate Bridge, San Francisco, California, United States',
   price: 100.00,
   description: 'An iconic suspension bridge offering stunning views of the bay and city. A must-see landmark of San Francisco.',
   review: 'Walking across the Golden Gate Bridge is an unforgettable experience with breathtaking views.',
@@ -212,7 +212,7 @@ sanfran1.save!
 
 sanfran2 = Place.new(
   name: 'Alcatraz Island',
-  address: 'San Francisco, CA, USA',
+  address: 'San Francisco Bay, California, United States',
   price: 39.00,
   description: 'A former prison turned museum, located on an island in the bay. Known for its intriguing history and captivating tours.',
   review: 'An eerie but fascinating visit. The audio tour provides a deep insight into the lives of former inmates.',
@@ -223,7 +223,7 @@ sanfran2.save!
 
 sanfran3 = Place.new(
   name: "Fisherman's Wharf",
-  address: 'San Francisco, CA, USA',
+  address: '39 Pier, San Francisco, California, United States',
   price: 100.00,
   description: 'A bustling waterfront area known for its seafood, shopping, and street performances. Home to Pier 39 and the sea lions.',
   review: 'A lively area with plenty to see and do. Great for a leisurely stroll and enjoying fresh seafood.',
@@ -234,7 +234,7 @@ sanfran3.save!
 
 sanfran4 = Place.new(
   name: 'Golden Gate Park',
-  address: 'San Francisco, CA, USA',
+  address: 'Crossover Dr, San Francisco, California, United States',
   price: 100.00,
   description: 'A large urban park with gardens, museums, and recreational areas. Ideal for outdoor activities and relaxation.',
   review: 'A beautiful park with something for everyone. The Japanese Tea Garden is a highlight.',
@@ -245,7 +245,7 @@ sanfran4.save!
 
 sanfran5 = Place.new(
   name: 'Exploratorium',
-  address: 'Pier 15, San Francisco, CA, USA',
+  address: 'Pier 15, Green Street, San Francisco, California, United States',
   price: 30.00,
   description: 'An interactive science museum offering hands-on exhibits for all ages. A great place to explore and learn through play.',
   review: 'An engaging experience for both kids and adults. Interactive exhibits make learning fun.',
@@ -256,7 +256,7 @@ sanfran5.save!
 
 sanfran6 = Place.new(
   name: 'Chinatown',
-  address: 'San Francisco, CA, USA',
+  address: 'Stockton Street Tunnel, San Francisco, California, United States',
   price: 80.00,
   description: 'The oldest and one of the largest Chinatowns in North America. Known for its vibrant culture, shops, and restaurants.',
   review: 'A colorful neighborhood with excellent food and unique shops. A must-visit for experiencing local culture.',
@@ -267,7 +267,7 @@ sanfran6.save!
 sanfran7 = Place.new(
 
   name: 'San Francisco- MOMA',
-  address: '151 3rd St, San Francisco, CA, USA',
+  address: '151 3rd Street, San Francisco, California, United States',
   price: 25.00,
   description: 'A major modern art museum featuring works by renowned artists such as Jackson Pollock and Andy Warhol.',
   review: 'A top-notch museum with impressive exhibits. Perfect for art lovers and modern art enthusiasts.',
@@ -278,7 +278,7 @@ sanfran7.save!
 
 sanfran8 = Place.new(
   name: 'Palace of Fine Arts',
-  address: '3301 Lyon St, San Francisco, CA, USA',
+  address: '3601 Lyon Street, San Francisco, California, United States',
   price: 40.00,
   description: 'A stunning Beaux-Arts structure surrounded by a lagoon. A picturesque spot for leisurely walks and photography.',
   review: 'A beautiful and serene location. Ideal for a relaxing walk or a peaceful picnic.',
@@ -289,7 +289,7 @@ sanfran8.save!
 
 sanfran9 = Place.new(
   name: 'Cable Car Ride',
-  address: 'San Francisco, CA, USA',
+  address: '2401 Taylor Street, San Francisco, California, United States',
   price: 85.00,
   description: "Experience a historic and scenic ride on San Francisco\'s famous cable cars. A fun way to explore the city's hills.",
   review: 'A quintessential San Francisco experience. Enjoy the unique charm and views of the city.',
@@ -300,7 +300,7 @@ sanfran9.save!
 
 sanfran10 = Place.new(
   name: 'Coit Tower',
-  address: '1 Telegraph Hill Blvd, San Francisco, CA, USA',
+  address: '1 Telegraph Hill Blvd, San Francisco, California, United States',
   price: 10.00,
   description: 'A historic tower offering panoramic views of the city and bay. Features murals from the 1930s inside.',
   review: 'Great views and interesting history. The murals inside are a nice bonus.',
