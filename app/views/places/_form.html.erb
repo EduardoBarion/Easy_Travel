@@ -1,6 +1,6 @@
 <div class="container">
   <%= simple_form_for [place, plan] do |f| %>
-    <%= f.association :trip, label: 'Itinerary:', collection: (@trips + @user_trips) %>
+    <%= f.association :trip, label: 'Itinerary:', collection: @trips %>
     <%= button_tag(type: 'submit', class: 'btn btn-primary mb-3', style: 'padding: 10px 20px; border-radius: 25px;') do %>
       <i class="fa-solid fa-plus"></i> Add
     <% end %>
